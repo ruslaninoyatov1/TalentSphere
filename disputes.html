@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арбитраж | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Арбитраж</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+        <header class="content-header">
+            <h1 class="page-title">Арбитраж & <span class="gradient-text">Споры</span></h1>
+            <p class="page-subtitle">Разрешение конфликтных ситуаций</p>
+        </header>
+        <div class="disputes-list">
+            <div class="dispute-card glass-card">
+                <div class="dispute-header">
+                    <div class="dispute-badge active">Активный</div><span class="dispute-id">#12345</span>
+                </div>
+                <h3 class="dispute-title">Проект: Редизайн Dashboard</h3>
+                <p class="dispute-desc">Разногласия по качеству выполненной работы</p>
+                <div class="dispute-meta"><span>Открыт: 2 дня назад</span><span class="dispute-status">⏳
+                        Рассмотрение</span></div>
+                <div class="dispute-actions"><button class="btn-secondary glass-card">Детали</button><button
+                        class="btn-primary neon-button">Добавить комментарий</button></div>
+            </div>
+            <div class="dispute-card glass-card">
+                <div class="dispute-header">
+                    <div class="dispute-badge resolved">Решено</div><span class="dispute-id">#12340</span>
+                </div>
+                <h3 class="dispute-title">Проект: Landing Page</h3>
+                <p class="dispute-desc">Спор по срокам выполнения</p>
+                <div class="dispute-meta"><span>Решено 5 дней назад</span><span class="dispute-status">✓ В пользу
+                        фрилансера</span></div>
+            </div>
+        </div>
+        <div class="help-section glass-card">
+            <h2>Как работает арбитраж</h2>
+            <ol>
+                <li>Открываете спор с описанием проблемы</li>
+                <li>Предоставляете доказательства (скриншоты, переписка)</li>
+                <li>Наша команда рассматривает обе стороны</li>
+                <li>Выносится справедливое решение в течение 3-5 дней</li>
+            </ol>
+        </div>
+    </main>
+    <style>
+        .disputes-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .dispute-card {
+            padding: var(--spacing-xl);
+        }
+
+        .dispute-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .dispute-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .dispute-badge.active {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+        }
+
+        .dispute-badge.resolved {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--neon-green);
+        }
+
+        .dispute-id {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .dispute-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .dispute-desc {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .dispute-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .dispute-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .help-section {
+            padding: var(--spacing-xl);
+        }
+
+        .help-section h2 {
+            font-size: 24px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .help-section ol {
+            padding-left: 20px;
+        }
+
+        .help-section li {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+        }
+    </style>
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index-modern.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="landing-page">
+    <nav class="main-nav glass-effect">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span>
+            </a>
+            <div class="nav-actions"><a href="login.html" class="btn-secondary">Войти</a><a href="register.html"
+                    class="btn-primary neon-button">Начать</a></div>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1 class="about-title">Свяжитесь с <span class="gradient-text">нами</span></h1>
+            <p class="about-subtitle">Мы всегда рады помочь и ответить на ваши вопросы</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-card glass-card">
+                <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 24px;">Напишите нам</h2>
+                <form class="contact-form">
+                    <div class="form-group-modern">
+                        <label>Имя</label>
+                        <input type="text" class="form-input-modern" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group-modern">
+                        <label>Email</label>
+                        <input type="email" class="form-input-modern" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group-modern">
+                        <label>Сообщение</label>
+                        <textarea class="form-input-modern" placeholder="Ваше сообщение..." rows="6"
+                            style="resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="neon-button"
+                        style="padding: 16px 32px; justify-content: center; display: flex; align-items: center; gap: 12px;">
+                        <span>Отправить</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info-list">
+                <div class="info-card-modern glass-card">
+                    <div class="info-icon-wrapper bg-blue-purple">📧</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Email</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 12px;">Напишите нам на почту</p>
+                    <a href="mailto:support@talentsphere.com"
+                        style="color: var(--neon-purple); font-weight: 600; text-decoration: none;">support@talentsphere.com</a>
+                </div>
+
+                <div class="info-card-modern glass-card">
+                    <div class="info-icon-wrapper bg-pink-orange">💬</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Live Chat</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 12px;">Онлайн поддержка 24/7</p>
+                    <button class="neon-button" style="padding: 10px 20px;"><span>Начать чат</span></button>
+                </div>
+
+                <div class="info-card-modern glass-card">
+                    <div class="info-icon-wrapper bg-purple-pink">📱</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Telegram</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 12px;">Быстрая связь в мессенджере</p>
+                    <a href="https://t.me/talentsphere"
+                        style="color: var(--neon-purple); font-weight: 600; text-decoration: none;">@talentsphere</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Link -->
+        <div class="faq-teaser glass-card">
+            <h2 class="stats-title">Не нашли ответ?</h2>
+            <p class="about-subtitle" style="margin-bottom: 32px;">Возможно, ответ уже есть в нашей базе знаний</p>
+            <a href="faq.html" class="btn-primary neon-button"
+                style="text-decoration: none; padding: 16px 32px;"><span>Перейти к FAQ</span></a>
+        </div>
+    </div>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+

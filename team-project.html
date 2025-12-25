@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Командный проект | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/team-project-layout.css">
+    <link rel="stylesheet" href="css/team-project.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <button class="mobile-project-menu-btn" onclick="toggleProjectMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item active">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Командный проект</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+        <div class="project-header glass-card">
+            <div class="header-content">
+                <div class="project-info">
+                    <span class="project-badge">В работе</span>
+                    <h1>Маркетплейс фрилансеров</h1>
+                    <p class="project-meta">
+                        <span><i class="far fa-clock"></i> Дедлайн: 25 Дек 2023</span>
+                        <span><i class="fas fa-users"></i> 3 участника</span>
+                    </p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-secondary glass-button"><i class="fas fa-cog"></i> Настройки</button>
+                    <button class="btn-primary neon-button"><i class="fas fa-plus"></i> Пригласить</button>
+                </div>
+            </div>
+
+            <div class="project-tabs">
+                <button class="tab-btn active" onclick="switchTab('chat')">
+                    <i class="far fa-comments"></i> Командный чат
+                </button>
+                <button class="tab-btn" onclick="switchTab('stages')">
+                    <i class="fas fa-tasks"></i> Этапы и сроки
+                </button>
+                <button class="tab-btn" onclick="switchTab('team')">
+                    <i class="fas fa-users"></i> Команда
+                </button>
+                <button class="tab-btn" onclick="switchTab('budget')">
+                    <i class="fas fa-wallet"></i> Бюджет
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab: Team Chat -->
+        <div id="chat" class="tab-content active">
+            <div class="chat-layout">
+                <div class="chat-main glass-card">
+                    <div class="chat-header">
+                        <h3>Общий чат проекта</h3>
+                        <div class="chat-actions">
+                            <button class="icon-btn" title="Видеозвонок"
+                                onclick="window.location.href='video-call.html'"><i class="fas fa-video"></i></button>
+                            <button class="icon-btn" title="Поиск"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="teamChatMessages">
+                        <div class="message-date">Сегодня</div>
+
+                        <div class="message received">
+                            <img src="~/assets/avatars/1.jpg" alt="User" class="msg-avatar">
+                            <div class="msg-content">
+                                <div class="msg-name">Алексей Морозов</div>
+                                <div class="msg-text">Привет команда! Я закончил дизайн главной страницы. Можете
+                                    посмотреть в Figma?</div>
+                                <div class="msg-time">10:23</div>
+                            </div>
+                        </div>
+
+                        <div class="message received">
+                            <img src="~/assets/avatars/2.jpg" alt="User" class="msg-avatar">
+                            <div class="msg-content">
+                                <div class="msg-name">Мария Петрова</div>
+                                <div class="msg-text">Отлично! Сейчас посмотрю. Кстати, я уже начала верстку
+                                    компонентов.</div>
+                                <div class="msg-time">10:25</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <img src="~/assets/avatars/3.jpg" alt="User" class="msg-avatar">
+                            <div class="msg-content">
+                                <div class="msg-text">Супер! Давайте созвонимся в 14:00 чтобы обсудить детали?</div>
+                                <div class="msg-time">10:27</div>
+                            </div>
+                        </div>
+
+                        <div class="message received">
+                            <img src="~/assets/avatars/1.jpg" alt="User" class="msg-avatar">
+                            <div class="msg-content">
+                                <div class="msg-name">Алексей Морозов</div>
+                                <div class="msg-text">Договорились! 👍</div>
+                                <div class="msg-time">10:28</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <button class="attach-btn"><i class="fas fa-paperclip"></i></button>
+                        <input type="text" placeholder="Напишите сообщение...">
+                        <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+                <div class="chat-sidebar">
+                    <div class="sidebar-section glass-card">
+                        <h4>Участники онлайн</h4>
+                        <div class="online-users">
+                            <div class="user-item">
+                                <div class="user-avatar online">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100"
+                                        alt="Anna">
+                                </div>
+                                <div class="user-info">
+                                    <span class="name">Анна В.</span>
+                                    <span class="role">UI/UX Designer</span>
+                                </div>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-avatar online">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100"
+                                        alt="Max">
+                                </div>
+                                <div class="user-info">
+                                    <span class="name">Максим К.</span>
+                                    <span class="role">Frontend</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section glass-card">
+                        <h4>Файлы проекта</h4>
+                        <div class="project-files">
+                            <div class="file-item">
+                                <div class="file-icon pdf"><i class="far fa-file-pdf"></i></div>
+                                <div class="file-info">
+                                    <span class="filename">ТЗ_v2.pdf</span>
+                                    <span class="filesize">2.4 MB</span>
+                                </div>
+                            </div>
+                            <div class="file-item">
+                                <div class="file-icon fig"><i class="fab fa-figma"></i></div>
+                                <div class="file-info">
+                                    <span class="filename">Design_System</span>
+                                    <span class="filesize">Link</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-small-secondary w-100 mt-2"><i class="fas fa-upload"></i> Загрузить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Stages & Deadlines -->
+        <div id="stages" class="tab-content">
+            <div class="stages-layout">
+                <div class="roadmap-section glass-card">
+                    <div class="section-header">
+                        <h3>Дорожная карта</h3>
+                    </div>
+
+                    <div class="timeline" id="projectTimeline">
+                        <!-- Stage 1: Completed -->
+                        <div class="stage-item completed">
+                            <div class="stage-status-line"></div>
+                            <div class="stage-content glass-card">
+                                <div class="stage-header">
+                                    <h4>Дизайн интерфейса</h4>
+                                    <span class="status-badge completed">Завершено</span>
+                                </div>
+                                <div class="stage-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%;"></div>
+                                    </div>
+                                    <span class="progress-text">100%</span>
+                                </div>
+                                <div class="stage-details">
+                                    <div class="detail-item">
+                                        <span class="label">Дедлайн</span>
+                                        <span class="value">15 Дек 2023</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Ответственный</span>
+                                        <span class="value">Анна В.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage 2: Active -->
+                        <div class="stage-item active">
+                            <div class="stage-status-line"></div>
+                            <div class="stage-content glass-card">
+                                <div class="stage-header">
+                                    <h4>Frontend разработка</h4>
+                                    <span class="status-badge active">В работе</span>
+                                </div>
+                                <div class="stage-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%;"></div>
+                                    </div>
+                                    <span class="progress-text">65%</span>
+                                </div>
+                                <div class="stage-details">
+                                    <div class="detail-item">
+                                        <span class="label">Дедлайн</span>
+                                        <span class="value warning">22 Дек 2023</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Ответственный</span>
+                                        <span class="value">Максим К.</span>
+                                    </div>
+                                </div>
+                                <div class="stage-actions">
+                                    <button class="btn-small-secondary">Детали</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage 3: Future -->
+                        <div class="stage-item future">
+                            <div class="stage-status-line"></div>
+                            <div class="stage-content glass-card">
+                                <div class="stage-header">
+                                    <h4>Backend интеграция</h4>
+                                    <span class="status-badge future">Запланировано</span>
+                                </div>
+                                <div class="stage-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%;"></div>
+                                    </div>
+                                    <span class="progress-text">0%</span>
+                                </div>
+                                <div class="stage-details">
+                                    <div class="detail-item">
+                                        <span class="label">Начало</span>
+                                        <span class="value">23 Дек 2023</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Ответственный</span>
+                                        <span class="value">Дмитрий В.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gantt-section glass-card">
+                    <h3>Диаграмма Ганта</h3>
+                    <div class="gantt-chart-placeholder">
+                        <div class="gantt-bars">
+                            <div class="gantt-bar done" style="width: 30%; margin-left: 0;">Дизайн</div>
+                            <div class="gantt-bar active" style="width: 40%; margin-left: 30%;">Frontend</div>
+                            <div class="gantt-bar future" style="width: 30%; margin-left: 70%;">Backend</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Team -->
+        <div id="team" class="tab-content">
+            <div class="team-grid" id="teamMembersGrid">
+                <!-- Content will be dynamic. See assets/sample/team_project_sample.html -->
+                <!-- Add Member Card -->
+                <div class="member-card glass-card add-member">
+                    <div class="add-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Добавить участника</h3>
+                    <p>Пригласите специалиста в проект</p>
+                </div>
+            </div>
+
+            <div class="workload-section glass-card mt-4">
+                <h3>Распределение нагрузки</h3>
+                <div class="workload-chart">
+                    <div class="workload-row">
+                        <span class="name">Анна В.</span>
+                        <div class="bar-container">
+                            <div class="bar-fill high" style="width: 85%"></div>
+                        </div>
+                        <span class="percent">85%</span>
+                    </div>
+                    <div class="workload-row">
+                        <span class="name">Максим К.</span>
+                        <div class="bar-container">
+                            <div class="bar-fill medium" style="width: 60%"></div>
+                        </div>
+                        <span class="percent">60%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Budget -->
+        <div id="budget" class="tab-content">
+            <div class="budget-overview">
+                <div class="budget-card glass-card">
+                    <div class="icon-box purple"><i class="fas fa-coins"></i></div>
+                    <div class="budget-info">
+                        <span class="label">Общий бюджет</span>
+                        <span class="amount">$9,100</span>
+                    </div>
+                </div>
+                <div class="budget-card glass-card">
+                    <div class="icon-box green"><i class="fas fa-check-circle"></i></div>
+                    <div class="budget-info">
+                        <span class="label">Выплачено</span>
+                        <span class="amount">$3,500</span>
+                    </div>
+                </div>
+                <div class="budget-card glass-card">
+                    <div class="icon-box orange"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="budget-info">
+                        <span class="label">В Escrow</span>
+                        <span class="amount">$5,600</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="budget-details-grid">
+                <div class="transactions-section glass-card">
+                    <h3>История транзакций</h3>
+                    <div class="transaction-list" id="projectTransactions">
+                        <!-- Content will be dynamic. See assets/sample/team_project_sample.html -->
+                    </div>
+                </div>
+
+                <div class="escrow-status-section glass-card">
+                    <h3>Статус Escrow</h3>
+                    <div class="escrow-timeline">
+                        <div class="escrow-step completed">
+                            <div class="dot"></div>
+                            <div class="content">
+                                <span class="title">Депозит внесен</span>
+                                <span class="date">10 Окт 2023</span>
+                            </div>
+                        </div>
+                        <div class="escrow-step active">
+                            <div class="dot"></div>
+                            <div class="content">
+                                <span class="title">Разблокировка: Этап 2</span>
+                                <span class="desc">Ожидает подтверждения</span>
+                            </div>
+                        </div>
+                        <div class="escrow-step">
+                            <div class="dot"></div>
+                            <div class="content">
+                                <span class="title">Финальная выплата</span>
+                                <span class="desc">После завершения проекта</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary w-100 mt-3"><i class="fas fa-gavel"></i> Запросить арбитраж</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Project Menu -->
+    <div class="mobile-project-menu" id="mobileProjectMenu">
+        <div class="mobile-menu-header">
+            <h3>Меню проекта</h3>
+            <button class="close-menu-btn" onclick="toggleProjectMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-links">
+                <button class="mobile-nav-btn" onclick="switchTab('chat'); toggleProjectMenu()">
+                    <i class="far fa-comments"></i> Командный чат
+                </button>
+                <button class="mobile-nav-btn" onclick="switchTab('stages'); toggleProjectMenu()">
+                    <i class="fas fa-tasks"></i> Этапы и сроки
+                </button>
+                <button class="mobile-nav-btn" onclick="switchTab('team'); toggleProjectMenu()">
+                    <i class="fas fa-users"></i> Команда
+                </button>
+                <button class="mobile-nav-btn" onclick="switchTab('budget'); toggleProjectMenu()">
+                    <i class="fas fa-wallet"></i> Бюджет
+                </button>
+            </div>
+
+            <div class="mobile-section">
+                <h4>Участники онлайн</h4>
+                <div class="online-users">
+                    <div class="user-item">
+                        <div class="user-avatar online">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="Anna">
+                        </div>
+                        <div class="user-info">
+                            <span class="name">Анна В.</span>
+                            <span class="role">UI/UX Designer</span>
+                        </div>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-avatar online">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Max">
+                        </div>
+                        <div class="user-info">
+                            <span class="name">Максим К.</span>
+                            <span class="role">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-section">
+                <h4>Файлы проекта</h4>
+                <div class="project-files">
+                    <div class="file-item">
+                        <div class="file-icon pdf"><i class="far fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <span class="filename">ТЗ_v2.pdf</span>
+                            <span class="filesize">2.4 MB</span>
+                        </div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-icon fig"><i class="fab fa-figma"></i></div>
+                        <div class="file-info">
+                            <span class="filename">Design_System</span>
+                            <span class="filesize">Link</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Activate button
+            const activeBtn = document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }
+
+        function toggleProjectMenu() {
+            const menu = document.getElementById('mobileProjectMenu');
+            menu.classList.toggle('active');
+        }
+
+
+    </script>
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Верификация | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Верификация</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+        <header class="content-header">
+            <h1 class="page-title">Верификация <span class="gradient-text">профиля</span></h1>
+            <p class="page-subtitle">Повысьте доверие клиентов</p>
+        </header>
+        <div class="verification-steps">
+            <div class="verification-card glass-card">
+                <div class="verification-icon neon-glow-blue">📧</div>
+                <h3>Email верификация</h3>
+                <p>Подтвердите ваш email адрес</p><span class="status-badge completed">✓ Завершено</span>
+            </div>
+            <div class="verification-card glass-card">
+                <div class="verification-icon neon-glow-pink">📱</div>
+                <h3>Телефон</h3>
+                <p>Подтвердите номер телефона</p><button class="verify-btn neon-button">Верифицировать</button>
+            </div>
+            <div class="verification-card glass-card">
+                <div class="verification-icon neon-glow-purple">🆔</div>
+                <h3>Документы</h3>
+                <p>Загрузите документ, удостоверяющий личность</p><button
+                    class="verify-btn neon-button">Загрузить</button>
+            </div>
+            <div class="verification-card glass-card">
+                <div class="verification-icon neon-glow-cyan">💼</div>
+                <h3>Профессиональный статус</h3>
+                <p>Подтвердите опыт работы</p><button class="verify-btn neon-button">Добавить</button>
+            </div>
+        </div>
+        <div class="benefits-section glass-card">
+            <h2>Преимущества верификации</h2>
+            <ul>
+                <li><i class="fas fa-bullseye neon-text-pink"></i> Приоритет в поиске</li>
+                <li><i class="fas fa-star neon-text-yellow"></i> Значок "Verified"</li>
+                <li>💰 Доступ к премиум проектам</li>
+                <li><i class="fas fa-shield-alt neon-text-blue"></i> Повышенное доверие</li>
+            </ul>
+        </div>
+    </main>
+    <style>
+        .verification-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .verification-card {
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .verification-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .verification-card h3 {
+            font-size: 18px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .verification-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--neon-green);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .verify-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .benefits-section {
+            padding: var(--spacing-xl);
+        }
+
+        .benefits-section h2 {
+            font-size: 24px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .benefits-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-section li {
+            padding: var(--spacing-sm) 0;
+            font-size: 16px;
+        }
+    </style>
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

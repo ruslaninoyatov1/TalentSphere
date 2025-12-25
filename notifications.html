@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уведомления | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Уведомления</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="notifications-container">
+            <!-- Filter Tabs -->
+            <div class="notifications-tabs">
+                <button class="tab-btn active"><i class="fas fa-list"></i> Все</button>
+                <button class="tab-btn"><i class="fas fa-hand-holding-usd"></i> Оплаты</button>
+                <button class="tab-btn"><i class="fas fa-project-diagram"></i> Проекты</button>
+                <button class="tab-btn"><i class="fas fa-users"></i> Соцсети</button>
+                <button class="tab-btn"><i class="fas fa-shield-alt"></i> Системные</button>
+            </div>
+
+            <div class="notifications-list" id="notificationsListContainer">
+                <!-- Static placeholders for now, will be dynamic from state.js -->
+                <div class="notification-item unread glass-card">
+                    <div class="notification-icon icon-payment neon-glow-green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h3 class="notification-title">Оплата получена</h3>
+                            <span class="notification-time">5 мин назад</span>
+                        </div>
+                        <p class="notification-text">За проект "Dashboard Design" зачислено $1,200. Средства доступны в
+                            кошельке.</p>
+                        <div class="notification-actions">
+                            <button class="btn-primary neon-button btn-small">Посмотреть чек</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item unread glass-card">
+                    <div class="notification-icon icon-social neon-glow-pink">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h3 class="notification-title">Новое сообщение</h3>
+                            <span class="notification-time">15 мин назад</span>
+                        </div>
+                        <p class="notification-text">Sarah Connor прислала вам сообщение: "Ок, жду прототипы к вечеру".
+                        </p>
+                        <div class="notification-actions">
+                            <button class="btn-primary neon-button btn-small">Ответить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item glass-card">
+                    <div class="notification-icon icon-system neon-glow-blue">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h3 class="notification-title">Обновление системы</h3>
+                            <span class="notification-time">2 часа назад</span>
+                        </div>
+                        <p class="notification-text">TalentSphere v2.4.0 уже доступна. Мы добавили поддержку новых
+                            крипто-кошельков.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <button class="btn-secondary neon-button secondary">Загрузить еще</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

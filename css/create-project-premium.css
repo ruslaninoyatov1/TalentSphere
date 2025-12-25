@@ -1,0 +1,640 @@
+/* ============================================================
+   CREATE PROJECT - ULTRA PREMIUM STYLES
+   Futuristic Wizard UI with Glassmorphism & Micro-animations
+   ============================================================ */
+
+/* 1. Base Overrides */
+.dashboard-page {
+    background: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #0a0a0f 100%);
+    min-height: 100vh;
+}
+
+/* 2. Page Header */
+.page-intro {
+    padding: 40px;
+    text-align: center;
+}
+
+.page-intro .page-title {
+    font-size: 42px;
+    font-weight: 900;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+}
+
+.page-intro .page-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 3. Steps Wizard Navigation */
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-number {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.02);
+}
+
+.step.active .step-number {
+    background: linear-gradient(135deg, #b000ff, #00d4ff);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.3);
+    transform: scale(1.1) translateY(-5px);
+}
+
+.step.completed .step-number {
+    background: rgba(0, 212, 255, 0.15);
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.step-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.step.active .step-label {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 20px;
+    margin-top: -26px;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #b000ff, #00d4ff);
+    transition: width 0.6s ease;
+}
+
+.step.completed+.step-line::after {
+    width: 100%;
+}
+
+/* 4. Form Sections */
+.form-section {
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(25px);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    padding: 48px;
+    margin: 40px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    animation: contentFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contentFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.section-title i {
+    color: #b000ff;
+    filter: drop-shadow(0 0 10px rgba(176, 0, 255, 0.5));
+}
+
+/* 5. Inputs & Form Controls */
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: #b000ff !important;
+    box-shadow: 0 0 25px rgba(176, 0, 255, 0.2), inset 0 0 10px rgba(176, 0, 255, 0.05) !important;
+    outline: none !important;
+}
+
+.form-textarea {
+    min-height: 160px;
+    line-height: 1.6;
+}
+
+/* 6. AI Magic Box */
+.ai-suggestion-box {
+    background: linear-gradient(135deg, rgba(176, 0, 255, 0.1), rgba(0, 212, 255, 0.05));
+    border: 1.5px solid rgba(176, 0, 255, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-ai-assist {
+    background: linear-gradient(135deg, #d300c5, #0012ff) !important;
+    border: none !important;
+    padding: 16px 20px !important;
+    border-radius: 20px !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    box-shadow: 0 10px 25px rgba(176, 0, 255, 0.4) !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    line-height: 1.2;
+    font-size: 13px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 120px;
+}
+
+.btn-ai-assist i {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.btn-ai-assist:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(176, 0, 255, 0.6) !important;
+}
+
+/* 7. Experience & Payment Options */
+.experience-options,
+.payment-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.option-content,
+.payment-content {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-option input:checked+.option-content,
+.payment-type input:checked~.payment-content {
+    background: rgba(176, 0, 255, 0.1);
+    border-color: #b000ff;
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.option-title,
+.payment-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+/* 8. Action Buttons */
+.form-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.btn-primary.neon-button {
+    background: linear-gradient(135deg, #b000ff, #00d4ff);
+    color: #fff;
+    border: none;
+    padding: 18px 48px;
+    border-radius: 18px;
+    font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.btn-primary.neon-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(176, 0, 255, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 18px 32px;
+    border-radius: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 9. Responsiveness & Visual Match Fixes */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    /* Mobile Header Overrides for this page */
+    .mobile-header {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 50px !important;
+        backdrop-filter: none !important;
+    }
+
+    .mobile-logo-text,
+    .mobile-avatar {
+        display: none !important;
+    }
+
+    /* Floating Header Card like in the image */
+    .global-header {
+        display: flex !important;
+        background: #0a0a0f !important;
+        /* Unified deep black background */
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 20px !important;
+        margin: 10px 16px 20px !important;
+        height: 64px !important;
+        padding: 0 20px !important;
+        position: relative;
+        z-index: 1001;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .global-header-left .page-title {
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        color: white !important;
+        margin: 0 !important;
+        background: none !important;
+        -webkit-text-fill-color: white !important;
+    }
+
+    .global-header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .header-btn-premium {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+
+    .header-btn-premium i {
+        font-size: 18px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .notif-badge-premium {
+        width: 10px !important;
+        height: 10px !important;
+        background: #ff4d4d !important;
+        /* Bright red dot */
+        border-radius: 50% !important;
+        position: absolute !important;
+        top: 8px !important;
+        right: 8px !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+        box-shadow: 0 0 10px #ff4d4d !important;
+    }
+
+    .wallet-tablet-premium {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .wallet-tablet-premium i {
+        color: #00ffaa !important;
+        /* Toxic green/cyan */
+        font-size: 18px !important;
+        filter: drop-shadow(0 0 5px #00ffaa) !important;
+    }
+
+    .header-avatar-premium {
+        background: #9d50ff !important;
+        /* Match purple avatar in image */
+        border-radius: 12px !important;
+        /* Squared with rounding */
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        color: white !important;
+        box-shadow: 0 0 15px rgba(157, 80, 255, 0.4) !important;
+    }
+
+    /* Hero Section Match */
+    .page-intro {
+        padding: 40px 20px;
+    }
+
+    .page-intro .page-title {
+        font-size: 38px;
+        line-height: 1.1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Steps Layout Match (Blocks, No Lines) */
+    .steps-container {
+        gap: 10px;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+
+    .step {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 12px 10px;
+        flex: 1;
+        min-width: 0;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .step.active {
+        background: linear-gradient(180deg, #4d7fff 0%, #b000ff 100%);
+        border: none;
+    }
+
+    .step-number {
+        background: transparent !important;
+        border: none !important;
+        width: auto;
+        height: auto;
+        font-size: 24px;
+        margin-bottom: 4px;
+        color: white;
+        box-shadow: none !important;
+    }
+
+    .step-line {
+        display: none;
+    }
+
+    .step-label {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .step.active .step-label {
+        color: white;
+    }
+
+    /* Form Section Match */
+    .form-section {
+        margin: 0 20px 20px;
+        padding: 40px 30px;
+        border-radius: 40px;
+        background: rgba(13, 13, 22, 0.9);
+    }
+
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 26px;
+        line-height: 1.2;
+        gap: 20px;
+    }
+
+    .section-title i {
+        font-size: 32px;
+    }
+
+    .experience-options,
+    .payment-types {
+        grid-template-columns: 1fr;
+    }
+
+    /* AI Box Match */
+    .ai-suggestion-box {
+        background: rgba(30, 30, 50, 0.4) !important;
+        border: 1px solid rgba(176, 0, 255, 0.2) !important;
+        border-radius: 24px !important;
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
+        margin-top: 24px !important;
+    }
+
+    .btn-ai-assist {
+        background: linear-gradient(135deg, #b000ff 0%, #6000ff 100%) !important;
+        border-radius: 20px !important;
+        padding: 16px !important;
+        min-width: 130px !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        box-shadow: 0 8px 20px rgba(176, 0, 255, 0.3) !important;
+    }
+
+    .btn-ai-assist i {
+        font-size: 20px !important;
+        margin-bottom: 8px !important;
+        color: white !important;
+    }
+
+    .form-hint {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        margin: 0 !important;
+    }
+
+    /* Nav Buttons Match */
+    .form-actions {
+        display: flex !important;
+        gap: 12px !important;
+        margin-top: 30px !important;
+    }
+
+    .btn-secondary {
+        background: #0f0f15 !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        height: 60px !important;
+        width: 100px !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        color: white !important;
+        font-size: 14px !important;
+    }
+
+    .btn-primary.neon-button {
+        flex: 1 !important;
+        background: linear-gradient(180deg, #6162ff 0%, #29c5ff 100%) !important;
+        border-radius: 20px !important;
+        height: 60px !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 10px 25px rgba(97, 98, 255, 0.3) !important;
+        border: none !important;
+    }
+
+    .btn-primary.neon-button span {
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        color: white !important;
+        line-height: 1 !important;
+    }
+
+    .btn-primary.neon-button i {
+        font-size: 14px !important;
+        margin-top: 5px !important;
+        color: white !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-intro .page-title {
+        font-size: 32px;
+    }
+}

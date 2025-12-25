@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщения - TalentSphere</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/messages-new.css">
+    <link rel="stylesheet" href="css/dashboard-fixes.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item active">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content messages-layout">
+        <div class="messages-wrapper glass-card-large">
+            <!-- Chat List Panel -->
+            <section class="chat-list-panel" id="chatListPanel">
+                <header class="chat-list-header">
+                    <h2>Сообщения</h2>
+                    <button class="new-chat-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </header>
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск по контактам...">
+                </div>
+
+                <div class="chat-list-scrollable">
+                    <!-- Контент будет подставляться динамически -->
+                    <div class="chat-item active" data-chat-id="1" data-chat-name="Анна Власова (Client)">
+                        <div class="user-avatar active-status">
+                            <img src="https://24smi.org/public/media/celebrity/2021/07/05/hehlqw5gt59z-anna-khilkevich.jpg"
+                                alt="A">
+                        </div>
+                        <div class="chat-info">
+                            <div class="chat-header-row">
+                                <span class="chat-name">Анна Власова</span>
+                                <span class="chat-time">10:45</span>
+                            </div>
+                            <div class="chat-preview">
+                                <span class="last-message">Приняла проект, спасибо за работу!</span>
+                                <span class="unread-count">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat Window Panel -->
+            <section class="chat-window-panel" id="chatWindowPanel">
+                <header class="window-header">
+                    <div class="header-user-info">
+                        <!-- Back button for mobile -->
+                        <div class="mobile-back-btn" id="mobileBackBtn" style="display: none;">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div class="user-avatar active-status">
+                            <img src="https://24smi.org/public/media/celebrity/2021/07/05/hehlqw5gt59z-anna-khilkevich.jpg"
+                                alt="A" id="activeChatAvatar">
+                        </div>
+                        <div class="user-details">
+                            <h3 id="activeChatName">Анна Власова (Client)</h3>
+                            <p class="project-title">Проект: E-commerce Website</p>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" title="Позвонить">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="action-btn" title="Видеозвонок">
+                            <i class="fas fa-video"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message received">
+                        <div class="msg-content">
+                            Здравствуйте! Как продвигается работа над дизайном главной страницы?
+                            <span class="msg-time">10:40</span>
+                        </div>
+                    </div>
+                    <div class="message sent">
+                        <div class="msg-content">
+                            Привет! Работаю над финальными штрихами, скину через час.
+                            <span class="msg-time">10:42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reply-preview-bar" id="replyPreviewBar">
+                    <div class="reply-info">
+                        <span class="reply-to-label">Replying to <span id="replyToName">Name</span></span>
+                        <span class="reply-text-preview" id="replyTextPreview">Message text...</span>
+                    </div>
+                    <button class="close-reply-btn" id="cancelReplyBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="input-panel" id="inputPanel">
+                    <div class="attach-button">
+                        <i class="fas fa-paperclip"></i>
+                    </div>
+                    <input type="text" placeholder="Написать сообщение..." id="messageInput">
+                    <button class="send-button" id="sendMessageBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Call Modal -->
+    <div class="call-modal-overlay" id="callModalOverlay">
+        <div class="call-modal glass-card-large">
+            <div class="call-header">
+                <div class="call-status">
+                    <span class="status-dot"></span>
+                    <span id="callStatusText">Calling...</span>
+                </div>
+                <div class="call-timer" id="callTimer">00:00</div>
+            </div>
+
+            <div class="call-content">
+                <div class="video-container" id="videoContainer">
+                    <!-- Placeholder for video or large avatar -->
+                    <div class="large-avatar">
+                        <img src="" alt="User" id="callAvatar">
+                    </div>
+                    <div class="user-info-large">
+                        <h2 id="callName">User Name</h2>
+                        <p id="callRole">Role</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="call-controls">
+                <button class="control-btn" id="micBtn" title="Mute">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="control-btn" id="cameraBtn" title="Camera">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button class="control-btn end-call-btn" id="endCallBtn" title="End Call">
+                    <i class="fas fa-phone-slash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatItems = document.querySelectorAll('.chat-item');
+            const chatListPanel = document.getElementById('chatListPanel');
+            const chatWindowPanel = document.getElementById('chatWindowPanel');
+            const mobileBackBtn = document.getElementById('mobileBackBtn');
+            const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+            const sidebar = document.getElementById('dashboardSidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            // Check if mobile (sync with CSS breakpoint)
+            const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+
+            
+            // Initial Mobile State
+            if (isMobile()) {
+                mobileBackBtn.style.display = 'block';
+                chatWindowPanel.classList.remove('active');
+                chatItems.forEach(i => i.classList.remove('active'));
+            }
+
+            // Resize Handler
+            window.addEventListener('resize', () => {
+                if (isMobile()) {
+                    mobileBackBtn.style.display = 'block';
+                    // If no chat selected, ensure list is visible
+                    if (!chatWindowPanel.classList.contains('active')) {
+                        chatListPanel.style.display = 'flex';
+                    }
+                } else {
+                    mobileBackBtn.style.display = 'none';
+                    chatListPanel.style.display = 'flex';
+                    chatWindowPanel.style.transform = 'none';
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                }
+            });
+
+            // Chat Item Click
+            chatItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Remove active from all
+                    chatItems.forEach(i => i.classList.remove('active'));
+                    // Add active to clicked
+                    item.classList.add('active');
+
+                    // Update Chat Window Info
+                    const name = item.getAttribute('data-chat-name');
+                    const img = item.querySelector('img').src;
+                    document.getElementById('activeChatName').textContent = name;
+                    document.getElementById('activeChatAvatar').src = img;
+
+                    // Mobile Logic
+                    if (isMobile()) {
+                        chatWindowPanel.classList.add('active');
+                    }
+                });
+            });
+
+            // Back Button Click
+            if (mobileBackBtn) {
+                mobileBackBtn.addEventListener('click', () => {
+                    chatWindowPanel.classList.remove('active');
+                    // Deselect items
+                    chatItems.forEach(i => i.classList.remove('active'));
+                });
+            }
+
+            // Call Modal Logic
+            const callModalOverlay = document.getElementById('callModalOverlay');
+            const callStatusText = document.getElementById('callStatusText');
+            const callTimer = document.getElementById('callTimer');
+            const callAvatar = document.getElementById('callAvatar');
+            const callName = document.getElementById('callName');
+            const callRole = document.getElementById('callRole');
+            const micBtn = document.getElementById('micBtn');
+            const cameraBtn = document.getElementById('cameraBtn');
+            const endCallBtn = document.getElementById('endCallBtn');
+
+            let callInterval;
+            let seconds = 0;
+            let isMuted = false;
+            let isCameraOff = false;
+
+            const formatTime = (totalSeconds) => {
+                const m = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+                const s = (totalSeconds % 60).toString().padStart(2, '0');
+                return `${m}:${s}`;
+            };
+
+            const startCall = (isVideo) => {
+                const activeName = document.getElementById('activeChatName').textContent;
+                const activeImg = document.getElementById('activeChatAvatar').src;
+
+                callName.textContent = activeName;
+                callAvatar.src = activeImg;
+                callRole.textContent = isVideo ? 'Video Call' : 'Voice Call';
+
+                callModalOverlay.classList.add('active');
+                callStatusText.textContent = 'Connecting...';
+                seconds = 0;
+                callTimer.textContent = '00:00';
+
+                // Simulate connection after 1.5s
+                setTimeout(() => {
+                    callStatusText.textContent = 'Connected';
+                    callInterval = setInterval(() => {
+                        seconds++;
+                        callTimer.textContent = formatTime(seconds);
+                    }, 1000);
+                }, 1500);
+
+                if (isVideo) {
+                    cameraBtn.classList.add('active');
+                    isCameraOff = false;
+                } else {
+                    cameraBtn.classList.remove('active');
+                    isCameraOff = true;
+                }
+            };
+
+            const endCall = () => {
+                callModalOverlay.classList.remove('active');
+                clearInterval(callInterval);
+                seconds = 0;
+                callTimer.textContent = '00:00';
+            };
+
+            // Bind Call Buttons
+            const callBtns = document.querySelectorAll('.action-btn');
+            if (callBtns.length >= 2) {
+                // Phone Button
+                callBtns[0].addEventListener('click', () => startCall(false));
+                // Video Button
+                callBtns[1].addEventListener('click', () => startCall(true));
+            }
+
+            // Control Buttons
+            micBtn.addEventListener('click', () => {
+                isMuted = !isMuted;
+                micBtn.classList.toggle('active');
+                micBtn.innerHTML = isMuted ? '<i class="fas fa-microphone-slash"></i>' : '<i class="fas fa-microphone"></i>';
+            });
+
+            cameraBtn.addEventListener('click', () => {
+                isCameraOff = !isCameraOff;
+                cameraBtn.classList.toggle('active');
+                cameraBtn.innerHTML = isCameraOff ? '<i class="fas fa-video-slash"></i>' : '<i class="fas fa-video"></i>';
+            });
+
+            endCallBtn.addEventListener('click', endCall);
+
+            // Send Message Logic
+            const sendBtn = document.getElementById('sendMessageBtn');
+            const input = document.getElementById('messageInput');
+            const container = document.getElementById('messagesContainer');
+            const messagesContainer = document.getElementById('messagesContainer');
+
+            // Context Menu Elements
+            const contextMenu = document.getElementById('messageContextMenu');
+            const ctxReply = document.getElementById('ctxReply');
+            const ctxCopy = document.getElementById('ctxCopy');
+            const ctxEdit = document.getElementById('ctxEdit');
+            const ctxDelete = document.getElementById('ctxDelete');
+
+            // Reply & Edit Elements
+            const replyPreviewBar = document.getElementById('replyPreviewBar');
+            const replyToName = document.getElementById('replyToName');
+            const replyTextPreview = document.getElementById('replyTextPreview');
+            const cancelReplyBtn = document.getElementById('cancelReplyBtn');
+            const inputPanel = document.getElementById('inputPanel');
+            const sendIcon = sendBtn.querySelector('i');
+
+            let activeMessage = null;
+            let currentReply = null; // { text, author }
+            let editingMessage = null; // DOM Element
+            let longPressTimer;
+            const longPressDuration = 500; // 500ms for long press
+
+            const sendMessage = () => {
+                const text = input.value.trim();
+                if (!text) return;
+
+                const now = new Date();
+                const timeString = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+
+                if (editingMessage) {
+                    // Edit existing message
+                    const contentDiv = editingMessage.querySelector('.msg-content');
+                    const timeSpan = contentDiv.querySelector('.msg-time');
+                    const editedLabel = contentDiv.querySelector('.edited-label');
+
+                    // Update text content, preserving reply quote if any
+                    const replyQuote = contentDiv.querySelector('.reply-quote');
+                    if (replyQuote) {
+                        // The text node is after the quote
+                        // We need to be careful not to delete the quote
+                        // Let's remove all child nodes EXCEPT the quote and time/edited label
+                        // Actually, simpler: just update the text node that contains the message
+                        // Assuming structure: [Quote] [Text] [Time]
+
+                        // Find the text node
+                        let textNode = null;
+                        for (let node of contentDiv.childNodes) {
+                            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+                                textNode = node;
+                                break;
+                            }
+                        }
+
+                        if (textNode) {
+                            textNode.textContent = ' ' + text + ' ';
+                        } else {
+                            // If no text node found (weird), insert one after quote
+                            const newText = document.createTextNode(' ' + text + ' ');
+                            contentDiv.insertBefore(newText, timeSpan);
+                        }
+                    } else {
+                        // No quote, just update first text node
+                        contentDiv.childNodes[0].textContent = text + ' ';
+                    }
+
+                    if (!editedLabel) {
+                        const newEditedLabel = document.createElement('span');
+                        newEditedLabel.classList.add('edited-label');
+                        newEditedLabel.textContent = ' (изм.)';
+                        if (timeSpan) {
+                            timeSpan.parentNode.insertBefore(newEditedLabel, timeSpan);
+                        } else {
+                            contentDiv.appendChild(newEditedLabel);
+                        }
+                    }
+                    resetInputState();
+                } else {
+                    // Send new message (or reply)
+                    const msgDiv = document.createElement('div');
+                    msgDiv.classList.add('message', 'sent');
+
+                    let replyQuoteHtml = '';
+                    if (currentReply) {
+                        replyQuoteHtml = `
+                            <div class="reply-quote">
+                                <span class="reply-sender">${currentReply.author}</span>
+                                <span class="reply-text">${currentReply.text}</span>
+                            </div>
+                        `;
+                    }
+
+                    msgDiv.innerHTML = `
+                        <div class="msg-content">
+                            ${replyQuoteHtml}
+                            ${text}
+                            <span class="msg-time">${timeString}</span>
+                        </div>
+                    `;
+
+                    messagesContainer.appendChild(msgDiv);
+                    resetInputState(); // Clear reply/edit state after sending
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+                    // Simulated Reply
+                    setTimeout(() => {
+                        const replyDiv = document.createElement('div');
+                        replyDiv.classList.add('message', 'received');
+                        replyDiv.innerHTML = `
+                            <div class="msg-content">
+                                Получено: "${text}"
+                                <span class="msg-time">${timeString}</span>
+                            </div>
+                        `;
+                        messagesContainer.appendChild(replyDiv);
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    }, 1000);
+                }
+            }
+
+            sendBtn.addEventListener('click', sendMessage);
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent new line in input
+                    sendMessage();
+                }
+            });
+
+            // Context Menu Logic
+            // Close menu on click outside
+            document.addEventListener('click', (e) => {
+                if (!contextMenu.contains(e.target)) {
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // Prevent default context menu and show custom one
+            document.addEventListener('contextmenu', (e) => {
+                const message = e.target.closest('.message');
+                if (message) {
+                    e.preventDefault();
+                    showContextMenu(e.clientX, e.clientY, message);
+                }
+            });
+
+            // Mobile Long Press Logic
+            document.addEventListener('touchstart', (e) => {
+                const message = e.target.closest('.message');
+                if (message && !e.target.closest('.action-btn')) {
+                    longPressTimer = setTimeout(() => {
+                        const touch = e.touches[0];
+                        showContextMenu(touch.clientX, touch.clientY, message);
+                        // Vibrate if supported
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }, longPressDuration);
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                clearTimeout(longPressTimer);
+            });
+
+            document.addEventListener('touchmove', () => {
+                clearTimeout(longPressTimer);
+            });
+
+            function showContextMenu(x, y, message) {
+                activeMessage = message;
+
+                // Adjust if close to edge
+                if (x + 160 > window.innerWidth) x -= 160;
+                if (y + 150 > window.innerHeight) y -= 150;
+
+                contextMenu.style.left = `${x}px`;
+                contextMenu.style.top = `${y}px`;
+                contextMenu.style.display = 'block';
+
+                // Show/Hide Edit based on message type
+                if (message.classList.contains('sent')) {
+                    ctxEdit.style.display = 'flex';
+                    ctxDelete.style.display = 'flex';
+                } else {
+                    ctxEdit.style.display = 'none';
+                    // ctxDelete.style.display = 'none'; // Can delete received messages locally? Let's keep it for now
+                }
+            }
+
+            // --- Actions ---
+
+            // DELETE
+            ctxDelete.addEventListener('click', () => {
+                if (activeMessage) {
+                    activeMessage.remove();
+                    contextMenu.style.display = 'none';
+                    resetInputState(); // Reset if we were editing this message
+                }
+            });
+
+            // COPY
+            ctxCopy.addEventListener('click', () => {
+                if (activeMessage) {
+                    // Get text only, ignoring time and other elements
+                    const contentDiv = activeMessage.querySelector('.msg-content');
+                    // Clone to remove children without affecting DOM
+                    const clone = contentDiv.cloneNode(true);
+                    // Remove time, reply quote, etc.
+                    const time = clone.querySelector('.msg-time');
+                    const quote = clone.querySelector('.reply-quote');
+                    const edited = clone.querySelector('.edited-label');
+                    if (time) time.remove();
+                    if (quote) quote.remove();
+                    if (edited) edited.remove();
+
+                    const text = clone.textContent.trim();
+                    navigator.clipboard.writeText(text);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // REPLY
+            ctxReply.addEventListener('click', () => {
+                if (activeMessage) {
+                    const isSent = activeMessage.classList.contains('sent');
+                    const author = isSent ? 'You' : document.getElementById('activeChatName').textContent.split('(')[0].trim();
+
+                    // Get text content cleanly
+                    const contentDiv = activeMessage.querySelector('.msg-content');
+                    const clone = contentDiv.cloneNode(true);
+                    const time = clone.querySelector('.msg-time');
+                    const quote = clone.querySelector('.reply-quote');
+                    const edited = clone.querySelector('.edited-label');
+                    if (time) time.remove();
+                    if (quote) quote.remove(); // Don't nest quotes for simplicity
+                    if (edited) edited.remove();
+
+                    const text = clone.textContent.trim();
+
+                    startReplyMode(author, text);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // EDIT
+            ctxEdit.addEventListener('click', () => {
+                if (activeMessage && activeMessage.classList.contains('sent')) {
+                    startEditMode(activeMessage);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // --- Helper Functions ---
+
+            function startReplyMode(author, text) {
+                // Reset Edit mode if active
+                if (editingMessage) resetInputState();
+
+                currentReply = { author, text };
+                replyToName.textContent = author;
+                replyTextPreview.textContent = text;
+                replyPreviewBar.classList.add('active');
+
+                input.focus();
+            }
+
+            function startEditMode(message) {
+                // Reset Reply mode if active
+                if (currentReply) resetInputState();
+
+                editingMessage = message;
+                inputPanel.classList.add('editing-mode');
+
+                // Change Icon to Checkmark
+                sendIcon.classList.remove('fa-paper-plane');
+                sendIcon.classList.add('fa-check');
+
+                // Populate Input
+                const contentDiv = message.querySelector('.msg-content');
+                const clone = contentDiv.cloneNode(true);
+                const time = clone.querySelector('.msg-time');
+                const quote = clone.querySelector('.reply-quote');
+                const edited = clone.querySelector('.edited-label');
+                if (time) time.remove();
+                if (quote) quote.remove();
+                if (edited) edited.remove();
+
+                const currentText = clone.textContent.trim();
+                input.value = currentText;
+                input.focus();
+            }
+
+            function resetInputState() {
+                currentReply = null;
+                editingMessage = null;
+
+                replyPreviewBar.classList.remove('active');
+                inputPanel.classList.remove('editing-mode');
+
+                sendIcon.classList.remove('fa-check');
+                sendIcon.classList.add('fa-paper-plane');
+
+                input.value = '';
+            }
+
+            cancelReplyBtn.addEventListener('click', resetInputState);
+        });
+    </script>
+    <!-- Context Menu -->
+    <div class="message-context-menu" id="messageContextMenu">
+        <div class="context-menu-item" id="ctxReply">
+            <i class="fas fa-reply"></i> Ответить
+        </div>
+        <div class="context-menu-item" id="ctxCopy">
+            <i class="fas fa-copy"></i> Копировать
+        </div>
+        <div class="context-menu-item" id="ctxEdit">
+            <i class="fas fa-pen"></i> Изменить
+        </div>
+        <div class="context-menu-item delete" id="ctxDelete">
+            <i class="fas fa-trash"></i> Удалить
+        </div>
+    </div>
+    <script src="js/state.js"></script>
+    <script src="js/universal-mobile.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

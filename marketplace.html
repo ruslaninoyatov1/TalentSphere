@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - TalentSphere</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-fixes.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/marketplace.css">
+    <link rel="stylesheet" href="css/marketplace-premium.css">
+    <link rel="stylesheet" href="css/marketplace-filters.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+    <link rel="stylesheet" href="css/marketplace-mobile.css">
+    <link rel="stylesheet" href="css/marketplace-modal-premium.css">
+    <!-- Production: href="styles.css", href="dashboard.css", href="marketplace.css" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="marketplace-page">
+    <!-- Mobile Header (Unified System) -->
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar">AD</div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item active">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Проекты</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <a href="create-project.html" class="header-btn-premium create-project-btn">
+                    <i class="fas fa-plus"></i> <span class="btn-text">Создать проект</span>
+                </a>
+
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="marketplace-main-container">
+            <div class="page-intro">
+                <h1 class="page-title">Маркетплейс <span class="gradient-text">проектов</span></h1>
+                <p class="page-subtitle">Найдите идеальный проект для реализации ваших амбиций</p>
+            </div>
+
+            <div class="search-section-premium">
+                <div class="search-container-premium">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="mainSearchInput" class="search-input-premium"
+                        placeholder="Поиск проектов по названию или навыкам...">
+                    <button id="mainSearchBtn" class="search-btn-premium">Найти</button>
+                </div>
+            </div>
+
+            <div class="category-tabs-container">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">Все категории</button>
+                    <button class="category-tab" data-category="development">Разработка</button>
+                    <button class="category-tab" data-category="design">Дизайн</button>
+                    <button class="category-tab" data-category="marketing">Маркетинг</button>
+                    <button class="category-tab" data-category="copywriting">Копирайтинг</button>
+                    <button class="category-tab" data-category="video">Видео и Аудио</button>
+                    <button class="category-tab" data-category="business">Бизнес и Консалтинг</button>
+                </div>
+            </div>
+
+            <!-- Marketplace Grid -->
+            <div class="marketplace-grid">
+                <!-- Mobile Filters Toggle -->
+                <div class="mobile-filters-bar">
+                    <button id="mobileFiltersToggle" class="mobile-filters-btn">
+                        <i class="fas fa-sliders-h"></i>
+                        Фильтры
+                    </button>
+                </div>
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <button class="filters-close-btn" id="filtersCloseBtn" aria-label="Закрыть фильтры">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <!-- Budget Filter -->
+                    <div class="filter-section glass-card">
+                        <h3 class="filter-title">Бюджет</h3>
+                        <div class="budget-inputs">
+                            <div class="budget-input-group">
+                                <label class="input-label">От</label>
+                                <input type="number" id="minBudget" class="budget-input" placeholder="$500" min="0">
+                            </div>
+                            <div class="budget-separator">—</div>
+                            <div class="budget-input-group">
+                                <label class="input-label">До</label>
+                                <input type="number" id="maxBudget" class="budget-input" placeholder="$5000" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Filter -->
+                    <div class="filter-section glass-card">
+                        <h3 class="filter-title">Навыки</h3>
+                        <div class="skills-filter">
+                            <input type="text" id="skillInput" class="skill-input"
+                                placeholder="Например: React, Python">
+                            <div class="selected-skills" id="selectedSkills"></div>
+                        </div>
+                    </div>
+
+                    <!-- Project Type Filter -->
+                    <div class="filter-section glass-card">
+                        <h3 class="filter-title">Тип проекта</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="projectType" value="individual" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Индивидуальный</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="projectType" value="team">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Командный</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Deadline & Location Filter -->
+                    <div class="filter-section glass-card">
+                        <h3 class="filter-title">Сроки и Локация</h3>
+                        <div class="filter-group">
+                            <label class="input-label">Срок (дней)</label>
+                            <input type="number" id="maxDeadline" class="deadline-input-field" placeholder="Макс. дней"
+                                min="1">
+                        </div>
+                        <div class="filter-group" style="margin-top: 10px;">
+                            <label class="input-label">Локация</label>
+                            <input type="text" id="locationInput" class="location-input" placeholder="Например, Remote">
+                        </div>
+                    </div>
+
+                    <!-- Level Filter -->
+                    <div class="filter-section glass-card">
+                        <h3 class="filter-title">Уровень</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="experienceLevel" value="junior">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Junior</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="experienceLevel" value="middle" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Middle</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="experienceLevel" value="senior">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Senior</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="experienceLevel" value="expert">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">Expert</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="apply-filters-btn" id="applyFiltersBtn">Применить фильтры</button>
+
+                    <!-- AI Recommendations -->
+                    <div class="filter-section ai-recommendations-filter glass-card">
+                        <h3 class="filter-title">🤖 AI-рекомендации</h3>
+                        <p class="ai-subtitle">Проекты для вас</p>
+                        <div id="aiRecommendationsContainer">
+                            <div class="loading-spinner-small"></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Projects Grid -->
+                <div class="projects-content">
+                    <div class="projects-header">
+                        <div class="results-info">
+                            Найдено <span class="gradient-text" id="projectsCount">0</span> проектов
+                        </div>
+                        <div class="sort-options">
+                            <select class="sort-select glass-card" id="sortSelect">
+                                <option value="newest">Сначала новые</option>
+                                <option value="budget_asc">По бюджету (возр.)</option>
+                                <option value="budget_desc">По бюджету (убыв.)</option>
+                                <option value="deadline">По дедлайну</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="projects-grid-container" id="projectsGrid">
+                        <!-- Контент будет подставляться динамически -->
+                        <!-- Javascript will inject cards here -->
+                    </div>
+
+                    <!-- Loading Indicator -->
+                    <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">🔍</div>
+                        <h3>Проекты не найдены</h3>
+                        <p>Попробуйте изменить параметры фильтрации</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay" id="projectDetailsModal">
+        <div class="modal-content glass-card project-modal">
+            <button class="modal-close" id="closeProjectModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-body" id="projectModalBody">
+                <h2 class="project-modal-title">Project Title</h2>
+                <div class="project-meta-tags modal-tags">
+                    <!-- Tags injected here -->
+                </div>
+
+                <div class="modal-section">
+                    <h3>Описание</h3>
+                    <p class="project-description-text">Description goes here...</p>
+                </div>
+
+                <div class="modal-section budget-section-modal">
+                    <h3>Бюджет</h3>
+                    <span class="modal-budget-value neon-text-purple">$0</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="submit-proposal-btn neon-button full-width">Отправить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content glass-card success-modal-content">
+            <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="success-icon-wrapper">
+                <div class="success-icon"><i class="fas fa-check"></i></div>
+                <div class="success-ring"></div>
+            </div>
+            <h3 class="success-title">Заявка отправлена!</h3>
+            <p class="success-message">Ваш отклик успешно передан заказчику. Ожидайте ответа в разделе "Сообщения".</p>
+            <button class="btn-primary full-width"
+                onclick="document.getElementById('successModal').classList.remove('active')">Отлично</button>
+        </div>
+    </div>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00fff5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff6b00;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff9500;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00cc6a;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="js/state.js"></script>
+    <script src="js/universal-mobile.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

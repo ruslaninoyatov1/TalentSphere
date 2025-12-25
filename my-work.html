@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление работой | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/my-work.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page my-work-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item active">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Управление работой</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="page-intro">
+            <h1 class="page-title">Управление <span class="gradient-text">работой</span></h1>
+
+            <!-- Quick Stats Grid (New Request) -->
+            <div class="work-stats-grid">
+                <div class="stat-card-glass">
+                    <div class="stat-icon-wrapper purple"><i class="fas fa-layer-group"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Всего проектов</span>
+                    </div>
+                    <div class="stat-glow purple"></div>
+                </div>
+                <div class="stat-card-glass">
+                    <div class="stat-icon-wrapper blue"><i class="fas fa-spinner"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">В работе</span>
+                    </div>
+                    <div class="stat-glow blue"></div>
+                </div>
+                <div class="stat-card-glass">
+                    <div class="stat-icon-wrapper green"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Завершено</span>
+                    </div>
+                    <div class="stat-glow green"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Dashboard Container -->
+        <div class="work-dashboard-container">
+            <!-- Tabs -->
+            <div class="work-tabs-container">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-tab="individual-projects">Мои Проекты</button>
+                    <button class="category-tab" data-tab="team-projects">Командные</button>
+                    <button class="category-tab" data-tab="my-applications">Мои Отклики</button>
+                    <button class="category-tab" data-tab="team-invitations">Приглашения</button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Individual Projects -->
+            <!-- Контент будет подставляться динамически -->
+            <div id="individual-projects" class="tab-content active">
+                <div class="content-controls">
+                    <div class="search-wrapper glass-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Поиск по проектам..." class="search-input">
+                    </div>
+                    <div class="filter-wrapper">
+                        <select class="filter-select glass-select">
+                            <option value="all">Все статусы</option>
+                            <option value="in_progress">В работе</option>
+                            <option value="review">На проверке</option>
+                            <option value="completed">Завершенные</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="projects-grid-container" id="individualProjectsList">
+
+                    <!-- Card 1: Active (In Progress) -->
+                    <div class="project-post-card accent-green">
+                        <div class="project-header">
+                            <div class="client-badge-square">NX</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">NextGen Shop</div>
+                                <div class="project-meta-top">E-commerce • UX/UI</div>
+                            </div>
+                            <span class="status-pill pending"
+                                style="margin-left:auto; background:rgba(16, 185, 129, 0.1); color:#34d399;">В
+                                работе</span>
+                        </div>
+                        <h3 class="project-title-large">Редизайн Интернет-Магазина Электроники</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Прогресс</span>
+                                <span>45%</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:45%; height:100%; background:var(--neon-green); box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Бюджет</span>
+                                <span class="detail-value accent-value">$2,400</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Дедлайн</span>
+                                <span class="detail-value">12 дней</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Чат"><i class="fas fa-comment-alt"></i></button>
+                                <button class="btn-icon-glass" title="Макеты"><i
+                                        class="fas fa-layer-group"></i></button>
+                            </div>
+                            <button class="btn-action-small"
+                                style="border-color:var(--neon-green); color:var(--neon-green);">Этапы</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Active (In Progress) -->
+                    <div class="project-post-card accent-blue">
+                        <div class="project-header">
+                            <div class="client-badge-square">TM</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">TechMinds</div>
+                                <div class="project-meta-top">Mobile • React Native</div>
+                            </div>
+                            <span class="status-pill pending"
+                                style="margin-left:auto; background:rgba(59, 130, 246, 0.1); color:#60a5fa;">В
+                                работе</span>
+                        </div>
+                        <h3 class="project-title-large">Разработка Приложения для Доставки</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Прогресс</span>
+                                <span>70%</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:70%; height:100%; background:var(--neon-blue); box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Бюджет</span>
+                                <span class="detail-value accent-value">$5,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Дедлайн</span>
+                                <span class="detail-value">5 дней</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Чат"><i class="fas fa-comment-alt"></i></button>
+                                <button class="btn-icon-glass" title="Repo"><i class="fab fa-github"></i></button>
+                            </div>
+                            <button class="btn-action-small"
+                                style="border-color:var(--neon-blue); color:var(--neon-blue);">Коммит</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Review -->
+                    <div class="project-post-card accent-purple">
+                        <div class="project-header">
+                            <div class="client-badge-square">SX</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">Studio X</div>
+                                <div class="project-meta-top">Branding • Identity</div>
+                            </div>
+                            <span class="status-pill viewed"
+                                style="margin-left:auto; background:rgba(139, 92, 246, 0.1); color:#a78bfa;">На
+                                проверке</span>
+                        </div>
+                        <h3 class="project-title-large">Корпоративный Брендбук и Логотип</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Статус</span>
+                                <span>Ожидание заказчика</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:100%; height:100%; background:var(--neon-purple); box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Бюджет</span>
+                                <span class="detail-value accent-value">$1,800</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Отправлено</span>
+                                <span class="detail-value">2 ч. назад</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Чат"><i class="fas fa-comment-alt"></i></button>
+                                <button class="btn-icon-glass" title="Правки"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <span style="font-size:12px; color:#aaa;">Проверка файлов...</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Completed -->
+                    <div class="project-post-card accent-pink">
+                        <div class="project-header">
+                            <div class="client-badge-square">DV</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">DataVisor</div>
+                                <div class="project-meta-top">Python • Data</div>
+                            </div>
+                            <span class="status-pill"
+                                style="margin-left:auto; background:rgba(236, 72, 153, 0.1); color:#f472b6;">Завершен</span>
+                        </div>
+                        <h3 class="project-title-large">Скрипт Парсинга Данных с Amazon</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Оплата</span>
+                                <span>Средства получены</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:100%; height:100%; background:var(--neon-pink); box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Получено</span>
+                                <span class="detail-value accent-value">$900</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Оценка</span>
+                                <span class="detail-value">⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Отзыв"><i class="fas fa-star"></i></button>
+                                <button class="btn-icon-glass" title="Архив"><i class="fas fa-archive"></i></button>
+                            </div>
+                            <button class="btn-action-small">Детали</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Active (In Progress) -->
+                    <div class="project-post-card accent-cyan">
+                        <div class="project-header">
+                            <div class="client-badge-square">SM</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">SocialMedia Pro</div>
+                                <div class="project-meta-top">Web • Dashboard</div>
+                            </div>
+                            <span class="status-pill pending"
+                                style="margin-left:auto; background:rgba(6, 182, 212, 0.1); color:#22d3ee;">В
+                                работе</span>
+                        </div>
+                        <h3 class="project-title-large">Дашборд Аналитики Соцсетей</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Прогресс</span>
+                                <span>20%</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:20%; height:100%; background:var(--neon-cyan); box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Бюджет</span>
+                                <span class="detail-value accent-value">$3,200</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Дедлайн</span>
+                                <span class="detail-value">25 дней</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Чат"><i class="fas fa-comment-alt"></i></button>
+                                <button class="btn-icon-glass" title="Figma"><i class="fab fa-figma"></i></button>
+                            </div>
+                            <button class="btn-action-small"
+                                style="border-color:var(--neon-cyan); color:var(--neon-cyan);">Статус</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Review -->
+                    <div class="project-post-card accent-purple">
+                        <div class="project-header">
+                            <div class="client-badge-square">AD</div>
+                            <div style="margin-left: 12px;">
+                                <div class="client-name-small">AdAgency Global</div>
+                                <div class="project-meta-top">Motion • 3D</div>
+                            </div>
+                            <span class="status-pill viewed"
+                                style="margin-left:auto; background:rgba(139, 92, 246, 0.1); color:#a78bfa;">На
+                                проверке</span>
+                        </div>
+                        <h3 class="project-title-large">3D Анимация для Рекламного Ролика</h3>
+
+                        <!-- Progress Section -->
+                        <div style="margin: 15px 0;">
+                            <div
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:6px;">
+                                <span>Статус</span>
+                                <span>Правки (2 итерация)</span>
+                            </div>
+                            <div
+                                style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                                <div
+                                    style="width:90%; height:100%; background:var(--neon-purple); box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Бюджет</span>
+                                <span class="detail-value accent-value">$1,500</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Осталось</span>
+                                <span class="detail-value">1 день</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="response-count" style="display:flex; gap:10px;">
+                                <button class="btn-icon-glass" title="Чат"><i class="fas fa-comment-alt"></i></button>
+                                <button class="btn-icon-glass" title="Превью"><i class="fas fa-play"></i></button>
+                            </div>
+                            <span style="font-size:12px; color:#aaa;">Внесение правок</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab Content: Team Projects -->
+            <div class="tab-content" id="team-projects">
+                <div class="team-projects-grid" id="teamProjectsList">
+
+                    <!-- Team Project Card 1 -->
+                    <div class="team-project-card">
+                        <div class="tp-header">
+                            <div class="tp-icon-wrapper"><i class="fas fa-leaf"></i></div>
+                            <div class="tp-info">
+                                <h3>SaaS Platform "EcoTrack"</h3>
+                                <span class="tp-role">Lead Designer</span>
+                            </div>
+                        </div>
+                        <div class="tp-progress-section">
+                            <div class="progress-text"
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:5px;">
+                                <span>Sprint 3/5</span>
+                                <span>12/45 Tasks</span>
+                            </div>
+                            <div class="tp-progress-bar">
+                                <div class="progress-bar-fill" style="width: 27%; background: var(--neon-green);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tp-footer">
+                            <div class="team-avatars-stack">
+                                <div class="team-avatar" style="background:#555">AD</div>
+                                <div class="team-avatar" style="background:#444">MK</div>
+                                <div class="team-avatar" style="background:#333">SV</div>
+                                <div class="team-avatar" style="background:#222">+1</div>
+                                <div class="add-member-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                            <button class="project-action-btn" title="Доска"><i class="fas fa-columns"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Team Project Card 2 -->
+                    <div class="team-project-card">
+                        <div class="tp-header">
+                            <div class="tp-icon-wrapper"
+                                style="color:#d946ef; box-shadow: inset 0 0 20px rgba(217, 70, 239, 0.05);"><i
+                                    class="fas fa-wallet"></i></div>
+                            <div class="tp-info">
+                                <h3>Fintech App "WalletX"</h3>
+                                <span class="tp-role">Frontend Dev</span>
+                            </div>
+                        </div>
+                        <div class="tp-progress-section">
+                            <div class="progress-text"
+                                style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; margin-bottom:5px;">
+                                <span>Release Candidates</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="tp-progress-bar">
+                                <div class="progress-bar-fill" style="width: 95%; background: var(--neon-pink);"></div>
+                            </div>
+                        </div>
+                        <div class="tp-footer">
+                            <div class="team-avatars-stack">
+                                <div class="team-avatar" style="background:#555">AD</div>
+                                <div class="team-avatar" style="background:#444">JD</div>
+                                <div class="team-avatar" style="background:#333">AS</div>
+                            </div>
+                            <button class="project-action-btn" title="Код"><i class="fab fa-github"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab Content: My Applications -->
+            <div class="tab-content" id="my-applications">
+                <div class="applications-list-container" id="applicationsList">
+
+                    <div class="application-card">
+                        <div class="app-info">
+                            <h4 class="app-title">Senior React Developer for DeFi Protocol</h4>
+                            <div class="app-meta">
+                                <span><i class="far fa-calendar"></i> Вчера, 14:30</span>
+                                <span style="color:var(--neon-green); font-weight:700;">$5,000 / mo</span>
+                            </div>
+                        </div>
+                        <div class="app-status">
+                            <div class="status-pill viewed"
+                                style="background: rgba(6, 182, 212, 0.1); color: var(--neon-cyan);">Просмотрено</div>
+                        </div>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="app-info">
+                            <h4 class="app-title">UI/UX Lead Designer for Booking System</h4>
+                            <div class="app-meta">
+                                <span><i class="far fa-calendar"></i> 18 Дек 2024</span>
+                                <span style="color:var(--neon-green); font-weight:700;">$3,200 fixed</span>
+                            </div>
+                        </div>
+                        <div class="app-status">
+                            <div class="status-pill pending">Отправлено</div>
+                        </div>
+                    </div>
+
+                    <div class="application-card" style="opacity: 0.7;">
+                        <div class="app-info">
+                            <h4 class="app-title">3D Generalist for Game Intro</h4>
+                            <div class="app-meta">
+                                <span><i class="far fa-calendar"></i> 15 Дек 2024</span>
+                                <span style="color:var(--text-muted);">$1,500</span>
+                            </div>
+                        </div>
+                        <div class="app-status">
+                            <div class="status-pill" style="background: rgba(255,255,255,0.05); color: #aaa;">Архив
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab Content: Team Invitations -->
+            <div class="tab-content" id="team-invitations">
+                <div class="invitations-list" id="invitationsList">
+
+                    <div class="invitation-card">
+                        <div class="invitation-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <div class="invitation-content">
+                            <h4>Приглашение в проект "AI Nexus"</h4>
+                            <p>Команда ищет Lead UI/UX дизайнера для разработки интерфейса системы искусственного
+                                интеллекта.</p>
+                            <div class="invitation-details">
+                                <span><i class="fas fa-user-astronaut"></i> Sara Connor (PM)</span>
+                                <span><i class="fas fa-users"></i> 5 участников</span>
+                            </div>
+                        </div>
+                        <div class="invitation-actions">
+                            <button class="btn-decline">Отклонить</button>
+                            <button class="btn-accept">Принять</button>
+                        </div>
+                    </div>
+
+                    <div class="invitation-card">
+                        <div class="invitation-icon neon-text-blue"><i class="fas fa-rocket"></i></div>
+                        <div class="invitation-content">
+                            <h4>Стартап "CryptoExchange"</h4>
+                            <p>Приглашаем на роль Frontend разработчика (React/Web3). Доля в проекте + зарплата.</p>
+                            <div class="invitation-details">
+                                <span><i class="fas fa-user-tie"></i> Mike Ross (CEO)</span>
+                                <span><i class="fas fa-users"></i> 3 участника</span>
+                            </div>
+                        </div>
+                        <div class="invitation-actions">
+                            <button class="btn-decline">Отклонить</button>
+                            <button class="btn-accept">Принять</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+/* ==============================================
+   MARKETPLACE MOBILE OPTIMIZATION
+   ============================================== */
+
+@media (max-width: 1023px) {
+
+    /* Force Sidebar Black on Marketplace Mobile */
+    .sidebar {
+        background: #05060a !important;
+    }
+
+    /* --- Layout Adjustments --- */
+    .marketplace-main-container {
+        padding: 20px 16px;
+    }
+
+    .marketplace-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0;
+    }
+
+    /* --- Filters Sidebar (Off-Canvas) --- */
+    .filters-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Hidden by default */
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 2000;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 80px 20px 20px;
+        /* Top padding for close button space */
+        overflow-y: auto;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .filters-sidebar.mobile-open {
+        right: 0;
+    }
+
+    /* Close Button for Filters */
+    .filters-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2001;
+        /* Above sidebar content */
+    }
+
+    /* Mobile Filters Toggle Button (Visible on Mobile) */
+    .mobile-filters-bar {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .mobile-filters-btn {
+        width: 100%;
+        padding: 14px;
+        background: rgba(20, 20, 25, 0.6);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 16px;
+        color: white;
+        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+    .mobile-filters-btn:hover {
+        background: rgba(139, 92, 246, 0.1);
+        border-color: var(--neon-purple);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .mobile-filters-btn i {
+        color: var(--neon-purple);
+        font-size: 16px;
+    }
+
+    /* --- Project Cards Mobile --- */
+    .projects-grid-container {
+        grid-template-columns: 1fr;
+        /* Single column */
+        gap: 16px;
+    }
+
+    .marketplace-card.premium-style {
+        padding: 24px 20px;
+        gap: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(15, 18, 25, 0.8);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .premium-card-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    .premium-card-title {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+
+    .premium-card-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.7;
+        margin-bottom: 8px;
+    }
+
+    .premium-card-stats {
+        padding: 16px 0;
+        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .p-stat {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .p-stat-label {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .p-stat-value {
+        font-size: 15px;
+    }
+
+    .premium-card-footer {
+        flex-direction: row;
+        /* Keep row on mobile if possible, or stacked if tight */
+        align-items: center;
+        gap: 12px;
+        margin-top: 4px;
+    }
+
+    /* Avatar and Name on Left */
+    .client-mini-info {
+        flex: 1;
+        min-width: 0;
+        /* Text truncation */
+    }
+
+    .client-name-s {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .premium-apply-btn {
+        width: auto;
+        padding: 12px 24px;
+        font-size: 14px;
+        background: var(--neon-purple);
+        border: none;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    }
+
+    /* On very small screens, stack footer */
+    @media (max-width: 380px) {
+        .premium-card-footer {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .premium-apply-btn {
+            width: 100%;
+        }
+
+        .premium-card-stats {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .p-stat {
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    /* --- Category Tabs Mobile --- */
+    .category-tabs-container {
+        margin-bottom: 24px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        /* Scrollbar space */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-tabs {
+        width: max-content;
+        border-radius: 16px;
+    }
+
+    .category-tab {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-intro {
+        margin-bottom: 24px;
+    }
+
+    .projects-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .sort-options,
+    .sort-select {
+        width: 100%;
+    }
+}

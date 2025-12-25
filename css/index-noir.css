@@ -1,0 +1,189 @@
+/* ============================================================
+   INDEX NOIR - Cyber Noir / Ultra-Premium Landing Page
+   ============================================================ */
+
+:root {
+    --noir-bg: #020205;
+    --noir-card: rgba(10, 10, 20, 0.4);
+    --noir-border: rgba(255, 255, 255, 0.05);
+    --noir-glow: rgba(139, 92, 246, 0.15);
+    --noir-text-dim: #888899;
+}
+
+body.landing-page {
+    background-color: var(--noir-bg);
+    background-image:
+        radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15), transparent 70%),
+        radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.05), transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+}
+
+/* Nav Refinement */
+.main-nav.glass-effect {
+    background: rgba(2, 2, 5, 0.7);
+    backdrop-filter: blur(30px) saturate(150%);
+    border-bottom: 1px solid var(--noir-border);
+    padding: 15px 0;
+}
+
+/* Hero Section Enhancement */
+.hero {
+    padding-top: 140px;
+    background: transparent;
+}
+
+.hero-title {
+    font-size: 82px;
+    font-weight: 950;
+    letter-spacing: -3px;
+    background: linear-gradient(180deg, #fff 0%, #888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.15));
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    max-width: 600px;
+    color: var(--noir-text-dim);
+    margin-bottom: 40px;
+}
+
+.hero-badge {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    margin-bottom: 24px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+/* Cinematic Glows */
+.glass-card {
+    background: var(--noir-card);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid var(--noir-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(15, 15, 30, 0.6);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+/* 3D Sphere Cinematic */
+.sphere-inner {
+    background: radial-gradient(circle at 30% 30%, #fff, #8b5cf6 30%, #000 80%);
+    box-shadow:
+        0 0 100px rgba(139, 92, 246, 0.6),
+        inset -20px -20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.sphere-ring {
+    border-width: 1px;
+    opacity: 0.3;
+}
+
+/* Feature Grid Polish */
+.benefit-card {
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--noir-border);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #fff;
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.benefit-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.benefit-description {
+    color: var(--noir-text-dim);
+    line-height: 1.8;
+}
+
+/* Buttons Cinematic */
+.btn-hero-primary {
+    padding: 22px 48px;
+    font-size: 20px;
+    border-radius: 20px;
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.btn-hero-primary:hover {
+    background: #f0f0f0;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.5);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.btn-hero-secondary {
+    padding: 22px 48px;
+    font-size: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--noir-border);
+}
+
+/* AI Matching Section Refinement */
+.ai-matching-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.05), transparent);
+}
+
+.section-title-large {
+    font-size: 56px;
+    letter-spacing: -1.5px;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(2deg);
+    }
+}
+
+.sphere-3d {
+    animation: float 8s ease-in-out infinite;
+}

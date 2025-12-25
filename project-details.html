@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали проекта | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/project-details.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item active">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Детали проекта</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+        <div class="project-details-container">
+            <!-- Project Header -->
+            <section class="project-header glass-card-large">
+                <div class="project-badges">
+                    <span class="project-badge featured neon-glow-purple">Featured</span>
+                    <span class="project-badge category">UI/UX Design</span>
+                </div>
+                <h1 class="project-title">Редизайн Dashboard для SaaS платформы</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" />
+                            <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <span>Опубликовано 2 часа назад</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <span>12 откликов</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2L12 7L17 8L13.5 11.5L14.5 17L10 14L5.5 17L6.5 11.5L3 8L8 7L10 2Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <span>4.8 рейтинг заказчика</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="project-content-grid">
+                <!-- Main Content -->
+                <div class="project-main">
+                    <!-- Description -->
+                    <section class="content-section glass-card">
+                        <h2 class="section-title">Описание проекта</h2>
+                        <p class="project-description">
+                            Требуется создать современный интерфейс для B2B SaaS платформы управления проектами.
+                            Дизайн должен быть минималистичным, функциональным и соответствовать последним трендам в
+                            UI/UX.
+                        </p>
+                        <p class="project-description">
+                            Основные задачи:
+                        </p>
+                        <ul class="project-list">
+                            <li>Редизайн главного дашборда с аналитикой</li>
+                            <li>Создание системы дизайна и UI Kit</li>
+                            <li>Дизайн мобильной версии</li>
+                            <li>Прототипирование основных сценариев</li>
+                        </ul>
+                    </section>
+
+                    <!-- Skills Required -->
+                    <section class="content-section glass-card">
+                        <h2 class="section-title">Необходимые навыки</h2>
+                        <div class="skills-list">
+                            <span class="skill-tag neon-glow-blue">Figma</span>
+                            <span class="skill-tag neon-glow-pink">UI Design</span>
+                            <span class="skill-tag neon-glow-purple">UX Research</span>
+                            <span class="skill-tag neon-glow-cyan">Prototyping</span>
+                            <span class="skill-tag neon-glow-orange">Design Systems</span>
+                        </div>
+                    </section>
+
+                    <!-- Attachments -->
+                    <section class="content-section glass-card">
+                        <h2 class="section-title">Прикрепленные файлы</h2>
+                        <div class="attachments-list" id="projectAttachmentsContainer">
+                            <!-- Content will be dynamic. See assets/sample/project_details_sample.html -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="project-sidebar">
+                    <!-- Price Card -->
+                    <div class="price-card glass-card">
+                        <div class="price-header">
+                            <span class="price-label">Бюджет проекта</span>
+                            <div class="price-value neon-text-purple">$3,500</div>
+                        </div>
+                        <div class="price-details">
+                            <div class="detail-row">
+                                <span>Тип оплаты:</span>
+                                <strong>Фиксированная</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Срок:</span>
+                                <strong>14 дней</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Опыт:</span>
+                                <strong>Middle+</strong>
+                            </div>
+                        </div>
+                        <button class="apply-button neon-button">
+                            <span>Откликнуться на проект</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Client Info -->
+                    <div class="client-card glass-card">
+                        <h3 class="client-title">О заказчике</h3>
+                        <div class="client-info">
+                            <div class="client-avatar neon-glow-blue"></div>
+                            <div class="client-details">
+                                <div class="client-name">TechStart Inc.</div>
+                                <div class="client-verified">✓ Верифицирован</div>
+                            </div>
+                        </div>
+                        <div class="client-stats">
+                            <div class="stat">
+                                <span class="stat-value neon-text-blue">47</span>
+                                <span class="stat-label">Проектов</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value neon-text-pink">$124K</span>
+                                <span class="stat-label">Потрачено</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value neon-text-purple">4.8</span>
+                                <span class="stat-label">Рейтинг</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Similar Projects -->
+                    <div class="similar-projects glass-card">
+                        <h3 class="similar-title">Похожие проекты</h3>
+                        <div class="similar-list" id="similarProjectsContainer">
+                            <!-- Content will be dynamic. See assets/sample/project_details_sample.html -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <script src="js/state.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+/* Feed Mobile Optimizations */
+
+@media (max-width: 1023px) {
+
+    /* 1. Layout */
+    .feed-layout {
+        grid-template-columns: 1fr !important;
+        /* Stack columns */
+        gap: 20px;
+    }
+
+    /* 2. Hide Right Sidebar by default (optional: make it toggleable if critical) */
+    .sidebar-right {
+        display: none;
+    }
+
+    /* 3. Global Header Adjustments */
+    .global-header {
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 0 80px 0;
+        /* Bottom padding for scroll */
+        width: 100%;
+    }
+
+    .feed-main {
+        padding: 0 16px;
+    }
+
+    /* Create Post Card */
+    .create-post-card {
+        padding: 16px;
+    }
+
+    .create-post-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .action-btn {
+        flex: 1;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .create-post-actions .btn-primary {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
+
+    /* Post Card */
+    .post-card {
+        padding: 16px;
+    }
+
+    .post-actions {
+        justify-content: space-between;
+    }
+
+    .feed-action-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .feed-action-btn i {
+        margin-right: 4px;
+    }
+}

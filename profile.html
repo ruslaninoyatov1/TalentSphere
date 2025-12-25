@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TalentSphere</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/profile-variables.css">
+    <link rel="stylesheet" href="css/profile-enhanced.css">
+    <link rel="stylesheet" href="css/profile-animations.css">
+    <link rel="stylesheet" href="css/portfolio-grid-fix.css">
+    <link rel="stylesheet" href="css/call-settings-premium.css">
+    <link rel="stylesheet" href="css/profile-activity.css">
+    <link rel="stylesheet" href="css/video-card-premium.css">
+    <link rel="stylesheet" href="css/profile-header-premium.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/profile-mobile.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Mobile Header (Unified System) -->
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar">AD</div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content profile-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Мой профиль</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+        <!-- Profile Header -->
+        <div class="profile-header-simple glass-card animate-fade-in">
+            <div class="profile-cover-simple">
+                <div class="cover-gradient"></div>
+            </div>
+
+            <div class="profile-content-simple">
+                <div class="profile-top">
+                    <div class="profile-avatar-simple neon-glow-purple avatar-entrance animate-shimmer">
+                        <div class="avatar-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Avatar"
+                                class="main-avatar-img">
+                        </div>
+                        <div class="availability-indicator status-available"></div>
+                    </div>
+                    <div class="profile-info-simple entrance-2">
+                        <h1 class="profile-name-simple">
+                            Alex <span class="gradient-text">Designer</span>
+                        </h1>
+                        <div class="profile-badges-simple">
+                            <span class="badge-simple neon-glow-blue">UI/UX</span>
+                            <span class="badge-simple neon-glow-purple">Web Design</span>
+                            <span class="badge-simple neon-glow-pink">Prototyping</span>
+                        </div>
+
+                        <div class="profile-stats-row">
+                            <span class="stat-item"><i class="fas fa-star" style="color: gold;"></i> 4.9 (243
+                                отзыва)</span>
+                            <span class="stat-item separator">•</span>
+                            <span class="stat-item status-text-available"><i class="fas fa-circle"
+                                    style="font-size: 8px; vertical-align: middle; margin-right: 6px;"></i> Доступен для
+                                заказов</span>
+                        </div>
+
+                        <div class="profile-quick-contacts">
+                            <button class="btn-icon-circle"><i class="fab fa-telegram"></i></button>
+                            <button class="btn-icon-circle"><i class="fab fa-whatsapp"></i></button>
+                            <button class="btn-icon-circle"><i class="far fa-envelope"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions-top">
+                        <button class="btn-edit-simple neon-button">Редактировать</button>
+                        <button class="btn-share-simple"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Tabs -->
+        <div class="profile-tabs glass-card">
+            <button class="tab-btn active" data-tab="video-card">
+                <i class="fas fa-video"></i>
+                <span>Видео-визитка</span>
+            </button>
+            <button class="tab-btn" data-tab="activity">
+                <i class="fas fa-stream"></i>
+                <span>Лента активности</span>
+            </button>
+            <button class="tab-btn" data-tab="portfolio">
+                <i class="fas fa-layer-group"></i>
+                <span>Портфолио</span>
+            </button>
+            <button class="tab-btn" data-tab="call-settings">
+                <i class="fas fa-headset"></i>
+                <span>Настройки звонков</span>
+            </button>
+        </div>
+
+        <!-- Tab Content Container -->
+        <div class="tab-content-container">
+
+            <!-- TAB 1: Видео-визитка -->
+            <div class="tab-content active" data-content="video-card">
+                <div class="video-card-layout">
+                    <!-- Main Video -->
+                    <div class="main-video-section glass-card">
+                        <div class="video-player-container">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle play-btn-large"></i>
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+                                    alt="Video Cover" class="video-cover">
+                            </div>
+                            <div class="video-controls-overlay">
+                                <span class="video-duration">02:45</span>
+                                <span class="video-views"><i class="fas fa-eye"></i> 1.2k</span>
+                            </div>
+                        </div>
+                        <div class="video-info-row">
+                            <h3>Приветствие и обзор навыков</h3>
+                            <div class="video-actions">
+                                <button class="btn-small-outline"><i class="fas fa-pen"></i> Редактировать</button>
+                                <button class="btn-small-outline"><i class="fas fa-lock"></i> Приватность</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Cases Grid -->
+                    <h3 class="section-subtitle">Видео-кейсы</h3>
+                    <div class="video-cases-grid">
+                        <!-- Demo Case 1 -->
+                        <div class="video-case-card glass-card">
+                            <div class="case-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400" alt="Case">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <span class="case-duration">01:30</span>
+                            </div>
+                            <div class="case-info">
+                                <h4>E-commerce Redesign</h4>
+                                <p>Редизайн интернет-магазина</p>
+                            </div>
+                        </div>
+
+                        <!-- Demo Case 2 -->
+                        <div class="video-case-card glass-card">
+                            <div class="case-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400"
+                                    alt="Case">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <span class="case-duration">02:15</span>
+                            </div>
+                            <div class="case-info">
+                                <h4>Mobile Banking App</h4>
+                                <p>Дизайн мобильного приложения</p>
+                            </div>
+                        </div>
+
+                        <!-- Demo Case 3 -->
+                        <div class="video-case-card glass-card">
+                            <div class="case-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400" alt="Case">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <span class="case-duration">01:45</span>
+                            </div>
+                            <div class="case-info">
+                                <h4>Dashboard Analytics</h4>
+                                <p>Аналитическая панель</p>
+                            </div>
+                        </div>
+
+                        <!-- Add New Case -->
+                        <div class="add-case-card glass-card dashed-border">
+                            <div class="add-icon"><i class="fas fa-plus"></i></div>
+                            <span>Добавить кейс</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Лента активности -->
+            <div class="tab-content" data-content="activity">
+                <div class="activity-feed-layout">
+                    <div class="feed-main">
+                        <div class="create-post-card glass-card">
+                            <div class="post-input-row">
+                                <div class="user-avatar-small">AD</div>
+                                <input type="text" placeholder="Поделитесь новостями или проектом..."
+                                    class="post-input">
+                            </div>
+                            <div class="post-actions-row">
+                                <button class="btn-action"><i class="fas fa-image"></i> Фото</button>
+                                <button class="btn-action"><i class="fas fa-video"></i> Видео</button>
+                                <button class="btn-primary-small">Опубликовать</button>
+                            </div>
+                        </div>
+
+                        <!-- Content will be dynamic. See assets/sample/feed_sample.html -->
+                        <div id="activityFeed">
+                            <!-- Post 1 -->
+                            <div class="activity-post">
+                                <div class="post-header">
+                                    <div class="post-user-info">
+                                        <div class="user-avatar-small">AD</div>
+                                        <div class="post-user-details">
+                                            <span class="post-user-name">Alex Designer</span>
+                                            <span class="post-status">обновил портфолио • <span class="post-time">2 часа
+                                                    назад</span></span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-action"><i class="fas fa-ellipsis-h"></i></button>
+                                </div>
+                                <div class="post-content">
+                                    <p class="post-text">Рад представить мой новый кейс — "Banking App Redesign". В этом
+                                        проекте я сфокусировался на упрощении пользовательского опыта и внедрении темной
+                                        темы с неоновыми акцентами. Что думаете?</p>
+                                    <div class="post-image-container">
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800"
+                                            class="post-image" alt="Post">
+                                    </div>
+                                </div>
+                                <div class="post-interactions">
+                                    <button class="btn-interact active"><i class="fas fa-heart"></i> 124</button>
+                                    <button class="btn-interact"><i class="fas fa-comment"></i> 18</button>
+                                    <button class="btn-interact"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="activity-post">
+                                <div class="post-header">
+                                    <div class="post-user-info">
+                                        <div class="user-avatar-small">AD</div>
+                                        <div class="post-user-details">
+                                            <span class="post-user-name">Alex Designer</span>
+                                            <span class="post-status">завершил курс • <span
+                                                    class="post-time">Вчера</span></span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-action"><i class="fas fa-ellipsis-h"></i></button>
+                                </div>
+                                <div class="post-content">
+                                    <p class="post-text">Прошел интенсив по "Advanced Motion Design". Теперь мои
+                                        интерфейсы будут еще более живыми и динамичными! 🚀🕺</p>
+                                </div>
+                                <div class="post-interactions">
+                                    <button class="btn-interact"><i class="fas fa-heart"></i> 89</button>
+                                    <button class="btn-interact"><i class="fas fa-comment"></i> 5</button>
+                                    <button class="btn-interact"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="feed-sidebar glass-card">
+                        <h3 class="sidebar-title"><i class="fas fa-sparkles"></i> Рекомендуем</h3>
+                        <div class="sidebar-list">
+                            <div class="sidebar-item-card">
+                                <div class="item-icon-box" style="background: rgba(0, 212, 255, 0.1); color: #00d4ff;">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="item-content-info">
+                                    <span class="item-name">UX Research Guide</span>
+                                    <span class="item-meta">2023 • PDF Book</span>
+                                </div>
+                            </div>
+                            <div class="sidebar-item-card">
+                                <div class="item-icon-box" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="item-content-info">
+                                    <span class="item-name">Advanced React Patterns</span>
+                                    <span class="item-meta">2022 • Course</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- TAB 3: Портфолио -->
+            <div class="tab-content" data-content="portfolio">
+                <div class="portfolio-header-actions">
+                    <h2 class="section-title-profile">Завершенные проекты</h2>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Добавить проект</button>
+                </div>
+
+                <div class="portfolio-grid-detailed">
+                    <!-- Project 1 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Dashboard Analytics Platform</h3>
+                            <p>Комплексная аналитическая панель для SaaS компании</p>
+                            <div class="project-tags">
+                                <span class="tag">UI/UX</span>
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">Analytics</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Дек 2023</span>
+                                <span><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>E-commerce Mobile App</h3>
+                            <p>Мобильное приложение для онлайн-магазина одежды</p>
+                            <div class="project-tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">iOS</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Ноя 2023</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Banking App Redesign</h3>
+                            <p>Редизайн мобильного банкинга с фокусом на UX</p>
+                            <div class="project-tags">
+                                <span class="tag">Redesign</span>
+                                <span class="tag">Banking</span>
+                                <span class="tag">Fintech</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Окт 2023</span>
+                                <span><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Social Media Dashboard</h3>
+                            <p>Панель управления для SMM специалистов</p>
+                            <div class="project-tags">
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">Social</span>
+                                <span class="tag">Web</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Сен 2023</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Fitness Tracking App</h3>
+                            <p>Приложение для отслеживания тренировок и питания</p>
+                            <div class="project-tags">
+                                <span class="tag">Health</span>
+                                <span class="tag">Fitness</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Авг 2023</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="portfolio-project-card glass-card">
+                        <div class="project-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Project">
+                            <div class="project-overlay">
+                                <button class="btn-view-project">Посмотреть</button>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>CRM System Interface</h3>
+                            <p>Интерфейс CRM системы для управления клиентами</p>
+                            <div class="project-tags">
+                                <span class="tag">CRM</span>
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">Web</span>
+                            </div>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Июл 2023</span>
+                                <span><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: Настройки звонков -->
+            <div class="tab-content" data-content="call-settings">
+                <div class="settings-layout-grid">
+                    <div class="settings-card glass-card">
+                        <h3>
+                            <div class="icon-box"><i class="fas fa-phone-alt"></i></div> Доступность звонков
+                        </h3>
+                        <div class="settings-form-group">
+                            <label class="radio-option">
+                                <input type="radio" name="call_access" checked>
+                                <div class="radio-content">
+                                    <span class="radio-title">Разрешить входящие звонки</span>
+                                    <span class="radio-desc">Любой пользователь может позвонить вам</span>
+                                </div>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_access">
+                                <div class="radio-content">
+                                    <span class="radio-title">Только избранные контакты</span>
+                                    <span class="radio-desc">Звонки только от подтвержденных клиентов</span>
+                                </div>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_access">
+                                <div class="radio-content">
+                                    <span class="radio-title">Только по предварительной записи</span>
+                                    <span class="radio-desc">Звонки недоступны, только бронирование слотов</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card glass-card">
+                        <h3>
+                            <div class="icon-box"><i class="far fa-clock"></i></div> Часы работы
+                        </h3>
+                        <div class="working-hours-grid">
+                            <div class="day-selector">
+                                <button class="day-btn active">Пн</button>
+                                <button class="day-btn active">Вт</button>
+                                <button class="day-btn active">Ср</button>
+                                <button class="day-btn active">Чт</button>
+                                <button class="day-btn active">Пт</button>
+                                <button class="day-btn">Сб</button>
+                                <button class="day-btn">Вс</button>
+                            </div>
+                            <div class="time-range-inputs">
+                                <div class="input-group">
+                                    <label>Начало</label>
+                                    <input type="time" value="09:00" class="form-input">
+                                </div>
+                                <div class="range-separator">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                                <div class="input-group">
+                                    <label>Конец</label>
+                                    <input type="time" value="18:00" class="form-input">
+                                </div>
+                            </div>
+                            <div class="toggle-option">
+                                <div class="toggle-label-content">
+                                    <span class="title">Перерыв на обед</span>
+                                    <span class="desc">13:00 - 14:00 (Звонки недоступны)</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="lunch-break" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card glass-card">
+                        <h3>
+                            <div class="icon-box"><i class="fas fa-video"></i></div> Автоматическая запись
+                        </h3>
+                        <div class="settings-form-group">
+                            <div class="select-wrapper">
+                                <select class="form-select">
+                                    <option>Спрашивать разрешение перед записью</option>
+                                    <option>Записывать все звонки автоматически</option>
+                                    <option>Не записывать звонки</option>
+                                </select>
+                            </div>
+                            <div class="settings-hint">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Записи хранятся в облаке 30 дней и доступны в истории звонков.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-actions">
+                        <button class="btn-primary neon-button">Сохранить настройки</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="js/state.js"></script>
+    <script src="js/universal-mobile.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

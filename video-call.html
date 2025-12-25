@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видеозвонок | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/video-call-noir.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="call-page">
+
+    <div class="call-layout">
+        <div class="video-ui-overlay"></div>
+
+        <!-- Main Video Area -->
+        <div class="main-video-area">
+            <div class="active-speaker-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                    alt="Active Speaker" class="active-speaker">
+            </div>
+
+            <!-- Overlay Info -->
+            <div class="video-overlay-info">
+                <div class="info-badge">
+                    <div class="status-indicator online"></div>
+                    <span class="connection-quality">HD CONNECTION</span>
+                </div>
+                <div class="info-badge">
+                    <i class="far fa-clock"></i>
+                    <span class="call-timer-badge" id="mainTimer">12:45</span>
+                </div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="thumbnails-grid">
+                <div class="thumbnail-noir">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        alt="User 1">
+                    <span class="thumbnail-name">Максим (PM)</span>
+                </div>
+                <div class="thumbnail-noir">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        alt="User 2">
+                    <span class="thumbnail-name">Дмитрий (Dev)</span>
+                </div>
+                <div class="thumbnail-noir">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        alt="You">
+                    <span class="thumbnail-name">Вы</span>
+                    <div class="status-indicator online" style="position: absolute; top: 8px; right: 8px;"></div>
+                </div>
+            </div>
+
+            <!-- Control Bar -->
+            <div class="control-bar">
+                <button class="control-btn" id="micToggle" title="Микрофон">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="control-btn" id="camToggle" title="Камера">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button class="control-btn" title="Экран">
+                    <i class="fas fa-desktop"></i>
+                </button>
+                <button class="control-btn" id="chatToggle" title="Чат">
+                    <i class="fas fa-comment-alt"></i>
+                </button>
+                <button class="control-btn" id="settingsToggle" title="Настройки">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn danger" onclick="window.location.href='team-project.html'" title="Завершить">
+                    <i class="fas fa-phone-slash"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="call-sidebar hidden" id="callSidebar">
+            <div class="sidebar-header">
+                <h3>Заседание команды</h3>
+                <button class="control-btn" style="width: 32px; height: 32px; font-size: 14px;" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="chat">Чат</button>
+                <button class="sidebar-tab" data-tab="participants">Участники (3)</button>
+            </div>
+
+            <div class="sidebar-content" id="sidebarContent">
+                <!-- Chat Content -->
+                <div class="chat-container" id="chatTab">
+                    <div class="chat-message" style="margin-bottom: 20px;">
+                        <span
+                            style="font-size: 12px; color: var(--auth-text-dim); display: block; margin-bottom: 4px;">Максим
+                            Соколов</span>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 0 16px 16px 16px; font-size: 14px;">
+                            Коллеги, давайте обсудим новый спринт.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 24px; border-top: 1px solid var(--noir-border);">
+                <div style="position: relative;">
+                    <input type="text"
+                        style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--noir-border); padding: 14px 44px 14px 16px; border-radius: 12px; color: #fff; font-size: 14px; outline: none;"
+                        placeholder="Напишите сообщение...">
+                    <button
+                        style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: var(--noir-accent); border: none; width: 32px; height: 32px; border-radius: 8px; color: white; cursor: pointer;">
+                        <i class="fas fa-paper-plane" style="font-size: 12px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Sidebar
+        const chatToggle = document.getElementById('chatToggle');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebar = document.getElementById('callSidebar');
+
+        chatToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            chatToggle.classList.toggle('active');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('hidden');
+            chatToggle.classList.remove('active');
+        });
+
+        // Mic & Cam Toggles
+        const micToggle = document.getElementById('micToggle');
+        const camToggle = document.getElementById('camToggle');
+
+        micToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-microphone');
+            icon.classList.toggle('fa-microphone-slash');
+        });
+
+        camToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-video');
+            icon.classList.toggle('fa-video-slash');
+        });
+
+        // Timer Logic
+        let seconds = 765;
+        setInterval(() => {
+            seconds++;
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            document.getElementById('mainTimer').textContent = `${m}:${s}`;
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentSphere - Professional Design Preview</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .preview-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 32px;
+        }
+        .preview-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .preview-title {
+            font-size: 48px;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 16px;
+        }
+        .version-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        .design-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            overflow: hidden;
+        }
+        .preview-label {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .changes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 48px;
+        }
+        .change-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .change-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .change-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .change-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .color-sample {
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="landing-page">
+    <nav class="main-nav glass-effect">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+            <div class="global-search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" placeholder="Поиск проектов, фрилансеров...">
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn-secondary">← Вернуться</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="preview-container">
+        <!-- Header -->
+        <div class="preview-header">
+            <div class="version-badge">✨ Обновленный дизайн v2.0</div>
+            <h1 class="preview-title">
+                <span class="gradient-text">Professional</span> Design Preview
+            </h1>
+            <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                Адаптация под новое ТЗ: профессиональный стиль с сохранением современных трендов
+            </p>
+        </div>
+
+        <!-- Key Changes -->
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 32px; font-family: 'Space Grotesk', sans-serif;">
+            🎨 Ключевые изменения
+        </h2>
+        
+        <div class="changes-list">
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-blue">🎨</div>
+                <h3 class="change-title">Цветовая палитра</h3>
+                <p class="change-desc">Яркие neon цвета заменены на профессиональные оттенки с мягкими акцентами</p>
+                <div class="before-after">
+                    <div class="color-sample" style="background: #b000ff;">Было: #b000ff</div>
+                    <div class="color-sample" style="background: #8b5cf6;">Стало: #8b5cf6</div>
+                </div>
+            </div>
+
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-pink">✨</div>
+                <h3 class="change-title">Упрощенные эффекты</h3>
+                <p class="change-desc">Интенсивные neon glow заменены на мягкие тени для профессионального вида</p>
+                <div style="margin-top: 12px; padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 8px; text-align: center;">
+                    Пример новой тени ↓
+                </div>
+            </div>
+
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-purple">🔍</div>
+                <h3 class="change-title">Глобальный поиск</h3>
+                <p class="change-desc">Добавлен поиск в навигации для быстрого доступа к проектам и фрилансерам</p>
+                <div style="margin-top: 12px; padding: 12px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; font-size: 13px;">
+                    🔍 Теперь в header на всех страницах
+                </div>
+            </div>
+
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-cyan">⚡</div>
+                <h3 class="change-title">Skeleton Loading</h3>
+                <p class="change-desc">Плавная загрузка контента с анимированными placeholder'ами</p>
+                <div class="skeleton" style="margin-top: 12px; height: 20px;"></div>
+                <div class="skeleton" style="margin-top: 8px; height: 20px; width: 80%;"></div>
+            </div>
+
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-orange">🤖</div>
+                <h3 class="change-title">AI Рекомендации</h3>
+                <p class="change-desc">Расширенные AI-блоки на всех ключевых страницах для персонализации</p>
+                <div style="margin-top: 12px; padding: 12px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1)); border-radius: 8px; font-size: 13px;">
+                    💡 Умные подсказки и matching
+                </div>
+            </div>
+
+            <div class="change-card glass-card">
+                <div class="change-icon neon-glow-green">✨</div>
+                <h3 class="change-title">Micro-interactions</h3>
+                <p class="change-desc">Улучшенные анимации, плавные переходы и focus states для лучшего UX</p>
+                <button class="neon-button" style="margin-top: 12px; width: 100%; justify-content: center;">
+                    Попробуйте навести
+                </button>
+            </div>
+        </div>
+
+        <!-- Color Palette -->
+        <div style="margin-top: 80px;">
+            <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 32px; font-family: 'Space Grotesk', sans-serif;">
+                🎨 Новая цветовая палитра
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #3b82f6; border-radius: 12px; margin: 0 auto 12px; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);"></div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">Primary Blue</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">#3b82f6</div>
+                </div>
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #8b5cf6; border-radius: 12px; margin: 0 auto 12px; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.25);"></div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">Primary Purple</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">#8b5cf6</div>
+                </div>
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #ec4899; border-radius: 12px; margin: 0 auto 12px; box-shadow: 0 4px 20px rgba(236, 72, 153, 0.25);"></div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">Primary Pink</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">#ec4899</div>
+                </div>
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #06b6d4; border-radius: 12px; margin: 0 auto 12px; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);"></div>
+                    <div style="font-weight: 600; margin-bottom: 4px;">Accent Cyan</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">#06b6d4</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="glass-card-large" style="margin-top: 80px; padding: 48px; text-align: center;">
+            <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif;">
+                ✅ Дизайн адаптирован под новое ТЗ
+            </h2>
+            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.7;">
+                Сохранили современность и функциональность, добавили профессионализм и минимализм.<br>
+                Все 20 страниц обновлены с новой цветовой схемой и улучшенными interactions.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn-primary neon-button" style="text-decoration: none;">Посмотреть Landing</a>
+                <a href="dashboard.html" class="btn-secondary glass-card" style="text-decoration: none;">Открыть Dashboard</a>
+                <a href="marketplace.html" class="btn-secondary glass-card" style="text-decoration: none;">Marketplace</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

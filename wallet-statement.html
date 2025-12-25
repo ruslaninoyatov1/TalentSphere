@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выписка | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/wallet.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn active" data-role="customer">Заказчик</button>
+            <button class="role-btn" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item active">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Выписка по счету</h1>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="page-intro"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+            <div>
+                <h1 class="page-title">Выписка по <span class="gradient-text">счету</span></h1>
+                <p class="page-subtitle">Полная история ваших финансовых операций</p>
+            </div>
+            <button class="btn-primary neon-button">
+                <i class="fas fa-download mr-2"></i>
+                Скачать PDF
+            </button>
+        </div>
+
+        <div class="wallet-content-grid" style="grid-template-columns: 1fr;">
+            <section class="transactions-section">
+
+                <!-- Filters -->
+                <div class="transactions-filters glass-card" style="padding: 20px; margin-bottom: 32px;">
+                    <div class="search-wrapper" style="max-width: 300px;">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="filter-input" placeholder="Поиск операций...">
+                    </div>
+
+                    <select class="filter-select">
+                        <option>Все операции</option>
+                        <option>Пополнения</option>
+                        <option>Выводы</option>
+                        <option>Оплата услуг</option>
+                    </select>
+
+                    <select class="filter-select">
+                        <option>За все время</option>
+                        <option>Этот месяц</option>
+                        <option>Прошлый месяц</option>
+                        <option>2023 год</option>
+                    </select>
+                </div>
+
+                <div class="transactions-list">
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon"
+                            style="background: rgba(16, 185, 129, 0.1); color: var(--neon-green);">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Проект "Redesign"</div>
+                            <div class="transaction-date">Сегодня, 14:30 · Проект</div>
+                        </div>
+                        <div class="transaction-amount positive">+$1,500.00</div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon"
+                            style="background: rgba(59, 130, 246, 0.1); color: var(--neon-blue);">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Вывод на карту</div>
+                            <div class="transaction-date">Вчера, 09:15 · Вывод</div>
+                        </div>
+                        <div class="transaction-amount negative">-$500.00</div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon"
+                            style="background: rgba(139, 92, 246, 0.1); color: var(--neon-purple);">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Комиссия сервиса</div>
+                            <div class="transaction-date">12 Окт, 2024 · Налог</div>
+                        </div>
+                        <div class="transaction-amount negative">-$25.00</div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon"
+                            style="background: rgba(16, 185, 129, 0.1); color: var(--neon-green);">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Проект "Mobile App"</div>
+                            <div class="transaction-date">10 Окт, 2024 · Проект</div>
+                        </div>
+                        <div class="transaction-amount positive">+$2,800.00</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileSidebarToggle');
+        const sidebar = document.getElementById('dashboardSidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

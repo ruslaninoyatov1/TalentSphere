@@ -1,0 +1,300 @@
+/* ============================================================
+   VIDEO CALL NOIR - Ultra-Premium / Cyber Noir Interface
+   ============================================================ */
+
+:root {
+    --noir-bg: #020205;
+    --noir-panel: rgba(10, 10, 15, 0.8);
+    --noir-glass: rgba(255, 255, 255, 0.03);
+    --noir-border: rgba(255, 255, 255, 0.06);
+    --noir-accent: #8b5cf6;
+    --noir-accent-glow: rgba(139, 92, 246, 0.4);
+    --noir-danger: #ef4444;
+}
+
+body.call-page {
+    background-color: var(--noir-bg);
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
+.call-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: radial-gradient(circle at center, #0f0f15 0%, #020205 100%);
+}
+
+/* --- Main Video Area --- */
+.main-video-area {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.active-speaker-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.active-speaker {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+/* Shadow Gradients for UI depth */
+.video-ui-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(2, 2, 5, 0.6) 0%, transparent 20%),
+        linear-gradient(to top, rgba(2, 2, 5, 0.8) 0%, transparent 25%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- Video Overlay Info --- */
+.video-overlay-info {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    gap: 16px;
+    z-index: 2;
+}
+
+.info-badge {
+    background: var(--noir-panel);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--noir-border);
+    padding: 8px 16px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.connection-quality {
+    color: #10b981;
+}
+
+.call-timer-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* --- Thumbnails Grid --- */
+.thumbnails-grid {
+    position: absolute;
+    bottom: 120px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 3;
+}
+
+.thumbnail-noir {
+    width: 180px;
+    height: 110px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--noir-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.thumbnail-noir:hover {
+    transform: translateX(-10px) scale(1.05);
+    border-color: var(--noir-accent);
+    box-shadow: 0 0 20px var(--noir-accent-glow);
+}
+
+.thumbnail-noir img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-name {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Control Bar --- */
+.control-bar {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: var(--noir-panel);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--noir-border);
+    border-radius: 30px;
+    z-index: 5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.control-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.control-btn.active {
+    background: var(--noir-accent);
+    box-shadow: 0 0 20px var(--noir-accent-glow);
+    border-color: transparent;
+}
+
+.control-btn.danger {
+    background: var(--noir-danger);
+    width: 64px;
+    border-radius: 20px;
+}
+
+.control-btn.danger:hover {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+}
+
+/* --- Call Sidebar --- */
+.call-sidebar {
+    width: 360px;
+    background: #05050a;
+    border-left: 1px solid var(--noir-border);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.call-sidebar.hidden {
+    transform: translateX(100%);
+    position: absolute;
+    right: 0;
+}
+
+.sidebar-header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--noir-border);
+}
+
+.sidebar-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-tabs {
+    display: flex;
+    padding: 12px 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--noir-border);
+}
+
+.sidebar-tab {
+    background: none;
+    border: none;
+    color: var(--auth-text-dim);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    padding-bottom: 8px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.sidebar-tab.active {
+    color: #fff;
+}
+
+.sidebar-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--noir-accent);
+    box-shadow: 0 0 10px var(--noir-accent-glow);
+}
+
+.sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+/* Status Dot with Glow */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-indicator.online {
+    background: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}

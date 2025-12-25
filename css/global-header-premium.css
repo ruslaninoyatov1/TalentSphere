@@ -1,0 +1,379 @@
+/* Global Header - Ultra Premium Design */
+
+.global-header {
+    height: 80px;
+    padding: 0 40px;
+    background: #0a0a0f;
+    /* Deep black background */
+    backdrop-filter: blur(25px);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 24px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.global-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.global-header-left .page-title {
+    font-size: 26px;
+    font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+/* Header Role Badge */
+.header-role-badge {
+    display: flex;
+    align-items: center;
+}
+
+.role-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.role-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.role-dot::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Role Specifics */
+.role-performer {
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #a78bfa;
+}
+
+.role-performer .role-dot {
+    background: #8b5cf6;
+}
+
+.role-performer .role-dot::after {
+    background: rgba(139, 92, 246, 0.5);
+}
+
+.role-customer {
+    border-color: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+}
+
+.role-customer .role-dot {
+    background: #00d4ff;
+}
+
+.role-customer .role-dot::after {
+    background: rgba(0, 212, 255, 0.5);
+}
+
+.role-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.global-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Premium Buttons in Header */
+.header-btn-premium {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0 14px;
+}
+
+.header-btn-premium:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.header-btn-premium i {
+    font-size: 18px;
+}
+
+/* Notification Badge */
+.notif-badge-premium {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #0a0a0f;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    }
+}
+
+/* Wallet Tablet Style */
+.wallet-tablet-premium {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wallet-tablet-premium:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 255, 157, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
+}
+
+.wallet-tablet-premium i {
+    color: #00ff9d;
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5));
+}
+
+.wallet-balance-premium {
+    color: #00ff9d;
+    font-weight: 800;
+    font-size: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* User Avatar Header */
+.header-avatar-premium {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #fff;
+    font-size: 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.header-avatar-premium:hover {
+    transform: scale(1.05) rotate(5deg);
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Divider */
+.header-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .global-header {
+        padding: 0 20px;
+    }
+
+    .wallet-tablet-premium {
+        padding: 0 10px;
+    }
+
+    .wallet-balance-premium {
+        display: none;
+    }
+
+    .global-header-left .page-title {
+        font-size: 20px;
+    }
+}
+
+/* refined mobile header refinements for small screens */
+@media (max-width: 480px) {
+    .global-header {
+        height: 70px;
+        padding: 0 16px;
+        margin-bottom: 20px;
+        border-radius: 0 0 20px 20px;
+        justify-content: space-between;
+    }
+
+    /* Left Section */
+    .global-header-left {
+        gap: 12px;
+    }
+
+    .global-header-left .page-title {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    /* Hide Role Badge */
+    .header-role-badge {
+        display: none;
+    }
+
+    /* Right Section - Compact */
+    .global-header-right {
+        gap: 8px;
+    }
+
+    /* Premium Buttons (Create, Notif) */
+    .header-btn-premium {
+        height: 40px;
+        width: 40px;
+        /* Force square for icon-only */
+        padding: 0;
+        border-radius: 12px;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Force hide text in Create Project button */
+    .header-btn-premium span,
+    .header-btn-premium:first-child {
+        font-size: 0;
+        gap: 0 !important;
+        /* Override inline gap */
+    }
+
+    .header-btn-premium i {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    /* Wallet - Icon Only */
+    .wallet-tablet-premium {
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 12px;
+    }
+
+    .wallet-balance-premium {
+        display: none;
+    }
+
+    .wallet-tablet-premium i {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    /* Avatar */
+    .header-avatar-premium {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+        margin-left: 4px;
+        border-radius: 12px;
+    }
+
+    /* Divider */
+    .header-divider {
+        display: none;
+    }
+}
+
+/* Create Project Button Specifics */
+.create-project-btn {
+    text-decoration: none;
+    padding: 0 24px;
+    gap: 10px;
+}
+
+.create-project-btn .btn-text {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Mobile override for create btn */
+@media (max-width: 480px) {
+    .create-project-btn {
+        padding: 0 !important;
+        width: 40px;
+        gap: 0;
+    }
+
+    .create-project-btn .btn-text {
+        display: none;
+    }
+}

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать проект - TalentSphere</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-fixes.css">
+    <link rel="stylesheet" href="css/create-project-premium.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn active" data-role="customer">Заказчик</button>
+            <button class="role-btn" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Новый проект</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-customer">
+                        <div class="role-dot"></div>
+                        Заказчик
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="page-intro animate-fade-in">
+            <h1 class="page-title">Создать новый <span class="gradient-text">проект</span></h1>
+            <p class="page-subtitle">Используйте мощь AI для создания идеального технического задания</p>
+        </div>
+
+        <!-- Steps Indicator -->
+        <div class="steps-container">
+            <div class="step active" id="stepIndicator1">
+                <div class="step-number">1</div>
+                <div class="step-label">Описание</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="stepIndicator2">
+                <div class="step-number">2</div>
+                <div class="step-label">Анализ AI</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="stepIndicator3">
+                <div class="step-number">3</div>
+                <div class="step-label">Команда</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="stepIndicator4">
+                <div class="step-number">4</div>
+                <div class="step-label">Оплата</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Description -->
+        <div id="step1" class="step-content active">
+            <div class="form-section">
+                <h2 class="section-title"><i class="fas fa-pencil-alt"></i> Опишите вашу идею</h2>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-edit"></i>
+                        Детальное описание проекта
+                    </label>
+                    <textarea class="form-textarea" rows="8"
+                        placeholder="Опишите цели, целевую аудиторию, ожидания от проекта..."></textarea>
+
+                    <div class="ai-suggestion-box">
+                        <button class="btn-ai-assist" type="button">
+                            <i class="fas fa-pencil-alt"></i> AI-<br>помощник<br>для ТЗ
+                        </button>
+                        <span class="form-hint" style="margin: 0;">Нажмите, чтобы AI помог сформулировать мысли</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-link"></i>
+                        Прикрепить материалы (опционально)
+                    </label>
+                    <div class="file-upload-area">
+                        <i class="fas fa-cloud-upload-alt"
+                            style="font-size: 32px; color: var(--text-secondary); margin-bottom: 10px;"></i>
+                        <p style="color: var(--text-secondary);">Перетащите файлы сюда или нажмите для выбора</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary" type="button" onclick="window.history.back()">Назад</button>
+                    <button class="btn-primary neon-button" type="button" onclick="startAIAnalysis()">
+                        <span>Далее</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: AI Analysis -->
+        <div id="step2" class="step-content" style="display: none;">
+
+            <!-- Loading State -->
+            <div id="aiLoading" class="ai-loading-overlay" style="display: none;">
+                <div class="ai-spinner"></div>
+                <h3>AI анализирует ваш проект...</h3>
+                <p style="color: var(--text-secondary);">Составляем ТЗ, подбираем команду и считаем бюджет</p>
+            </div>
+
+            <!-- Results -->
+            <div id="aiResults" style="display: none;">
+                <!-- Generated TS -->
+                <div class="form-section">
+                    <h2 class="section-title"><i class="fas fa-file-invoice"></i> Сгенерированное ТЗ</h2>
+                    <div class="generated-ts-grid">
+                        <div class="form-group">
+                            <label class="form-label">Цели и задачи</label>
+                            <textarea class="form-textarea"
+                                rows="4">Создать современный маркетплейс для фрилансеров с AI-подбором. Основная цель - сократить время поиска исполнителя до 5 минут.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Стек технологий</label>
+                            <div class="tags-container" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <span class="skill-tag">React <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">Node.js <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">PostgreSQL <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">AI/ML <i class="fas fa-times skill-remove"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Критерии приемки</label>
+                            <textarea class="form-textarea" rows="3">- Полная адаптивность под мобильные устройства
+- Скорость загрузки страниц < 1.5 сек
+- Интеграция с платежными системами</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Specialists -->
+                <div class="form-section">
+                    <h2 class="section-title"><i class="fas fa-users-gear"></i> Рекомендуемая команда</h2>
+                    <div class="specialists-grid" id="recommendedSpecialists">
+                        <!-- Content will be dynamic. See assets/sample/project_creation_sample.html -->
+                    </div>
+                    <button class="btn-secondary" style="width: 100%;">Просмотреть всех кандидатов</button>
+                </div>
+
+                <!-- Budget -->
+                <div class="form-section">
+                    <h2 class="section-title"><i class="fas fa-coins"></i> Расчет бюджета</h2>
+                    <div class="budget-table-container">
+                        <table style="width: 100%; border-collapse: collapse; color: var(--text-primary);">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                    <th style="text-align: left; padding: 10px;">Роль</th>
+                                    <th style="text-align: right; padding: 10px;">Часы</th>
+                                    <th style="text-align: right; padding: 10px;">Ставка</th>
+                                    <th style="text-align: right; padding: 10px;">Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">UI/UX Designer</td>
+                                    <td style="text-align: right; padding: 10px;">40</td>
+                                    <td style="text-align: right; padding: 10px;">$45</td>
+                                    <td style="text-align: right; padding: 10px;">$1,800</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">Frontend Dev</td>
+                                    <td style="text-align: right; padding: 10px;">80</td>
+                                    <td style="text-align: right; padding: 10px;">$50</td>
+                                    <td style="text-align: right; padding: 10px;">$4,000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">Backend Dev</td>
+                                    <td style="text-align: right; padding: 10px;">60</td>
+                                    <td style="text-align: right; padding: 10px;">$55</td>
+                                    <td style="text-align: right; padding: 10px;">$3,300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total-budget">
+                        <span style="font-size: 18px; font-weight: 600;">Итоговый бюджет:</span>
+                        <span class="amount"
+                            style="font-size: 24px; font-weight: 700; color: var(--neon-green);">$9,100</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="backToStep1()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="goToStep3()">
+                        <span>Далее</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Team Selection -->
+        <div id="step3" class="step-content" style="display: none;">
+            <div class="form-section">
+                <h2 class="section-title"><i class="fas fa-users-viewfinder"></i> Выбор команды</h2>
+
+                <div class="form-group">
+                    <label class="form-label">Размер команды</label>
+                    <div class="team-size-selector">
+                        <button class="size-btn active">3 специалиста</button>
+                        <button class="size-btn">5 специалистов</button>
+                        <button class="size-btn">Больше</button>
+                    </div>
+                </div>
+
+                <div class="candidates-gallery">
+                    <div class="gallery-filters">
+                        <button class="filter-pill active">Все</button>
+                        <button class="filter-pill">Топ рейтинг</button>
+                        <button class="filter-pill">Быстрый старт</button>
+                    </div>
+
+                    <div class="specialists-grid" id="candidatesGallery">
+                        <!-- Content will be dynamic. See assets/sample/project_creation_sample.html -->
+                    </div>
+                </div>
+
+                <div class="team-summary"
+                    style="margin-top: 20px; background: rgba(0, 255, 157, 0.05); border: 1px solid rgba(0, 255, 157, 0.2); border-radius: 16px; padding: 20px;">
+                    <h3 style="font-size: 16px; margin-bottom: 10px; color: #fff;">Ваша команда (2/3)</h3>
+                    <div class="team-avatars">
+                        <div class="team-avatar-item" title="Анна В.">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100"
+                                style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--neon-green);">
+                        </div>
+                        <div class="team-avatar-item" title="Максим К.">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100"
+                                style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--neon-green);">
+                        </div>
+                        <div class="team-avatar-placeholder"
+                            style="width: 40px; height: 40px; border-radius: 50%; border: 2px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="backToStep2()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="goToStep4()">
+                        <span>Далее</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Confirmation & Payment -->
+        <div id="step4" class="step-content" style="display: none;">
+            <div class="form-section">
+                <h2 class="section-title"><i class="fas fa-rocket"></i> Подтверждение и запуск</h2>
+
+                <div class="summary-card"
+                    style="margin-bottom: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 24px;">
+                    <div class="summary-row">
+                        <span class="label">Проект</span>
+                        <span class="value">Маркетплейс фрилансеров</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="label">Команда</span>
+                        <span class="value">3 специалиста</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="label">Срок</span>
+                        <span class="value">2 месяца</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span class="label">Итого к оплате</span>
+                        <span class="value neon-text">$9,100</span>
+                    </div>
+                </div>
+
+                <div class="escrow-settings">
+                    <h3 class="section-subtitle">Настройки Escrow</h3>
+                    <div class="escrow-option glass-card">
+                        <div class="option-header">
+                            <i class="fas fa-shield-alt" style="color: var(--neon-green);"></i>
+                            <span>Безопасная сделка</span>
+                        </div>
+                        <p>Средства резервируются и выплачиваются поэтапно после приемки работ.</p>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3 class="section-subtitle">Способ оплаты</h3>
+                    <div class="methods-grid">
+                        <label class="method-card glass-card active">
+                            <input type="radio" name="payment" checked>
+                            <i class="fas fa-credit-card"></i>
+                            <span>Карта</span>
+                        </label>
+                        <label class="method-card glass-card">
+                            <input type="radio" name="payment">
+                            <i class="fas fa-university"></i>
+                            <span>Банк</span>
+                        </label>
+                        <label class="method-card glass-card">
+                            <input type="radio" name="payment">
+                            <i class="fab fa-bitcoin"></i>
+                            <span>Crypto</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="consent-checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Я принимаю условия использования платформы</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="backToStep3()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="alert('Проект успешно создан! 🚀')">
+                        <span>Запустить</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="js/state.js"></script>
+    <script src="js/universal-mobile.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function updateSteps(currentStep) {
+            // Reset all steps
+            for (let i = 1; i <= 4; i++) {
+                const indicator = document.getElementById(`stepIndicator${i}`);
+                const content = document.getElementById(`step${i}`);
+
+                // Update Indicators
+                if (i < currentStep) {
+                    indicator.classList.add('completed');
+                    indicator.classList.remove('active');
+                } else if (i === currentStep) {
+                    indicator.classList.add('active');
+                    indicator.classList.remove('completed');
+                } else {
+                    indicator.classList.remove('active', 'completed');
+                }
+
+                // Update Content Visibility
+                if (i === currentStep) {
+                    content.style.display = 'block';
+                    setTimeout(() => content.classList.add('active'), 10);
+                } else {
+                    content.style.display = 'none';
+                    content.classList.remove('active');
+                }
+            }
+        }
+
+        function startAIAnalysis() {
+            updateSteps(2);
+            document.getElementById('aiLoading').style.display = 'block';
+            document.getElementById('aiResults').style.display = 'none';
+
+            setTimeout(() => {
+                document.getElementById('aiLoading').style.display = 'none';
+                document.getElementById('aiResults').style.display = 'block';
+
+                // Fade in
+                document.getElementById('aiResults').style.opacity = 0;
+                let opacity = 0;
+                const fadeIn = setInterval(() => {
+                    opacity += 0.1;
+                    document.getElementById('aiResults').style.opacity = opacity;
+                    if (opacity >= 1) clearInterval(fadeIn);
+                }, 50);
+            }, 3000);
+        }
+
+        function backToStep1() { updateSteps(1); }
+        function goToStep3() { updateSteps(3); }
+        function backToStep2() {
+            updateSteps(2);
+            // Ensure results are shown when going back
+            document.getElementById('aiLoading').style.display = 'none';
+            document.getElementById('aiResults').style.display = 'block';
+        }
+        function goToStep4() { updateSteps(4); }
+        function backToStep3() { updateSteps(3); }
+    </script>
+</body>
+
+</html>

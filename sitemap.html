@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта сайта | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sitemap-container {
+            max-width: 1400px;
+            margin: 120px auto;
+            padding: 0 32px;
+        }
+
+        .sitemap-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .sitemap-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(8px);
+        }
+
+        .page-icon {
+            font-size: 20px;
+        }
+
+        .badge {
+            font-size: 10px;
+            padding: 4px 8px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+            border-radius: 8px;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body class="landing-page">
+    <nav class="main-nav glass-effect" style="margin-top: 20px;">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn-primary neon-button">← На главную</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sitemap-container">
+        <div class="sitemap-header">
+            <h1
+                style="font-size: 56px; font-weight: 800; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif;">
+                Все <span class="gradient-text">страницы</span> платформы
+            </h1>
+            <p style="font-size: 18px; color: var(--text-secondary);">Полная навигация по 20 страницам TalentSphere</p>
+        </div>
+
+        <div class="sitemap-grid">
+            <!-- Основные страницы -->
+            <div class="sitemap-section">
+                <h2 class="section-title">🏠 Основные</h2>
+                <a href="index.html" class="page-link">
+                    <span class="page-icon">🏠</span>
+                    <span>Главная (Landing)</span>
+                </a>
+                <a href="about.html" class="page-link">
+                    <span class="page-icon">ℹ️</span>
+                    <span>О платформе</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="contact.html" class="page-link">
+                    <span class="page-icon">📧</span>
+                    <span>Контакты</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="faq.html" class="page-link">
+                    <span class="page-icon">❓</span>
+                    <span>FAQ / Помощь</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="404.html" class="page-link">
+                    <span class="page-icon">🚫</span>
+                    <span>Страница 404</span>
+                    <span class="badge">NEW</span>
+                </a>
+            </div>
+
+            <!-- Аутентификация -->
+            <div class="sitemap-section">
+                <h2 class="section-title">🔐 Аутентификация</h2>
+                <a href="login.html" class="page-link">
+                    <span class="page-icon">🔑</span>
+                    <span>Вход</span>
+                </a>
+                <a href="register.html" class="page-link">
+                    <span class="page-icon">✍️</span>
+                    <span>Регистрация</span>
+                </a>
+            </div>
+
+            <!-- Личный кабинет -->
+            <div class="sitemap-section">
+                <h2 class="section-title">👤 Личный кабинет</h2>
+                <a href="dashboard.html" class="page-link">
+                    <span class="page-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="profile.html" class="page-link">
+                    <span class="page-icon">👤</span>
+                    <span>Профиль</span>
+                </a>
+                <a href="settings.html" class="page-link">
+                    <span class="page-icon">⚙️</span>
+                    <span>Настройки</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="notifications.html" class="page-link">
+                    <span class="page-icon">🔔</span>
+                    <span>Уведомления</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="verification.html" class="page-link">
+                    <span class="page-icon">✅</span>
+                    <span>Верификация</span>
+                    <span class="badge">NEW</span>
+                </a>
+            </div>
+
+            <!-- Проекты -->
+            <div class="sitemap-section">
+                <h2 class="section-title">💼 Проекты</h2>
+                <a href="marketplace.html" class="page-link">
+                    <span class="page-icon">🛍️</span>
+                    <span>Marketplace</span>
+                </a>
+                <a href="create-project.html" class="page-link">
+                    <span class="page-icon">➕</span>
+                    <span>Создать проект</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="project-details.html" class="page-link">
+                    <span class="page-icon">📄</span>
+                    <span>Детали проекта</span>
+                    <span class="badge">NEW</span>
+                </a>
+                <a href="find-freelancers.html" class="page-link">
+                    <span class="page-icon">🔍</span>
+                    <span>Поиск фрилансеров</span>
+                    <span class="badge">NEW</span>
+                </a>
+            </div>
+
+            <!-- Финансы -->
+            <div class="sitemap-section">
+                <h2 class="section-title">💰 Финансы</h2>
+                <a href="wallet.html" class="page-link">
+                    <span class="page-icon">💳</span>
+                    <span>Кошелек & Escrow</span>
+                </a>
+                <a href="disputes.html" class="page-link">
+                    <span class="page-icon">⚖️</span>
+                    <span>Арбитраж / Споры</span>
+                    <span class="badge">NEW</span>
+                </a>
+            </div>
+
+            <!-- Коммуникация -->
+            <div class="sitemap-section">
+                <h2 class="section-title">💬 Коммуникация</h2>
+                <a href="messages.html" class="page-link">
+                    <span class="page-icon">💬</span>
+                    <span>Сообщения / Чат</span>
+                </a>
+            </div>
+
+            <!-- Обучение -->
+            <div class="sitemap-section">
+                <h2 class="section-title">🎓 Обучение</h2>
+                <a href="education.html" class="page-link">
+                    <span class="page-icon">📚</span>
+                    <span>Образовательный центр</span>
+                    <span class="badge">NEW</span>
+                </a>
+            </div>
+
+
+        </div>
+
+        <!-- Summary -->
+        <div class="glass-card-large" style="margin-top: 64px; padding: 48px; text-align: center;">
+            <h2
+                style="font-size: 36px; font-weight: 800; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif;">
+                📊 Всего: 20+ страниц
+            </h2>
+            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px;">
+                Полноценная платформа с профессиональным дизайном и всем необходимым функционалом
+            </p>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--primary-blue); margin-bottom: 4px;">8
+                    </div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">Основных</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--primary-pink); margin-bottom: 4px;">12
+                    </div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">Новых</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--primary-purple); margin-bottom: 4px;">
+                        100%</div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">Готовность</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page education-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item active">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Образование</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <!-- Creator Dashboard Tabs -->
+        <div class="creator-tabs-container glass-card">
+            <div class="creator-tabs">
+                <button class="creator-tab active" data-tab="create">
+                    <i class="fas fa-plus-circle"></i> Создать
+                </button>
+                <button class="creator-tab" data-tab="materials">
+                    <i class="fas fa-layer-group"></i> Материалы
+                </button>
+                <button class="creator-tab" data-tab="analytics">
+                    <i class="fas fa-chart-line"></i> Статистика
+                </button>
+                <button class="creator-tab" data-tab="reviews">
+                    <i class="fas fa-star"></i> Отзывы
+                </button>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: CREATE -->
+        <div class="creator-section active" id="section-create">
+            <h2 class="section-title">Создание контента</h2>
+
+            <!-- Type Selection -->
+            <div class="content-type-grid" id="contentTypeGridContainer">
+                <!-- Video Course -->
+                <div class="type-card" onclick="openWizard('video')">
+                    <div class="type-icon">🎥</div>
+                    <h3>Видео-курс</h3>
+                    <p>Создайте полноценный видео-курс с уроками и материалами</p>
+                </div>
+
+                <!-- Article -->
+                <div class="type-card" onclick="openWizard('article')">
+                    <div class="type-icon">📝</div>
+                    <h3>Статья</h3>
+                    <p>Напишите обучающую статью или гайд</p>
+                </div>
+
+                <!-- Webinar -->
+                <div class="type-card" onclick="openWizard('webinar')">
+                    <div class="type-icon">🎓</div>
+                    <h3>Вебинар</h3>
+                    <p>Проведите live-вебинар для студентов</p>
+                </div>
+
+                <!-- Quiz -->
+                <div class="type-card" onclick="openWizard('quiz')">
+                    <div class="type-icon">✅</div>
+                    <h3>Тест</h3>
+                    <p>Создайте тест для проверки знаний</p>
+                </div>
+            </div>
+
+            <!-- Creation Wizard (Hidden by default) -->
+            <div class="creation-wizard glass-card" id="creationWizard" style="display: none;">
+                <div class="wizard-header">
+                    <h3>Новый видео-курс</h3>
+                    <button class="btn-close-wizard" onclick="closeWizard()"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="wizard-steps">
+                    <div class="step active" data-step="1">1. Инфо</div>
+                    <div class="step" data-step="2">2. Контент</div>
+                    <div class="step" data-step="3">3. Доступ</div>
+                    <div class="step" data-step="4">4. Цена</div>
+                    <div class="step" data-step="5">5. Публикация</div>
+                </div>
+
+                <div class="wizard-content">
+                    <!-- Step 1 Form -->
+                    <div class="wizard-step-content active" id="step1">
+                        <div class="form-group">
+                            <label>Название курса</label>
+                            <input type="text" class="form-input" placeholder="Например: Основы веб-дизайна">
+                        </div>
+                        <div class="form-group">
+                            <label>Описание</label>
+                            <textarea class="form-input" rows="4" placeholder="О чем этот курс?"></textarea>
+                        </div>
+                    </div>
+                    <!-- Step 2: Content -->
+                    <div class="wizard-step-content" id="step2">
+                        <div class="upload-area glass-card">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <h3>Перетащите файлы сюда</h3>
+                            <p>или нажмите для загрузки видео и материалов</p>
+                            <input type="file" hidden id="courseFileUpload" multiple>
+                            <button class="btn-small-outline"
+                                onclick="document.getElementById('courseFileUpload').click()">Выбрать файлы</button>
+                        </div>
+                        <div class="uploaded-files-list" id="uploadedFilesContainer">
+                            <!-- Content will be dynamic. See assets/sample/education_sample.html -->
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Access -->
+                    <div class="wizard-step-content" id="step3">
+                        <div class="access-options-grid" id="accessOptionsContainer">
+                            <!-- Content will be dynamic. See assets/sample/education_sample.html -->
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Price -->
+                    <div class="wizard-step-content" id="step4">
+                        <div class="price-setup-container">
+                            <div class="form-group">
+                                <label>Стоимость курса ($)</label>
+                                <div class="price-input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" class="form-input price-input" placeholder="49.99"
+                                        value="49.99">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Включить скидку для первых 100 студентов (20%)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Publish -->
+                    <div class="wizard-step-content" id="step5">
+                        <div class="publish-summary">
+                            <div class="summary-icon neon-glow-green"><i class="fas fa-check"></i></div>
+                            <h3>Почти готово!</h3>
+                            <p>Ваш курс готов к публикации. Проверьте данные:</p>
+
+                            <div class="summary-details glass-card">
+                                <div class="summary-row">
+                                    <span>Название:</span>
+                                    <strong>Основы веб-дизайна</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Тип:</span>
+                                    <strong>Видео-курс</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Доступ:</span>
+                                    <strong>Платный ($49.99)</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Файлов:</span>
+                                    <strong>12 уроков</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-footer">
+                    <button class="btn-secondary" onclick="prevStep()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="nextStep()">Далее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: MATERIALS -->
+        <div class="creator-section" id="section-materials">
+            <div class="section-header-row">
+                <h2 class="section-title">Мои материалы</h2>
+                <div class="filters-row">
+                    <select class="form-select-small">
+                        <option>Все типы</option>
+                        <option>Курсы</option>
+                    </select>
+                    <select class="form-select-small">
+                        <option>Все статусы</option>
+                        <option>Опубликован</option>
+                    </select>
+                    <button class="btn-primary-small"><i class="fas fa-plus"></i> Создать</button>
+                </div>
+            </div>
+
+            <div class="materials-table-container glass-card">
+                <table class="materials-table">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Статус</th>
+                            <th>Просмотры</th>
+                            <th>Доход</th>
+                            <th>Рейтинг</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materialsTableBody">
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Основы веб-дизайна</strong>
+                                        <div style="font-size: 0.85rem; color: #9ca3af;">12 уроков • 8ч 30м</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge published">Опубликовано</span></td>
+                            <td>12,450</td>
+                            <td style="color: #10b981; font-weight: 600;">$2,340</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 4px;">
+                                    <i class="fas fa-star" style="color: #f59e0b;"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Гайд по Figma для начинающих</strong>
+                                        <div style="font-size: 0.85rem; color: #9ca3af;">Статья • 15 мин чтения</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge published">Опубликовано</span></td>
+                            <td>8,560</td>
+                            <td style="color: #10b981; font-weight: 600;">$1,280</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 4px;">
+                                    <i class="fas fa-star" style="color: #f59e0b;"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <strong>UI/UX тренды 2024</strong>
+                                        <div style="font-size: 0.85rem; color: #9ca3af;">Вебинар • 25 Дек 2023</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge draft">Черновик</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Тест: HTML & CSS Basics</strong>
+                                        <div style="font-size: 0.85rem; color: #9ca3af;">20 вопросов</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge published">Опубликовано</span></td>
+                            <td>5,230</td>
+                            <td style="color: #10b981; font-weight: 600;">$520</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 4px;">
+                                    <i class="fas fa-star" style="color: #f59e0b;"></i>
+                                    <span>4.7</span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: ANALYTICS -->
+        <div class="creator-section" id="section-analytics">
+            <h2 class="section-title">Статистика и аналитика</h2>
+            <div class="analytics-cards-row">
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-green"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="stat-info">
+                        <h3>$12,450</h3>
+                        <span>Общий доход</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-blue"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3>1,540</h3>
+                        <span>Студентов</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-purple"><i class="fas fa-eye"></i></div>
+                    <div class="stat-info">
+                        <h3>45.2k</h3>
+                        <span>Просмотров</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card glass-card">
+                    <h3>Динамика дохода</h3>
+                    <div class="chart-placeholder">
+                        <!-- Placeholder for Chart -->
+                        <div class="bar" style="height: 40%"></div>
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 30%"></div>
+                        <div class="bar" style="height: 80%"></div>
+                        <div class="bar" style="height: 50%"></div>
+                        <div class="bar" style="height: 90%"></div>
+                        <div class="bar" style="height: 70%"></div>
+                    </div>
+                </div>
+                <div class="chart-card glass-card">
+                    <h3>Вовлеченность</h3>
+                    <div class="chart-placeholder-line">
+                        <svg viewBox="0 0 100 50" class="line-chart-svg">
+                            <polyline points="0,50 20,40 40,45 60,20 80,30 100,10" fill="none" stroke="#8b5cf6"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: REVIEWS -->
+        <div class="creator-section" id="section-reviews">
+            <h2 class="section-title">Управление отзывами</h2>
+            <div class="reviews-list" id="reviewsList">
+                <!-- Content will be dynamic. See assets/sample/reviews_sample.html for review-card sample -->
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск исполнителей | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/find-executors.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page overflow-hidden">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item active">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Global Header -->
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Исполнители</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-customer">
+                        <div class="role-dot"></div>
+                        Заказчик
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="page-intro">
+            <h1 class="page-title">Поиск <span class="gradient-text">специалистов</span></h1>
+            <p class="page-subtitle">Найдите лучших экспертов для вашего следующего большого проекта</p>
+        </div>
+
+        <div class="find-executors-container">
+            <!-- Search & Filter Panel -->
+            <div class="search-filter-panel glass-card">
+                <div class="search-row">
+                    <div class="main-search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="main-search-input"
+                            placeholder="Найти специалиста по навыкам (например, React, 3D Design)...">
+                    </div>
+                    <button class="btn-apply-filters">Применить</button>
+                </div>
+
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <span class="filter-label"><i class="fas fa-coins text-yellow-400"></i> Бюджет:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>$10 - $30 / час</option>
+                            <option>$30 - $60 / час</option>
+                            <option>$60+ / час</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label"><i class="fas fa-star text-orange-400"></i> Рейтинг:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>4.5+</option>
+                            <option>4.8+</option>
+                            <option>5.0</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label"><i class="fas fa-map-marker-alt text-red-400"></i> Локация:</span>
+                        <select class="filter-select">
+                            <option>Весь мир</option>
+                            <option>Европа</option>
+                            <option>США</option>
+                            <option>Азия</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label"><i class="fas fa-language text-blue-400"></i> Язык:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>Английский</option>
+                            <option>Русский</option>
+                            <option>Испанский</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label"><i class="fas fa-clock text-green-400"></i> Доступность:</span>
+                        <select class="filter-select">
+                            <option>Сейчас</option>
+                            <option>В течение недели</option>
+                            <option>В течение месяца</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sort-ai-row">
+                    <div class="sort-options">
+                        <button class="sort-btn active">По релевантности</button>
+                        <button class="sort-btn">Новые</button>
+                        <button class="sort-btn">Рейтинг</button>
+                    </div>
+                    <label class="ai-toggle">
+                        <span class="ai-toggle-label"><i class="fas fa-magic neon-text-purple"></i>
+                            AI-рекомендации</span>
+                        <input type="checkbox" checked style="display:none">
+                        <div class="toggle-switch"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Executors Grid -->
+            <div class="executors-grid" id="executorsGridContainer">
+
+                <!-- Card 1: Senior Designer -->
+                <div class="executor-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                                alt="Avatar" class="executor-avatar">
+                            <div class="status-indicator status-online"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Sarah Jenkins</h3>
+                            <div class="executor-role">Senior UI/UX Designer</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (124 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Portfolio Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <div class="skills-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Web Design</span>
+                        <span class="skill-tag">+4</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$65 / час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-heart"></i></button>
+                            <button class="btn-invite">Нанять</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: 3D Motion Artist -->
+                <div class="executor-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                                alt="Avatar" class="executor-avatar">
+                            <div class="status-indicator status-busy"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Alex Chen</h3>
+                            <div class="executor-role">3D Motion Artist</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 (42 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Portfolio Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <div class="skills-tags">
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">Cinema 4D</span>
+                        <span class="skill-tag">After Effects</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$80 / час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-heart"></i></button>
+                            <button class="btn-invite">Нанять</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: React Native Dev -->
+                <div class="executor-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                                alt="Avatar" class="executor-avatar">
+                            <div class="status-indicator status-online"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Marcus Johnson</h3>
+                            <div class="executor-role">React Native Dev</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (19 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Portfolio Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <div class="skills-tags">
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$55 / час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-heart"></i></button>
+                            <button class="btn-invite">Нанять</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: AI Engineer -->
+                <div class="executor-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                                alt="Avatar" class="executor-avatar">
+                            <div class="status-indicator status-online"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Elena Volkova</h3>
+                            <div class="executor-role">AI Engineer</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (8 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Portfolio Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <div class="skills-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">OpenAI API</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$120 / час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-heart"></i></button>
+                            <button class="btn-invite">Нанять</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-indicator">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+            </div>
+        </div>
+    </main>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="profile-modal glass-card">
+            <div class="modal-header">
+                <div class="modal-profile-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Avatar"
+                        class="modal-avatar">
+                    <div class="modal-user-details">
+                        <h2>Анна Смирнова</h2>
+                        <span class="modal-user-role">Senior UI/UX Designer</span>
+                        <div class="modal-stats">
+                            <span><i class="fas fa-star" style="color: gold;"></i> 4.9</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Лондон, Великобритания</span>
+                            <span><i class="far fa-clock"></i> 10:30 AM</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeProfileModal()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-sidebar">
+                    <div class="info-block">
+                        <span class="info-label">Контакты</span>
+                        <div class="info-value">anna.design@example.com</div>
+                        <div class="info-value">+44 20 7123 4567</div>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Языки</span>
+                        <div class="info-value">Английский (Native)</div>
+                        <div class="info-value">Русский (Fluent)</div>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Навыки</span>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Prototyping</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-content">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" onclick="switchTab('about')">О себе</button>
+                        <button class="tab-btn" onclick="switchTab('portfolio')">Портфолио</button>
+                        <button class="tab-btn" onclick="switchTab('reviews')">Отзывы (124)</button>
+                    </div>
+
+                    <div id="tab-about" class="tab-pane active">
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Привет! Я Senior UI/UX дизайнер с более чем 8-летним опытом создания интуитивно понятных и
+                            визуально привлекательных цифровых продуктов.
+                            Я специализируюсь на дизайне мобильных приложений и сложных веб-интерфейсов.
+                            <br><br>
+                            Мой подход основан на глубоком понимании потребностей пользователей и бизнес-целей. Я верю,
+                            что хороший дизайн должен быть не только красивым, но и функциональным.
+                        </p>
+
+                        <h4 style="margin-top: 24px; margin-bottom: 12px;">История проектов</h4>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">FinTech App Redesign</span>
+                                <span style="color: var(--neon-green);">Завершен</span>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Полный редизайн
+                                банковского приложения для крупного европейского банка.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">E-commerce Platform</span>
+                                <span style="color: var(--neon-green);">Завершен</span>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Разработка
+                                дизайн-системы для маркетплейса.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab-portfolio" class="tab-pane">
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300"
+                                    alt="Work 1"></div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=300"
+                                    alt="Work 2"></div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?w=300" alt="Work 3">
+                            </div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300" alt="Work 4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-reviews" class="tab-pane">
+                        <div
+                            style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">John Doe</span>
+                                <span style="color: gold;"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Анна проделала отличную работу!
+                                Очень внимательна к деталям и всегда на связи.</p>
+                        </div>
+                        <div
+                            style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">Sarah Smith</span>
+                                <span style="color: gold;"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Профессионал своего дела.
+                                Рекомендую!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-icon" style="width: auto; padding: 0 20px; border-radius: 8px;">Написать</button>
+                <button class="btn-invite"
+                    style="padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Пригласить в
+                    проект</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+<script>
+    // Modal Logic
+    function openProfileModal() {
+        document.getElementById('profileModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProfileModal() {
+        document.getElementById('profileModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close modal on outside click
+    document.getElementById('profileModal').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closeProfileModal();
+        }
+    });
+
+    // Tabs Logic
+    function switchTab(tabName) {
+        // Remove active class from all buttons and panes
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding pane
+        event.target.classList.add('active');
+        document.getElementById('tab-' + tabName).classList.add('active');
+    }
+
+    // Sort Buttons Logic
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+
+</html>

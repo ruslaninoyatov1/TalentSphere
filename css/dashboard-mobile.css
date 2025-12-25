@@ -1,0 +1,168 @@
+/* ==============================================
+   DASHBOARD MOBILE OPTIMIZATION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .dashboard-bento-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* Hero spans full width on tablet */
+    .hero-card {
+        grid-column: 1 / -1;
+    }
+
+    /* Stats span 1 each on tablet */
+    .stat-card-premium {
+        grid-column: span 1;
+    }
+
+    /* Projects and AI span full width */
+    .projects-area,
+    .ai-sidebar {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* --- Main Layout --- */
+    .main-content {
+        margin-left: 0;
+        padding: 80px 16px 100px;
+        /* Bottom padding for mobile nav if needed */
+        width: 100%;
+    }
+
+    /* Force Sidebar Black on Dashboard Mobile */
+    .sidebar {
+        background: #05060a !important;
+    }
+
+    .dashboard-bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* --- Hero Section --- */
+    .hero-card {
+        padding: 24px 20px;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), rgba(30, 30, 35, 0.9));
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary.neon-button,
+    .btn-glass {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .hero-visual {
+        display: none;
+        /* Hide complex visuals on mobile to save space */
+    }
+
+    /* --- Stats Section --- */
+    .dashboard-stats-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card-premium {
+        flex-direction: row;
+        align-items: center;
+        padding: 16px;
+        gap: 16px;
+        height: auto;
+    }
+
+    .stat-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .stat-content {
+        flex: 1;
+    }
+
+    .stat-value {
+        font-size: 24px;
+        margin-bottom: 2px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .stat-chart-bg {
+        display: none;
+        /* Hide charts on mobile for clarity */
+    }
+
+    /* --- Projects List --- */
+    .projects-area {
+        height: auto;
+        max-height: 500px;
+        /* Prevent infinite scroll height issues */
+        overflow: hidden;
+    }
+
+    .project-item-premium {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .project-icon-large {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .project-title {
+        font-size: 14px;
+    }
+
+    .project-meta {
+        font-size: 11px;
+    }
+
+    /* --- AI & Notifications --- */
+    .ai-sidebar {
+        gap: 16px;
+    }
+
+    .ai-suggestion-item {
+        padding: 10px;
+    }
+}

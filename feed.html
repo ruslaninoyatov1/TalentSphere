@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/feed-mobile.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="feed-page">
+
+    <!-- Mobile Header (Unified System) -->
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar">AD</div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item active">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Лента</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="feed-layout">
+            <!-- Central Feed -->
+            <div class="feed-main">
+
+                <!-- Create Post Input -->
+                <div class="create-post-card glass-card">
+                    <div class="create-post-top">
+                        <div class="user-avatar-small neon-glow-purple">AD</div>
+                        <input type="text" placeholder="О чем хотите рассказать?" class="standard-input">
+                    </div>
+                    <div class="create-post-actions">
+                        <button class="action-btn">
+                            <i class="far fa-image mr-1"></i> Фото
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-video mr-1"></i> Видео
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-chart-bar mr-1"></i> Опрос
+                        </button>
+                        <button class="btn-primary neon-button ml-auto">Опубликовать</button>
+                    </div>
+                </div>
+
+                <div id="feedPostsContainer">
+                    <!-- Контент будет подставляться динамически -->
+                    <!-- Demo Post 1: Image & High Engagement -->
+                    <div class="post-card glass-card">
+                        <div class="post-header">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Avatar">
+                            <div class="post-info">
+                                <h4>Sarah Creative</h4>
+                                <span>UX/UI Designer • 2 ч. назад</span>
+                            </div>
+                            <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="post-content">
+                            <p>Только что закончила редизайн дашборда для нового финтех проекта! 🚀 Использовала
+                                "Glassmorphism" и неоновые акценты. Как вам результат? #uidesign #figma #webdesign</p>
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                alt="Post Image" class="post-image">
+                        </div>
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart text-pink-500 mr-1"></i> 1,245 лайков</span>
+                            <span>42 комментария</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="feed-action-btn like-btn"><i class="far fa-heart"></i> Нравится</button>
+                            <button class="feed-action-btn comment-btn"><i class="far fa-comment-alt"></i>
+                                Коммент.</button>
+                            <button class="feed-action-btn share-btn"><i class="far fa-share-square"></i>
+                                Поделиться</button>
+                        </div>
+                    </div>
+
+                    <!-- Demo Post 2: Poll -->
+                    <div class="post-card glass-card">
+                        <div class="post-header">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Avatar">
+                            <div class="post-info">
+                                <h4>David Code</h4>
+                                <span>Frontend Dev • 5 ч. назад</span>
+                            </div>
+                            <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="post-content">
+                            <p>Какой фреймворк вы планируете учить в 2025 году? 🤔</p>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-top: 10px;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                                    <span>Vue.js 4</span>
+                                    <span style="color:var(--neon-purple);">45%</span>
+                                </div>
+                                <div
+                                    style="width:100%; height:8px; background:rgba(255,255,255,0.1); border-radius:4px;">
+                                    <div
+                                        style="width:45%; height:100%; background:var(--neon-purple); border-radius:4px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <span><i class="fas fa-poll text-purple-500 mr-1"></i> 856 голосов</span>
+                            <span>2 дня осталось</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="feed-action-btn like-btn"><i class="far fa-heart"></i> Нравится</button>
+                            <button class="feed-action-btn comment-btn"><i class="far fa-comment-alt"></i>
+                                Коммент.</button>
+                            <button class="feed-action-btn share-btn"><i class="far fa-share-square"></i>
+                                Поделиться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading-indicator">
+                    <div class="spinner"></div>
+                    <span>Загружаем еще...</span>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <div class="sidebar-section glass-card p-4">
+                    <h3 class="gradient-text mb-4">Фильтры ленты</h3>
+
+                    <div class="filter-group">
+                        <h4 class="text-sm font-semibold mb-2 text-white">Быстрые фильтры</h4>
+                        <div class="filter-tags">
+                            <span class="filter-tag active"><i class="fas fa-fire mr-1"></i> Популярное</span>
+                            <span class="filter-tag"><i class="fas fa-clock mr-1"></i> Новое</span>
+                            <span class="filter-tag"><i class="fas fa-magic mr-1"></i> Рекомендуемое</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group mt-4">
+                        <h4 class="text-sm font-semibold mb-2 text-white">Тип контента</h4>
+                        <div class="filter-tags">
+                            <span class="filter-tag"><i class="fas fa-video mr-1"></i> Видео</span>
+                            <span class="filter-tag"><i class="fas fa-graduation-cap mr-1"></i> Курсы</span>
+                            <span class="filter-tag"><i class="fas fa-lightbulb mr-1"></i> Советы</span>
+                            <span class="filter-tag"><i class="fas fa-briefcase mr-1"></i> Кейсы</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary neon-button w-100 mt-4">Применить</button>
+                </div>
+
+                <div class="sidebar-section ai-recs mt-4">
+                    <div class="ai-card glass-card p-4 neon-border-green">
+                        <div class="ai-card-header mb-3">
+                            <div class="ai-icon-mini neon-glow-green"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h4 class="text-white">AI Рекомендует</h4>
+                                <span class="text-muted text-xs">Тренды в дизайне 2024</span>
+                            </div>
+                        </div>
+                        <button class="follow-btn neon-button secondary w-100">Подписаться</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="js/universal-mobile.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/state.js"></script>
+</body>
+
+</html>messages.html

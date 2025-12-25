@@ -1,0 +1,371 @@
+/* Call Settings - Ultra Premium Design (V2) */
+
+.settings-layout-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.settings-card {
+    padding: 48px;
+    border-radius: 32px;
+    background: linear-gradient(145deg, rgba(15, 15, 25, 0.98), rgba(10, 10, 20, 0.95));
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sophisticated Mesh Gradient Background */
+.settings-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    animation: floatingGlow 10s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.settings-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.05) 0%, transparent 70%);
+    animation: floatingGlow 12s infinite alternate-reverse ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatingGlow {
+    0% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 10%) scale(1.2);
+    }
+}
+
+.settings-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.settings-card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glowing Icon Container */
+.settings-card h3 .icon-box {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1.5px solid rgba(139, 92, 246, 0.3);
+    border-radius: 16px;
+    font-size: 22px;
+    color: #a78bfa;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    transition: all 0.4s ease;
+}
+
+.settings-card:hover h3 .icon-box {
+    transform: rotate(5deg) scale(1.1);
+    background: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    color: #fff;
+}
+
+/* Radio Options Modernized */
+.settings-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.radio-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.radio-option::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.radio-option:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateX(10px);
+}
+
+.radio-option:hover::before {
+    opacity: 1;
+}
+
+.radio-option input[type="radio"] {
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
+    cursor: pointer;
+    accent-color: #8b5cf6;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.radio-option:has(input:checked) {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2), inset 0 0 20px rgba(139, 92, 246, 0.05);
+}
+
+.radio-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
+}
+
+.radio-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.radio-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+/* Working Hours Redesigned */
+.working-hours-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.day-selector {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.day-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.day-btn.active {
+    background: linear-gradient(135deg, #8b5cf6, #d946ef);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+.time-range-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.input-group label {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.form-input {
+    padding: 20px 24px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.2), inset 0 4px 12px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Custom styles for time input */
+.form-input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
+}
+
+.checkbox-option:hover {
+    background: rgba(139, 92, 246, 0.05);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #8b5cf6;
+}
+
+.checkbox-option label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Actions Section */
+.settings-actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-button {
+    padding: 20px 60px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border: none;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.neon-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.neon-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.neon-button:hover::after {
+    left: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .settings-card {
+        padding: 32px;
+    }
+
+    .settings-card h3 {
+        font-size: 22px;
+    }
+
+    .time-range-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .day-selector {
+        gap: 10px;
+    }
+
+    .day-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 13px;
+    }
+}

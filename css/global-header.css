@@ -1,0 +1,376 @@
+/* ============================================
+   GLOBAL HEADER (Premium Futuristic)
+   ============================================ */
+
+.global-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    margin: 10px 24px 0 24px;
+    /* Optimized top margin */
+    /* Floating margin */
+    border-radius: 20px;
+    /* Rounded corners */
+    background: rgba(15, 17, 21, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Full border since it's floating */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 10px;
+    /* Sticking closer to top */
+    /* Stick with offset */
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Left side - Search */
+.global-header-left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.global-search-bar {
+    position: relative;
+    width: 100%;
+}
+
+.global-search-bar .search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.global-search-input {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.global-search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.global-search-input:focus+.search-icon {
+    color: var(--accent-purple);
+}
+
+.global-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Right side - Actions */
+.global-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- ROLE BADGE (NEW) --- */
+.role-badge-display {
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-dim);
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.role-badge-display i {
+    font-size: 1rem;
+}
+
+.role-badge-display.customer-active {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.role-badge-display.performer-active {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--accent-purple);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+/* Icons */
+.header-icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-icon-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* Notification Bell - Enhanced */
+.notification-bell {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notification-bell:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(176, 0, 255, 0.1));
+    border-color: var(--neon-purple);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.notification-bell i {
+    font-size: 18px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.notification-bell:hover i {
+    animation: ring 0.5s ease;
+}
+
+@keyframes ring {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    30% {
+        transform: rotate(-10deg);
+    }
+
+    20%,
+    40% {
+        transform: rotate(10deg);
+    }
+}
+
+.notification-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid rgba(15, 17, 21, 0.8);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(239, 68, 68, 0.9);
+    }
+}
+
+/* Wallet Display - Premium Enhanced */
+.wallet-display {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-display::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wallet-display:hover::before {
+    opacity: 1;
+}
+
+.wallet-display:hover {
+    transform: translateY(-2px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.wallet-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--neon-green);
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5));
+    transition: all 0.3s ease;
+}
+
+.wallet-display:hover .wallet-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+}
+
+.wallet-balance {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg, var(--neon-green), #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+/* User Avatar */
+.header-user-avatar {
+    cursor: pointer;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-image {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-image:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    border-color: var(--accent-purple);
+}
+
+/* Page Header (below global header) */
+.page-header {
+    padding: 24px 24px 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1023px) {
+    .global-header {
+        padding: 12px 16px;
+    }
+
+    .global-header-left {
+        max-width: 200px;
+    }
+
+    .global-search-bar {
+        display: none;
+        /* Hide search on smaller/medium screens */
+    }
+
+    .role-badge-display span {
+        display: none;
+        /* Icon only */
+    }
+
+    .role-badge-display {
+        padding: 10px;
+    }
+
+    .wallet-balance {
+        display: none;
+    }
+
+    .header-icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 767px) {
+    .global-header-right {
+        gap: 12px;
+    }
+
+    .role-badge-display {
+        display: none;
+        /* Too small for role badge on mobile header, sidebar has switcher */
+    }
+
+    .avatar-image {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+}

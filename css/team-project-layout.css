@@ -1,0 +1,16 @@
+/* =========================================
+   TEAM PROJECT PAGE - GLOBAL LAYOUT
+   ========================================= */
+
+/* Main Content Area */
+.main-content {
+    background: transparent !important;
+    padding: 30px;
+    padding-top: 40px;
+    /* Reduced space to lift content and match global header */
+}
+
+body.dashboard-page {
+    background-color: #020205 !important;
+    background-image: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.1), transparent 40%);
+}

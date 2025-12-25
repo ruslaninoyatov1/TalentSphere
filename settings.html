@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки | TalentSphere</title>
+
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/global-header-premium.css">
+    <link rel="stylesheet" href="css/global-sidebar-premium.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/mobile-header.css">
+    <link rel="stylesheet" href="css/universal-mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="dashboardSidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="sidebar-role-switcher">
+            <button class="role-btn" data-role="customer">Заказчик</button>
+            <button class="role-btn active" data-role="performer">Исполнитель</button>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Дашборд</span>
+            </a>
+            <a href="feed.html" class="nav-item">
+                <i class="fas fa-rss"></i>
+                <span>Лента</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <i class="fas fa-tasks"></i>
+                <span>Управление работой</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Командный проект</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Кошелек</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Сообщения</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+            <a href="profile.html" class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="user-name">Alex Designer</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="global-header">
+            <div class="global-header-left">
+                <h1 class="page-title">Настройки</h1>
+                <div class="header-role-badge">
+                    <div class="role-pill role-performer">
+                        <div class="role-dot"></div>
+                        Исполнитель
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-btn-premium">
+                    <i class="far fa-bell"></i>
+                    <span class="notif-badge-premium">3</span>
+                </button>
+
+                <div class="wallet-tablet-premium">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="wallet-balance-premium">$14,500.5</span>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-avatar-premium">
+                    AD
+                </div>
+            </div>
+        </header>
+
+
+
+        <div class="settings-content">
+            <!-- Профиль -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-blue"><i class="fas fa-user-circle"></i></div>
+                    <div>
+                        <h2 class="section-title">Основная информация</h2>
+                        <p class="section-description">Управляйте своими личными данными</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        Имя
+                    </label>
+                    <input type="text" class="form-input glass-card" value="Alex Designer">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M3 7L10 11L17 7" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        Email
+                    </label>
+                    <input type="email" class="form-input glass-card" value="alex@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="5" y="3" width="10" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        Телефон
+                    </label>
+                    <input type="tel" class="form-input glass-card" value="+7 999 123 45 67">
+                </div>
+                <button class="btn-primary neon-button">
+                    <span>Сохранить изменения</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M16 10L10 16M16 10L10 4M16 10H4" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Безопасность -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-pink">🔒</div>
+                    <div>
+                        <h2 class="section-title">Безопасность</h2>
+                        <p class="section-description">Защитите свой аккаунт</p>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Двухфакторная аутентификация</h4>
+                        <p>Дополнительный уровень защиты вашего аккаунта</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Уведомления о входе</h4>
+                        <p>Получайте уведомления о новых входах</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <button class="btn-secondary glass-card" style="margin-top: 20px;">Изменить пароль</button>
+            </section>
+
+            <!-- Уведомления -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-purple">🔔</div>
+                    <div>
+                        <h2 class="section-title">Уведомления</h2>
+                        <p class="section-description">Управляйте уведомлениями</p>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Новые проекты</h4>
+                        <p>Уведомления о подходящих проектах</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Сообщения</h4>
+                        <p>Уведомления о новых сообщениях</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Email рассылка</h4>
+                        <p>Новости и обновления платформы</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/state.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
