@@ -406,8 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Dashboard/Pages Mobile Sidebar Toggle
-    // Removed to avoid conflicts with the universal mobile handler in universal-mobile.js
+    // Dashboard/Pages Mobile Sidebar Togg    // Removed to avoid conflicts with the universal mobile handler in universal-mobile.js
     // The global script now solely manages sidebar open/close and body overflow across pages.
 
     // Sidebar toggle for messages page (separate from main mobile menu)
@@ -578,8 +577,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Marketplace Filtering Logic
 // Marketplace Filtering Logic
 document.addEventListener('DOMContentLoaded', () => {
-    // Only run on marketplace page
-    if (!document.querySelector('.marketplace-page')) return;
+    // Run if marketplace page OR if projects grid exists
+    if (!document.querySelector('.marketplace-page') && !document.getElementById('projectsGrid')) return;
 
     // --- Mock Data ---
     const mockProjects = [
@@ -902,6 +901,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillInput = document.getElementById('skillInput');
     const selectedSkillsContainer = document.getElementById('selectedSkills');
 
+    // Mobile Filters
+    const mobileFiltersToggle = document.getElementById('mobileFiltersToggle');
+    const filtersSidebar = document.getElementById('filtersSidebar');
+    const filtersCloseBtn = document.getElementById('filtersCloseBtn');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+
     // Modal
     const modal = document.getElementById('projectDetailsModal');
     const modalBody = document.getElementById('projectModalBody');
@@ -923,28 +929,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <div class="marketplace-card premium-style" data-id="${project.id}">
                 <div class="premium-card-header">
-                    <div class="category-tag-premium">${project.category}</div>
+                    <div class="category-tag-premium ${colorClass}">${project.category}</div>
                     <div class="match-score-pill">
                         <i class="fas fa-robot"></i>
-                        <span>${project.matchScore}% AI Match</span>
+                        <span>${project.matchScore}% Match</span>
                     </div>
                 </div>
                 
-                <h3 class="premium-card-title">${project.title}</h3>
-                <p class="premium-card-desc">${project.description}</p>
-                
-                <div class="card-tags">
-                    ${project.skills.slice(0, 3).map(skill => `<span class="tag">${skill}</span>`).join('')}
-                    ${project.skills.length > 3 ? `<span class="tag">+${project.skills.length - 3}</span>` : ''}
+                <div class="premium-card-body">
+                    <h3 class="premium-card-title">${project.title}</h3>
+                    <p class="premium-card-desc">${project.description}</p>
+                    
+                    <div class="card-tags">
+                        ${project.skills.slice(0, 4).map(skill => `<span class="tag">${skill}</span>`).join('')}
+                        ${project.skills.length > 4 ? `<span class="tag">+${project.skills.length - 4}</span>` : ''}
+                    </div>
                 </div>
                 
                 <div class="premium-card-stats">
                     <div class="p-stat">
                         <div class="p-stat-label">Бюджет</div>
-                        <div class="p-stat-value budget">$${project.budget}</div>
+                        <div class="p-stat-value budget">$${project.budget.toLocaleString()}</div>
                     </div>
                     <div class="p-stat">
-                        <div class="p-stat-label">Срок</div>
+                        <div class="p-stat-label">Дедлайн</div>
                         <div class="p-stat-value">${project.deadline} дн.</div>
                     </div>
                     <div class="p-stat">
@@ -955,15 +963,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <div class="premium-card-footer">
                     <div class="client-mini-info">
-                        <div class="client-avatar-s">${project.client ? project.client.name.charAt(0) : 'C'}</div>
-                        <div class="client-name-s">${project.client ? project.client.name : 'Client'}</div>
+                        <div class="client-avatar-s" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2);">${project.client ? project.client.name.charAt(0) : 'C'}</div>
+                        <div class="client-info-text">
+                            <div class="client-name-s">${project.client ? project.client.name : 'Client'}</div>
+                            <div class="client-rating-s"><i class="fas fa-star" style="font-size: 8px; color: #fbbf24;"></i> ${project.client ? project.client.rating : '5.0'}</div>
+                        </div>
                     </div>
-                    <button class="premium-apply-btn" onclick="openProjectModal(${project.id})">Подробнее</button>
+                    <button class="premium-apply-btn" onclick="openProjectModal(${project.id})">Откликнуться</button>
                 </div>
 
-                ${project.featured ? '<div class="card-badge featured" style="position: absolute; top: 12px; right: 12px; margin: 0;">Featured</div>' : ''}
+                ${project.featured ? '<div class="card-badge featured" style="position: absolute; top: 12px; right: 12px; margin: 0; transform: scale(0.8); transform-origin: top right;">Featured</div>' : ''}
             </div>
-        `;
+            `;
     }
 
     function loadProjects(reset = false) {
@@ -1013,32 +1024,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterProjects() {
-        const searchQuery = mainSearchInput ? mainSearchInput.value.toLowerCase() : '';
-        const minBudget = parseInt(minBudgetInput.value) || 0;
-        const maxBudget = parseInt(maxBudgetInput.value) || 1000000;
-        const maxDeadline = parseInt(maxDeadlineInput.value) || 365;
-        const location = locationInput.value.toLowerCase();
+        if (!mockProjects) return;
 
-        const selectedTypes = Array.from(projectTypeInputs).filter(cb => cb.checked).map(cb => cb.value);
-        const selectedExperience = Array.from(experienceLevelInputs).filter(cb => cb.checked).map(cb => cb.value);
+        const searchQuery = (mainSearchInput && mainSearchInput.value) ? mainSearchInput.value.toLowerCase() : '';
+        const minBudget = (minBudgetInput && minBudgetInput.value) ? parseInt(minBudgetInput.value) : 0;
+        const maxBudget = (maxBudgetInput && maxBudgetInput.value) ? parseInt(maxBudgetInput.value) : 1000000;
+        const maxDeadline = (maxDeadlineInput && maxDeadlineInput.value) ? parseInt(maxDeadlineInput.value) : 365;
+        const location = (locationInput && locationInput.value) ? locationInput.value.toLowerCase() : '';
 
-        // Skills logic (simplified for text input)
-        const skillQuery = skillInput.value.toLowerCase();
+        const selectedTypes = projectTypeInputs ? Array.from(projectTypeInputs).filter(cb => cb.checked).map(cb => cb.value) : [];
+        const selectedExperience = experienceLevelInputs ? Array.from(experienceLevelInputs).filter(cb => cb.checked).map(cb => cb.value) : [];
+
+        // Skills logic
+        const skillQuery = (skillInput && skillInput.value) ? skillInput.value.toLowerCase() : '';
+
+        const activeCategoryTab = document.querySelector('.category-tab.active');
+        const categoryFilter = activeCategoryTab ? activeCategoryTab.getAttribute('data-category') : 'all';
 
         currentProjects = mockProjects.filter(project => {
             const matchesSearch = project.title.toLowerCase().includes(searchQuery) || project.description.toLowerCase().includes(searchQuery);
-            const matchesBudget = project.budget >= minBudget && project.budget <= maxBudget;
-            const matchesDeadline = project.deadline <= maxDeadline;
+            const matchesBudget = project.budget >= (isNaN(minBudget) ? 0 : minBudget) && project.budget <= (isNaN(maxBudget) ? 1000000 : maxBudget);
+            const matchesDeadline = project.deadline <= (isNaN(maxDeadline) ? 365 : maxDeadline);
             const matchesLocation = location === '' || project.location.toLowerCase().includes(location);
-            const matchesType = selectedTypes.includes(project.type);
-            const matchesExperience = selectedExperience.includes(project.experience);
+            const matchesType = selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            const matchesExperience = selectedExperience.length === 0 || selectedExperience.includes(project.experience);
             const matchesSkill = skillQuery === '' || project.skills.some(s => s.toLowerCase().includes(skillQuery));
 
-            return matchesSearch && matchesBudget && matchesDeadline && matchesLocation && matchesType && matchesExperience && matchesSkill;
+            // Category mapping
+            let matchesCategory = true;
+            if (categoryFilter !== 'all') {
+                const catLower = project.category.toLowerCase();
+                if (categoryFilter === 'development') matchesCategory = catLower.includes('development') || catLower.includes('full-stack');
+                else if (categoryFilter === 'design') matchesCategory = catLower.includes('design') || catLower.includes('illustration') || catLower.includes('branding');
+                else if (categoryFilter === 'marketing') matchesCategory = catLower.includes('marketing');
+                else if (categoryFilter === 'copywriting') matchesCategory = catLower.includes('copywriting');
+                else if (categoryFilter === 'video') matchesCategory = catLower.includes('video');
+                else if (categoryFilter === 'business') matchesCategory = catLower.includes('business');
+            }
+
+            return matchesSearch && matchesBudget && matchesDeadline && matchesLocation && matchesType && matchesExperience && matchesSkill && matchesCategory;
         });
 
-        sortProjects(false); // Sort but don't reload yet
-        loadProjects(true); // Reset and reload
+        sortProjects(false);
+        loadProjects(true);
+
+        // Close mobile filters after apply
+        if (window.innerWidth < 1024 && typeof window.closeMobileSidebar === 'function') {
+            window.closeMobileSidebar();
+        }
+    }
+
+    function clearFilters() {
+        if (mainSearchInput) mainSearchInput.value = '';
+        if (minBudgetInput) minBudgetInput.value = '';
+        if (maxBudgetInput) maxBudgetInput.value = '';
+        if (maxDeadlineInput) maxDeadlineInput.value = '';
+        if (locationInput) locationInput.value = '';
+        if (skillInput) skillInput.value = '';
+
+        projectTypeInputs.forEach(cb => cb.checked = cb.value === 'individual');
+        experienceLevelInputs.forEach(cb => cb.checked = cb.value === 'middle');
+
+        filterProjects();
     }
 
     function sortProjects(reload = true) {
@@ -1065,7 +1112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="stage-name">${s.name}</span>
                 <span class="stage-duration">${s.duration}</span>
             </div>
-        `).join('') : '';
+            `).join('') : '';
 
         modalBody.innerHTML = `
             <div class="modal-header-content">
@@ -1075,14 +1122,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="modal-badge category">${project.category}</span>
                 </div>
             </div>
-            
+
             <div class="modal-grid">
                 <div class="modal-main">
                     <div class="modal-section">
                         <h3>Описание проекта</h3>
                         <p>${project.fullDescription.replace(/\n/g, '<br>')}</p>
                     </div>
-                    
+
                     ${stagesHtml ? `
                     <div class="modal-section">
                         <h3>Этапы работы</h3>
@@ -1092,9 +1139,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     ` : ''}
                 </div>
-                
-                
-                
+
+
+
                 <div class="modal-sidebar">
                     <div class="client-card glass-card">
                         <div class="client-header">
@@ -1102,14 +1149,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="client-info">
                                 <div class="client-name">${project.client.name}</div>
                                 <div class="client-rating" style="display: flex; align-items: center; gap: 4px;">
-                                    <i class="fas fa-star" style="color: #fbbf24;"></i> 
+                                    <i class="fas fa-star" style="color: #fbbf24;"></i>
                                     <span>${project.client.rating}</span>
                                     <span style="opacity: 0.5; font-size: 12px;">(${project.client.reviews} отзывов)</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="project-stats glass-card">
                         <div class="stat-row">
                             <span>Бюджет:</span>
@@ -1124,7 +1171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stat-value" style="font-size: 28px; color: white; text-transform: capitalize;">${project.experience}</span>
                         </div>
                     </div>
-                    
+
                     <button class="apply-btn" onclick="document.getElementById('projectDetailsModal').classList.remove('active'); document.getElementById('successModal').classList.add('active');" style="margin-top: 16px;">Подать заявку</button>
                 </div>
             </div>
@@ -1154,12 +1201,111 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Event Listeners ---
-    applyFiltersBtn.addEventListener('click', filterProjects);
-    mainSearchBtn.addEventListener('click', filterProjects);
-    mainSearchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') filterProjects();
+    if (applyFiltersBtn) applyFiltersBtn.addEventListener('click', filterProjects);
+    if (mainSearchBtn) mainSearchBtn.addEventListener('click', filterProjects);
+    if (mainSearchInput) {
+        mainSearchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') filterProjects();
+        });
+    }
+    if (sortSelect) sortSelect.addEventListener('change', () => sortProjects(true));
+    if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', clearFilters);
+
+    // Category Tabs Logic
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            filterProjects();
+        });
     });
-    sortSelect.addEventListener('change', () => sortProjects(true));
+
+    // Mobile Filters Toggle Logic - Enhanced
+    let filtersOverlay = document.getElementById('filtersOverlay');
+
+    // Create overlay if it doesn't exist
+    if (!filtersOverlay) {
+        filtersOverlay = document.createElement('div');
+        filtersOverlay.className = 'filters-overlay';
+        filtersOverlay.id = 'filtersOverlay';
+        document.body.appendChild(filtersOverlay);
+    }
+
+    function openFiltersPanel() {
+        console.log('Opening filters panel...');
+        if (filtersSidebar) {
+            filtersSidebar.classList.add('mobile-open');
+            filtersOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Close dashboard sidebar if open
+            const dashboardSidebar = document.getElementById('dashboardSidebar');
+            if (dashboardSidebar) {
+                dashboardSidebar.classList.remove('active');
+            }
+
+            const mainSidebarOverlay = document.getElementById('sidebarOverlay');
+            if (mainSidebarOverlay) {
+                mainSidebarOverlay.classList.remove('active');
+            }
+        }
+    }
+
+    function closeFiltersPanel() {
+        console.log('Closing filters panel...');
+        if (filtersSidebar) {
+            filtersSidebar.classList.remove('mobile-open');
+            filtersOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Expose globally for other scripts
+    window.openFiltersPanel = openFiltersPanel;
+    window.closeFiltersPanel = closeFiltersPanel;
+
+    if (mobileFiltersToggle) {
+        mobileFiltersToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Mobile filters toggle clicked');
+            openFiltersPanel();
+        });
+    }
+
+    if (filtersCloseBtn) {
+        filtersCloseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Filters close button clicked');
+            closeFiltersPanel();
+        });
+    }
+
+    // Close on overlay click
+    if (filtersOverlay) {
+        filtersOverlay.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Filters overlay clicked');
+            closeFiltersPanel();
+        });
+    }
+
+    // Apply filters also closes panel on mobile
+    if (applyFiltersBtn) {
+        const originalFilterFunction = filterProjects;
+        applyFiltersBtn.addEventListener('click', () => {
+            console.log('Apply filters clicked');
+            // Close panel on mobile after applying filters
+            if (window.innerWidth < 1024) {
+                setTimeout(() => {
+                    closeFiltersPanel();
+                }, 100);
+            }
+        });
+    }
 
     // AI Recommendations (Mock)
     const aiContainer = document.getElementById('aiRecommendationsContainer');
@@ -1242,7 +1388,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.creator-section').forEach(s => s.classList.remove('active'));
 
                 // Show target section
-                const targetId = `section-${tab.dataset.tab}`;
+                const targetId = `section - ${tab.dataset.tab} `;
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     targetSection.classList.add('active');
@@ -1315,7 +1461,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show content
         document.querySelectorAll('.wizard-step-content').forEach(c => c.classList.remove('active'));
-        const targetContent = document.getElementById(`step${currentStep}`);
+        const targetContent = document.getElementById(`step${currentStep} `);
         if (targetContent) {
             targetContent.classList.add('active');
         }
@@ -1334,37 +1480,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* ========================================
-   MARKETPLACE FILTERS LOGIC
-   ======================================== */
-document.addEventListener('DOMContentLoaded', () => {
-    const applyFiltersBtn = document.querySelector('.btn-primary.full-width');
-    if (applyFiltersBtn) {
-        applyFiltersBtn.addEventListener('click', () => {
-            // Collect filter values
-            const location = document.querySelector('.location-input')?.value;
-            const projectType = document.querySelector('input[name="projectType"]:checked')?.value;
-            const experience = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-                .map(cb => cb.value);
 
-            console.log('Filters Applied:', {
-                location,
-                projectType,
-                experience
-            });
-
-            // Visual feedback
-            const originalText = applyFiltersBtn.innerText;
-            applyFiltersBtn.innerText = 'Фильтры применены!';
-            applyFiltersBtn.style.background = 'var(--neon-green)';
-
-            setTimeout(() => {
-                applyFiltersBtn.innerText = originalText;
-                applyFiltersBtn.style.background = '';
-            }, 2000);
-        });
-    }
-});
 
 /* ========================================
    INFINITE SCROLL & EMPTY STATE LOGIC
@@ -1522,18 +1638,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Determine Badge Class
         let badgeHtml = '';
         if (project.urgent) {
-            badgeHtml = `<span class="card-badge urgent">Urgent</span>`;
+            badgeHtml = `< span class="card-badge urgent" > Urgent</span > `;
         } else if (project.new) {
-            badgeHtml = `<span class="card-badge new">New</span>`;
+            badgeHtml = `< span class="card-badge new" > New</span > `;
         } else if (project.status === 'Featured') {
-            badgeHtml = `<span class="card-badge featured"><i class="fas fa-bolt"></i> Featured</span>`;
+            badgeHtml = `< span class="card-badge featured" > <i class="fas fa-bolt"></i> Featured</span > `;
         }
 
         // Generate Tags
-        const tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+        const tagsHtml = project.tags.map(tag => `< span class="tag" > ${tag}</span > `).join('');
 
         // Format Budget
-        const budgetDisplay = typeof project.budget === 'number' ? `$${project.budget.toLocaleString()}` : (project.budget.includes('$') ? project.budget : `$${project.budget}`);
+        const budgetDisplay = typeof project.budget === 'number' ? `$${project.budget.toLocaleString()} ` : (project.budget.includes('$') ? project.budget : `$${project.budget} `);
 
         // Neon color based on Price (Just for visual variety)
         const priceColor = project.budget > 5000 ? 'purple' : (project.budget > 2000 ? 'blue' : 'orange');
@@ -1542,53 +1658,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const avatarColor = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'][project.id % 5];
         const initials = project.client.name.substring(0, 2).toUpperCase();
 
-        card.className = `marketplace-card post-style ${project.urgent ? 'urgent-project' : ''}`;
+        card.className = `marketplace - card premium - style ${project.urgent ? 'urgent-project' : ''} `;
         card.innerHTML = `
-            <div class="card-post-header">
-                <div class="client-avatar" style="background: ${avatarColor}">
-                    ${initials}
-                    ${project.client.online ? '<span class="status-dot"></span>' : ''}
-                </div>
-                <div class="client-info">
-                    <div class="client-name-row">
-                        <span class="client-name">${project.client.name}</span>
-                        <span class="client-role-badge">${project.client.role}</span>
+            < div class="premium-card-header" >
+                <div class="client-mini-info">
+                    <div class="client-avatar-s" style="background: ${avatarColor}">
+                        ${initials}
                     </div>
-                    <span class="post-time">${project.client.postedTime} • ${project.category}</span>
+                    <div class="client-info-text">
+                        <span class="client-name-s">${project.client.name}</span>
+                        <span class="client-rating-s">${project.category} • ${project.client.postedTime}</span>
+                    </div>
                 </div>
-                <div class="post-actions-top">
-                    ${badgeHtml}
-                    <button class="icon-btn"><i class="far fa-bookmark"></i></button>
-                    <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                <div class="premium-budget-badge neon-border-${priceColor}">
+                    ${budgetDisplay}
                 </div>
-            </div>
+            </div >
 
-            <div class="card-post-body">
-                <h3 class="card-title">${project.title}</h3>
-                <p class="card-description">${project.description}</p>
+            <div class="premium-card-body">
+                <h3 class="premium-card-title">${project.title}</h3>
+                <p class="premium-card-desc">${project.description}</p>
                 <div class="card-tags">
                     ${tagsHtml}
                 </div>
             </div>
 
-            <div class="card-post-footer">
-                <div class="budget-section">
-                    <span class="budget-label">Бюджет проекта</span>
-                    <span class="budget-value neon-text-${priceColor}">${budgetDisplay}</span>
-                </div>
-                
-                <div class="post-meta-row">
-                   <div class="meta-item">
+            <div class="premium-card-footer">
+                <div class="premium-meta-group">
+                    <div class="p-meta-item">
                         <i class="far fa-clock"></i>
-                        <span>Дедлайн: ${project.deadline}</span>
+                        <span>${project.deadline}</span>
                     </div>
-                    <div class="meta-item">
+                    <div class="p-meta-item">
                         <i class="far fa-comment-alt"></i>
                         <span>${project.responses} откликов</span>
                     </div>
                 </div>
-
-                <button class="apply-btn">Откликнуться</button>
+                <button class="premium-apply-btn">Откликнуться</button>
             </div>
         `;
 
@@ -1629,11 +1735,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (titleEl) titleEl.textContent = project.title;
         if (descEl) descEl.textContent = project.description;
-        if (budgetEl) budgetEl.textContent = typeof project.budget === 'number' ? `$${project.budget.toLocaleString()}` : project.budget;
+        if (budgetEl) budgetEl.textContent = typeof project.budget === 'number' ? `$${project.budget.toLocaleString()} ` : project.budget;
 
         // Populate Tags
         if (tagsContainer) {
-            tagsContainer.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            tagsContainer.innerHTML = project.tags.map(tag => `< span class="tag" > ${tag}</span > `).join('');
         }
 
         // Show Modal
@@ -1712,9 +1818,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Check if empty
                 const list = document.getElementById('invitationsList');
                 if (list && list.children.length === 0) {
-                    list.innerHTML = `<div class="empty-state-message" style="text-align: center; padding: 40px; color: var(--text-muted);">
-                        <p>Нет новых приглашений</p>
-                    </div>`;
+                    list.innerHTML = `< div class="empty-state-message" style = "text-align: center; padding: 40px; color: var(--text-muted);" >
+            <p>Нет новых приглашений</p>
+                    </div > `;
                 }
 
                 // Show toast (simulated)
@@ -1752,7 +1858,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         container.innerHTML = projects.map(p => `
-            <div class="project-list-card">
+< div class= "project-list-card" >
                 <div class="project-main-info">
                     <h3>${p.title}</h3>
                     <span class="client-name-small">Заказчик: ${p.client}</span>
@@ -1778,8 +1884,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="project-action-btn" title="Файлы"><i class="far fa-folder"></i></button>
                     <button class="project-action-btn" title="Подробнее"><i class="fas fa-ellipsis-h"></i></button>
                 </div>
-            </div>
-        `).join('');
+            </div >
+    `).join('');
     }
 
     function renderTeamProjects() {
@@ -1808,7 +1914,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         container.innerHTML = projects.map(p => `
-            <div class="team-project-card">
+    < div class= "team-project-card" >
                 <div class="tp-header">
                     <div class="tp-icon-wrapper" style="color: ${p.color}; background: ${p.color}20;">
                         <i class="${p.icon}"></i>
@@ -1845,8 +1951,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="tp-action-btn primary" title="Открыть">Открыть</button>
                     </div>
                 </div>
-            </div>
-        `).join('');
+            </div >
+    `).join('');
     }
 
     function renderApplications() {
@@ -1859,7 +1965,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         container.innerHTML = apps.map(a => `
-            <tr>
+    < tr >
                 <td>${a.project}</td>
                 <td>${a.date}</td>
                 <td><span class="app-status ${a.status}"><i class="fas fa-circle" style="font-size: 8px;"></i> ${getAppStatusLabel(a.status)}</span></td>
@@ -1867,8 +1973,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>
                     <button class="app-delete-btn" title="Удалить"><i class="far fa-trash-alt"></i></button>
                 </td>
-            </tr>
-        `).join('');
+            </tr >
+    `).join('');
     }
 
     function renderInvitations() {
@@ -1878,7 +1984,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         container.innerHTML = invites.map(i => `
-            <div class="invitation-card">
+    < div class= "invitation-card" >
                 <div class="invitation-icon">
                     <i class="fas fa-envelope-open-text"></i>
                 </div>
@@ -1894,8 +2000,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="btn-primary neon-button">Принять</button>
                     <button class="btn-secondary">Отклонить</button>
                 </div>
-            </div>
-        `).join('');
+            </div >
+    `).join('');
     }
 
     function getStatusLabel(status) {
@@ -1946,7 +2052,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const projectsContainer = document.getElementById('activeProjectsList');
         if (projectsContainer && state.activeProjects.length > 0) {
             projectsContainer.innerHTML = state.activeProjects.map(prj => `
-                <div class="project-item-premium">
+< div class= "project-item-premium" >
                     <div class="project-icon-large">
                         <i class="fas fa-cube" style="color: ${prj.progress > 80 ? 'var(--neon-green)' : 'var(--neon-purple)'};"></i>
                     </div>
@@ -1963,15 +2069,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="progress-fill" style="width: ${prj.progress}%; background: ${prj.progress > 80 ? 'var(--neon-green)' : 'linear-gradient(90deg, var(--neon-blue), var(--neon-cyan))'};"></div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                </div >
+    `).join('');
         }
 
         // Update Notifications List (Premium Template)
         const notificationsContainer = document.getElementById('notificationsList');
         if (notificationsContainer && state.notifications) {
             notificationsContainer.innerHTML = state.notifications.slice(0, 3).map(notif => `
-                <div class="notification-item-premium">
+    < div class= "notification-item-premium" >
                      <div class="notif-icon-wrapper" style="color: ${notif.read ? 'var(--text-secondary)' : 'var(--neon-pink)'}">
                         <i class="fas ${notif.read ? 'fa-check-circle' : 'fa-bell'}"></i>
                     </div>
@@ -1979,8 +2085,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h4 style="color: ${notif.read ? 'var(--text-secondary)' : 'white'}">${notif.title}</h4>
                         <div class="notif-time">${notif.time}</div>
                     </div>
-                </div>
-             `).join('');
+                </div >
+    `).join('');
         }
     }
 
@@ -2019,8 +2125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const isPerformer = role === 'performer';
 
         // 0. Update Role Button States (Active Class)
-        document.querySelectorAll(`.role-btn[data-role="${role}"]`).forEach(b => b.classList.add('active'));
-        document.querySelectorAll(`.role-btn:not([data-role="${role}"])`).forEach(b => b.classList.remove('active'));
+        document.querySelectorAll(`.role - btn[data - role="${role}"]`).forEach(b => b.classList.add('active'));
+        document.querySelectorAll(`.role - btn: not([data - role="${role}"])`).forEach(b => b.classList.remove('active'));
 
         // 1. Sidebar Navigation Filtering
         document.querySelectorAll('.nav-item').forEach(item => {

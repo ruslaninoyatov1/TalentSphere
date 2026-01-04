@@ -35,7 +35,7 @@
             </svg>
         </button>
         <span class="mobile-logo-text">TalentSphere</span>
-        <div class="mobile-avatar"></div>
+        <div class="mobile-avatar">AD</div>
     </div>
 
     <!-- Sidebar Overlay -->
@@ -148,20 +148,42 @@
             <h1 class="page-title">Поиск <span class="gradient-text">фрилансеров</span></h1>
         </header>
         <div class="search-section">
-            <div class="search-bar glass-card"><svg width="20" height="20" fill="none">
-                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
-                </svg><input type="text" placeholder="Поиск по навыкам..."></div>
+            <div class="search-bar glass-card">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="mainSearchInput" placeholder="Поиск по навыкам...">
+                <button id="mainSearchBtn" class="search-btn-premium" style="display:none;"></button>
+            </div>
         </div>
         <div class="marketplace-grid">
-            <aside class="filters-sidebar">
+            <!-- Mobile Filters Toggle -->
+            <div class="mobile-filters-bar">
+                <button id="mobileFiltersToggle" class="mobile-filters-btn">
+                    <i class="fas fa-sliders-h"></i>
+                    Фильтры
+                </button>
+            </div>
+            <aside class="filters-sidebar" id="filtersSidebar">
+                <button class="filters-close-btn" id="filtersCloseBtn" aria-label="Закрыть фильтры">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
                 <div class="filter-section glass-card">
                     <h3 class="filter-title">Навыки</h3>
-                    <div class="filter-options"><label class="filter-option"><input type="checkbox"><span
-                                class="checkmark"></span><span class="filter-label">UI/UX Design</span></label></div>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="experienceLevel" value="senior">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">UI/UX Design</span>
+                        </label>
+                    </div>
                 </div>
+                <button class="apply-filters-btn" id="applyFiltersBtn"
+                    style="width: 100%; margin-top: 10px;">Применить</button>
             </aside>
             <div class="projects-content">
-                <div class="projects-grid-container">
+                <div class="projects-grid-container" id="projectsGrid">
                     <div class="marketplace-card glass-card">
                         <div class="card-header">
                             <div class="card-category neon-glow-blue">Senior Designer</div>

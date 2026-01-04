@@ -196,99 +196,108 @@
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
-                    <!-- Budget Filter -->
-                    <div class="filter-section glass-card">
-                        <h3 class="filter-title">Бюджет</h3>
-                        <div class="budget-inputs">
-                            <div class="budget-input-group">
-                                <label class="input-label">От</label>
-                                <input type="number" id="minBudget" class="budget-input" placeholder="$500" min="0">
+                    <div class="filter-section-wrapper">
+                        <!-- Budget Filter -->
+                        <div class="filter-section glass-card">
+                            <h3 class="filter-title">Бюджет</h3>
+                            <div class="budget-inputs">
+                                <div class="budget-input-group">
+                                    <label class="input-label">От</label>
+                                    <input type="number" id="minBudget" class="budget-input" placeholder="$500" min="0">
+                                </div>
+                                <div class="budget-separator">—</div>
+                                <div class="budget-input-group">
+                                    <label class="input-label">До</label>
+                                    <input type="number" id="maxBudget" class="budget-input" placeholder="$5000"
+                                        min="0">
+                                </div>
                             </div>
-                            <div class="budget-separator">—</div>
-                            <div class="budget-input-group">
-                                <label class="input-label">До</label>
-                                <input type="number" id="maxBudget" class="budget-input" placeholder="$5000" min="0">
+                        </div>
+
+                        <!-- Skills Filter -->
+                        <div class="filter-section glass-card">
+                            <h3 class="filter-title">Навыки</h3>
+                            <div class="skills-filter">
+                                <input type="text" id="skillInput" class="skill-input"
+                                    placeholder="Например: React, Python">
+                                <div class="selected-skills" id="selectedSkills"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project Type Filter -->
+                        <div class="filter-section glass-card">
+                            <h3 class="filter-title">Тип проекта</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="projectType" value="individual" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Индивидуальный</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="projectType" value="team">
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Командный</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Deadline & Location Filter -->
+                        <div class="filter-section glass-card">
+                            <h3 class="filter-title">Сроки и Локация</h3>
+                            <div class="filter-group">
+                                <label class="input-label">Срок (дней)</label>
+                                <input type="number" id="maxDeadline" class="deadline-input-field"
+                                    placeholder="Макс. дней" min="1">
+                            </div>
+                            <div class="filter-group" style="margin-top: 10px;">
+                                <label class="input-label">Локация</label>
+                                <input type="text" id="locationInput" class="location-input"
+                                    placeholder="Например, Remote">
+                            </div>
+                        </div>
+
+                        <!-- Level Filter -->
+                        <div class="filter-section glass-card">
+                            <h3 class="filter-title">Уровень</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="experienceLevel" value="junior">
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Junior</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="experienceLevel" value="middle" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Middle</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="experienceLevel" value="senior">
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Senior</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="experienceLevel" value="expert">
+                                    <span class="checkmark"></span>
+                                    <span class="filter-label">Expert</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- AI Recommendations -->
+                        <div class="filter-section ai-recommendations-filter glass-card">
+                            <h3 class="filter-title">🤖 AI-рекомендации</h3>
+                            <p class="ai-subtitle">Проекты для вас</p>
+                            <div id="aiRecommendationsContainer">
+                                <div class="loading-spinner-small"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skills Filter -->
-                    <div class="filter-section glass-card">
-                        <h3 class="filter-title">Навыки</h3>
-                        <div class="skills-filter">
-                            <input type="text" id="skillInput" class="skill-input"
-                                placeholder="Например: React, Python">
-                            <div class="selected-skills" id="selectedSkills"></div>
-                        </div>
-                    </div>
-
-                    <!-- Project Type Filter -->
-                    <div class="filter-section glass-card">
-                        <h3 class="filter-title">Тип проекта</h3>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="projectType" value="individual" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Индивидуальный</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="projectType" value="team">
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Командный</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Deadline & Location Filter -->
-                    <div class="filter-section glass-card">
-                        <h3 class="filter-title">Сроки и Локация</h3>
-                        <div class="filter-group">
-                            <label class="input-label">Срок (дней)</label>
-                            <input type="number" id="maxDeadline" class="deadline-input-field" placeholder="Макс. дней"
-                                min="1">
-                        </div>
-                        <div class="filter-group" style="margin-top: 10px;">
-                            <label class="input-label">Локация</label>
-                            <input type="text" id="locationInput" class="location-input" placeholder="Например, Remote">
-                        </div>
-                    </div>
-
-                    <!-- Level Filter -->
-                    <div class="filter-section glass-card">
-                        <h3 class="filter-title">Уровень</h3>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="experienceLevel" value="junior">
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Junior</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="experienceLevel" value="middle" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Middle</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="experienceLevel" value="senior">
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Senior</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="experienceLevel" value="expert">
-                                <span class="checkmark"></span>
-                                <span class="filter-label">Expert</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="apply-filters-btn" id="applyFiltersBtn">Применить фильтры</button>
-
-                    <!-- AI Recommendations -->
-                    <div class="filter-section ai-recommendations-filter glass-card">
-                        <h3 class="filter-title">🤖 AI-рекомендации</h3>
-                        <p class="ai-subtitle">Проекты для вас</p>
-                        <div id="aiRecommendationsContainer">
-                            <div class="loading-spinner-small"></div>
-                        </div>
+                    <div class="filter-actions-group">
+                        <button class="apply-filters-btn" id="applyFiltersBtn">Применить фильтры</button>
+                        <button class="clear-filters-btn" id="clearFiltersBtn">
+                            <i class="fas fa-undo-alt"></i> Очистить всё
+                        </button>
                     </div>
                 </aside>
 

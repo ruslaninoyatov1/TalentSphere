@@ -33,7 +33,7 @@
             </svg>
         </button>
         <span class="mobile-logo-text">TalentSphere</span>
-        <div class="mobile-avatar"></div>
+        <div class="mobile-avatar">AD</div>
     </div>
 
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -244,24 +244,33 @@
                         <button class="chart-btn">Год</button>
                     </div>
                 </div>
-                <div class="chart-placeholder"
-                    style="height: 180px; display: flex; align-items: flex-end; justify-content: space-between; padding: 20px 0;">
-                    <!-- CSS-only simple bar chart for visualization -->
-                    <div class="chart-bar"
-                        style="height: 40%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
-                    <div class="chart-bar"
-                        style="height: 65%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
-                    <div class="chart-bar"
-                        style="height: 50%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
-                    <div class="chart-bar"
-                        style="height: 85%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
-                    <div class="chart-bar"
-                        style="height: 60%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
-                    <div class="chart-bar"
-                        style="height: 95%; width: 8%; background: #8b5cf6; border-radius: 4px; box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);">
+                <div class="income-chart-container">
+                    <div class="chart-grid-lines">
+                        <span></span><span></span><span></span><span></span><span></span>
                     </div>
-                    <div class="chart-bar"
-                        style="height: 75%; width: 8%; background: rgba(139, 92, 246, 0.3); border-radius: 4px;"></div>
+                    <div class="chart-bars">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 40%;"></div><span class="bar-label">Пн</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 65%;"></div><span class="bar-label">Вт</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 50%;"></div><span class="bar-label">Ср</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 85%;"></div><span class="bar-label">Чт</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 60%;"></div><span class="bar-label">Пт</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar active" style="height: 95%;"></div><span class="bar-label">Сб</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 75%;"></div><span class="bar-label">Вс</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

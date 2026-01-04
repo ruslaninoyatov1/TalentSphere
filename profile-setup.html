@@ -7,27 +7,24 @@
     <title>Настройка профиля | TalentSphere</title>
 
     <link rel="stylesheet" href="css/global-variables.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="auth-landing.css">
+    <link rel="stylesheet" href="css/auth-noir.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="auth-page overflow-hidden">
-    <!-- Ambient Glows -->
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
+<body class="auth-page">
 
     <div class="auth-split-container">
 
         <div class="auth-left">
+            <div class="auth-left-mist"></div>
             <div class="auth-left-content">
-                <div class="auth-landing-logo animate-fade-in">
+                <div class="auth-landing-logo">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="32" height="32" rx="10" fill="url(#logo-gradient)" />
                         <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white" />
@@ -39,91 +36,66 @@
                             </linearGradient>
                         </defs>
                     </svg>
-                    <h2 class="gradient-text">TalentSphere</h2>
+                    <h2>TalentSphere</h2>
                 </div>
 
-                <div class="auth-landing-hero animate-slide-up">
-                    <h1 class="text-5xl font-black mb-6">Почти <br><span class="highlight-purple">готово!</span></h1>
-                    <p class="auth-landing-subtitle text-lg text-secondary">Заполните профиль, чтобы мы могли подобрать
-                        для вас идеальные
+                <div class="auth-landing-hero">
+                    <div class="auth-hero-badge">✨ PERSONALIZATION</div>
+                    <h1>Почти <br><span class="gradient-text-animated">готово!</span></h1>
+                    <p class="auth-landing-subtitle">Заполните профиль, чтобы мы могли подобрать для вас идеальные
                         проекты или кандидатов.</p>
-                </div>
-
-                <div class="auth-features animate-fade-in delay-200">
-                    <div class="auth-feature-item glass-card">
-                        <div class="auth-feature-icon neon-glow-purple">
-                            <i class="fas fa-user-astronaut"></i>
-                        </div>
-                        <div class="auth-feature-text">
-                            <h3>Персонализация</h3>
-                            <p>Умная лента под ваши интересы</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <div class="auth-right">
-            <div class="auth-form-container glass-card animate-scale-in">
+            <div class="auth-form-container">
                 <div class="auth-form-header">
-                    <h2 class="text-2xl font-bold mb-2">Настройка профиля 🔥</h2>
-                    <p class="text-secondary">Расскажите немного о себе</p>
+                    <h2>Настройка профиля 🔥</h2>
+                    <p>Расскажите миру о своих талантах</p>
                 </div>
 
-                <form action="dashboard.html" method="get" class="mt-8">
-
+                <form action="dashboard.html" method="get">
                     <!-- Avatar Upload -->
-                    <div class="avatar-upload-container mb-8 text-center">
-                        <div class="avatar-upload glass-card animate-shimmer"
-                            onclick="document.getElementById('avatarInput').click()">
+                    <div class="avatar-upload-container">
+                        <div class="avatar-upload" onclick="document.getElementById('avatarInput').click()">
                             <div class="avatar-placeholder">
-                                <i class="fas fa-camera-retro text-3xl mb-2 gradient-text"></i>
-                                <span class="text-xs font-semibold uppercase tracking-wider">Загрузить фото</span>
+                                <i class="fas fa-camera"></i>
+                                <span>Фото</span>
                             </div>
-                            <img id="avatarPreview" src="" alt="Avatar Preview"
-                                style="display: none; border-radius: 20px;">
+                            <img id="avatarPreview" src="" alt="Preview" class="avatar-preview-img"
+                                style="display: none;">
                             <input type="file" id="avatarInput" accept="image/*" hidden onchange="previewAvatar(this)">
                         </div>
                     </div>
 
                     <!-- Skills Multiselect -->
-                    <div class="auth-form-group mb-6">
-                        <label class="auth-form-label mb-2 block font-medium">Ваши навыки</label>
-                        <div class="skills-input-container glass-card p-3 flex flex-wrap gap-2"
-                            onclick="document.getElementById('skillInput').focus()">
-                            <div class="skills-list flex flex-wrap gap-2" id="skillsList">
+                    <div class="auth-form-group">
+                        <label class="auth-form-label">Ваши навыки</label>
+                        <div class="skills-input-container" onclick="document.getElementById('skillInput').focus()">
+                            <div class="skills-list" id="skillsList" style="display: flex; flex-wrap: wrap; gap: 8px;">
                                 <!-- Tags will appear here -->
                             </div>
-                            <input type="text" id="skillInput"
-                                class="skill-input-field flex-1 bg-transparent border-none outline-none text-white"
-                                placeholder="Например: React, Design...">
+                            <input type="text" id="skillInput" class="skill-input-field"
+                                placeholder="Напр: React, Design...">
                         </div>
-                        <div class="skills-suggestions mt-3 flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag-suggest glass-card py-1 px-3 text-sm cursor-pointer hover:bg-white/10 transition"
-                                onclick="addSkill('JavaScript')">JavaScript</span>
-                            <span
-                                class="skill-tag-suggest glass-card py-1 px-3 text-sm cursor-pointer hover:bg-white/10 transition"
-                                onclick="addSkill('UI/UX')">UI/UX</span>
-                            <span
-                                class="skill-tag-suggest glass-card py-1 px-3 text-sm cursor-pointer hover:bg-white/10 transition"
-                                onclick="addSkill('Python')">Python</span>
-                            <span
-                                class="skill-tag-suggest glass-card py-1 px-3 text-sm cursor-pointer hover:bg-white/10 transition"
-                                onclick="addSkill('Marketing')">Marketing</span>
+                        <div class="skills-suggestions">
+                            <span class="skill-tag-suggest" onclick="addSkill('JavaScript')">JavaScript</span>
+                            <span class="skill-tag-suggest" onclick="addSkill('UI/UX')">UI/UX</span>
+                            <span class="skill-tag-suggest" onclick="addSkill('Python')">Python</span>
+                            <span class="skill-tag-suggest" onclick="addSkill('Marketing')">Marketing</span>
                         </div>
                     </div>
 
                     <!-- Bio -->
-                    <div class="auth-form-group mb-8">
-                        <label for="bio" class="auth-form-label mb-2 block font-medium">О себе</label>
-                        <textarea id="bio" class="auth-form-input glass-card w-full p-4 min-h-[120px]"
+                    <div class="auth-form-group">
+                        <label for="bio" class="auth-form-label">О себе</label>
+                        <textarea id="bio" class="auth-form-input" style="min-height: 100px; resize: none;"
                             placeholder="Кратко опишите ваш опыт и цели..."></textarea>
                     </div>
 
-                    <button type="submit"
-                        class="auth-submit-btn btn-primary neon-button w-full py-4 rounded-xl font-bold text-lg">
-                        <span>Завершить регистрацию</span>
+                    <button type="submit" class="auth-submit-btn">
+                        Завершить регистрацию →
                     </button>
                 </form>
             </div>
@@ -168,10 +140,10 @@
             skills.add(skill);
 
             const tag = document.createElement('div');
-            tag.className = 'skill-tag badge glass-card neon-glow-blue py-1 px-3 rounded-full flex items-center gap-2';
+            tag.className = 'skill-tag';
             tag.innerHTML = `
                 ${skill}
-                <i class="fas fa-times cursor-pointer text-xs opacity-60 hover:opacity-100" onclick="removeSkill(this, '${skill}')"></i>
+                <i class="fas fa-times" onclick="removeSkill(this, '${skill}')"></i>
             `;
             skillsList.appendChild(tag);
         }
@@ -181,10 +153,8 @@
             element.closest('.skill-tag').remove();
         }
     </script>
-
 </body>
 
 </html>
 
 </html>
-

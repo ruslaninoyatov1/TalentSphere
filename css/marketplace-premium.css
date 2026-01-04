@@ -3,11 +3,12 @@
    ======================================== */
 
 :root {
-    --card-bg: rgba(15, 18, 25, 0.7);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-glow-blue: rgba(0, 212, 255, 0.15);
-    --card-glow-pink: rgba(255, 0, 128, 0.15);
-    --card-glow-purple: rgba(176, 0, 255, 0.15);
+    --card-bg: rgba(20, 24, 35, 0.6);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-glow-blue: rgba(0, 212, 255, 0.3);
+    --card-glow-pink: rgba(255, 0, 128, 0.3);
+    --card-glow-purple: rgba(176, 0, 255, 0.3);
+    --iridescent-gradient: linear-gradient(135deg, #8b5cf6, #ec4899, #00d4ff);
 }
 
 /* --- Dynamic Background for Main Content --- */
@@ -21,8 +22,8 @@
 
 /* --- Layout Container --- */
 .marketplace-main-container {
-    padding: 30px 40px;
-    max-width: 1600px;
+    padding: 30px 60px;
+    max-width: 1900px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -97,40 +98,37 @@
 .marketplace-card.premium-style {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 28px;
+    border-radius: 28px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 24px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
-.marketplace-card.premium-style::before {
+.marketplace-card.premium-style::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .marketplace-card.premium-style:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
-        0 0 30px var(--card-glow-purple);
-}
-
-.marketplace-card.premium-style:hover::before {
-    opacity: 1;
+    transform: translateY(-12px) scale(1.03);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px var(--card-glow-purple);
 }
 
 /* Card Header */
@@ -170,13 +168,20 @@
 
 /* Card Body */
 .premium-card-title {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: white;
     font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    color: white;
     margin: 0;
-    transition: color 0.3s;
+    transition: all 0.3s;
+}
+
+.premium-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .marketplace-card.premium-style:hover .premium-card-title {
@@ -184,13 +189,13 @@
 }
 
 .premium-card-desc {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -238,26 +243,40 @@
 .client-mini-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .client-avatar-s {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--bg-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.client-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .client-name-s {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+}
+
+.client-rating-s {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 /* Apply button specifically for this card */
